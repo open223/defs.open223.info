@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+<style>
+    {% include "static/prism.min.css" %}
+    {% include "static/site.css" %}
+</style>
+</head>
+<body>
+    <h1>Docs</h1>
+    <input type="text" id="search" placeholder="Search" />
+    {% for concept in concepts %}
+    <div class="card" data-concept="{{concept.name}}">
+        <h3><a href="#{{ concept.name }}" id="{{ concept.name}}">{{ concept.label }}</a></h3>
+        <p>URI: <a href="{{ concept.class }}">{{ concept.class }}</a></p>
+        <pre><code class="language-turtle">
+{{ concept.immediate_subgraph.serialize(format='turtle') }}
+        </code></pre>
+        {% if concept.see_alsos|length > 0 %}
+            <h4>See Also</h4>
+            <ul>
+            {% for see_also in concept.see_alsos %}
+                <li><a href="#{{ see_also }}">{{ see_also }}</a></li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        <h4>Details</h4>
+        <details>
+            <summary>All related shapes and rules</summary>
+            <pre><code class="language-turtle">
+{{ concept.subgraph.serialize(format='turtle') }}
+            </code></pre>
+        </details>
+    </div>
+    {% endfor %}
+    {% for concept in property_shapes %}
+    <div class="card" data-concept="{{concept.name}}">
+        <h3><a href="#{{ concept.name }}" id="{{ concept.name}}">{{ concept.label }}</a></h3>
+
+    {% if concept.class is not none %}
+        <p>URI: <a href="{{ concept.class }}">{{ concept.class }}</a></p>
+    {% endif %}
+        <pre><code class="language-turtle">
+{{ concept.immediate_subgraph.serialize(format='turtle') }}
+        </code></pre>
+    </div>
+    {% endfor %}
+    <script>
+        {% include "static/app.js" %}
+        {% include "static/prism.min.js" %}
+        {% include "static/prism-autoloader.min.js" %}
+        {% include "static/prism-turtle.min.js" %}
+    </script>
+    <!--
+    <script src="app.js"></script>
+    <script src="prism.min.js"></script>
+    <script src="prism-autoloader.min.js"></script>
+    <script src="prism-turtle.min.js"></script>
+    -->
+</body>
