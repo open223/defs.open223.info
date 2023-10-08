@@ -12,6 +12,7 @@ RDFS = RDFS
 def simplify_node(node):
     if isinstance(node, BNode):
         return stable_id(node)
+    return g.namespace_manager.qname(node)
     for prefix, namespace in g.namespace_manager.namespaces():
         if str(node).startswith(namespace):
             return prefix + ":" + str(node)[len(namespace):]
@@ -141,6 +142,38 @@ for s223class in g.subjects(predicate=RDF["type"], object=S223["Class"]):
     })
 
 seen = set()
+
+# add all nodeshapes that are not classes
+for node_shape in set(g.subjects(predicate=RDF["type"], object=SH.NodeShape)):
+    # check it's not a class
+    if (node_shape, RDF["type"], S223["Class"]) in g:
+        continue
+
+    if isinstance(node_shape, BNode):
+        node_name = stable_id(node_shape)
+    else:
+        node_name = simplify_node(node_shape)
+    # avoid duplicates
+    if node_name in seen:
+        continue
+    seen.add(node_name)
+
+    immediate_subgraph = g.cbd(node_shape)
+    bind_namespaces(immediate_subgraph)
+    subgraph = get_subgraph(g, node_shape)
+    bind_namespaces(subgraph)
+
+    name_or_label = g.value(node_shape, SH["name"]) or g.value(node_shape, RDFS["label"])
+    message_or_comment = g.value(node_shape, SH["message"]) or g.value(node_shape, RDFS.comment)
+    label = name_or_label or message_or_comment or "Node Shape"
+    prop_defns.append({
+        "class": None if isinstance(node_shape, BNode) else node_shape,
+        "name": node_name,
+        "label": label,
+        "immediate_subgraph": immediate_subgraph,
+        "subgraph": subgraph,
+        "see_alsos": [],
+    })
 
 # TODO: do this for property shapes!
 for property_shape in set(g.objects(predicate=SH["property"])):
