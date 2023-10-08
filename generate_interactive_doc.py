@@ -201,7 +201,7 @@ for rule in set(g.objects(predicate=SH["rule"])):
     })
 
 
-with open("static/index.html", "w") as f:
+with open("index.html", "w") as f:
     f.write(template.render(
         concepts=sorted(defns, key=lambda x: x['class']),
         property_shapes=sorted(prop_defns, key=lambda x: x['name']),

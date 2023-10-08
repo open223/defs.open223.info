@@ -34,7 +34,7 @@ jobs:
         run: poetry install
 
       - name: make index.html
-        run: make static/index.html
+        run: make index.html
 
       - name: Commit Built Files
         run: |
