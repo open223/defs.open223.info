@@ -2,11 +2,6 @@
     const search = document.getElementById("search");
     search.addEventListener("change", function() {
         for (const item of document.getElementsByClassName("card")) {
-            // if search.value is empty, then show all
-            if (search.value == "") {
-                item.style.display = "block";
-                continue;
-            }
             // if search.value is not empty OR
             // if the 'language-turtle' section of the card contains the string,
             // then show the card

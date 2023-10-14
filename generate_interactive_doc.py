@@ -190,6 +190,11 @@ for property_shape in set(g.objects(predicate=SH["property"])):
     seen.add(node_name)
 
     immediate_subgraph = g.cbd(property_shape)
+    if isinstance(property_shape, BNode):
+        # if this is a blank node, then add the subject of the property shape to the immediate_subgraph so we know
+        # who owns the property shape
+        subject_of_property_shape = next(g.subjects(predicate=SH["property"], object=property_shape))
+        immediate_subgraph.add((subject_of_property_shape, SH["property"], property_shape))
     bind_namespaces(immediate_subgraph)
     subgraph = get_subgraph(g, property_shape)
     bind_namespaces(subgraph)
@@ -219,12 +224,13 @@ for rule in set(g.objects(predicate=SH["rule"])):
 
     print(f"Generating rule {rule} {node_name}")
 
-    subject_of_rule = next(g.subjects(predicate=SH["rule"], object=rule))
 
     immediate_subgraph = g.cbd(rule)
-    # add the subject of the rule to the immediate_subgraph so we know
-    # who owns the rule
-    immediate_subgraph.add((subject_of_rule, SH["rule"], rule))
+    if isinstance(rule, BNode):
+        # if this is a blank node, add the subject of the rule to the immediate_subgraph so we know
+        # who owns the rule
+        subject_of_rule = next(g.subjects(predicate=SH["rule"], object=rule))
+        immediate_subgraph.add((subject_of_rule, SH["rule"], rule))
     bind_namespaces(immediate_subgraph)
     subgraph = get_subgraph(g, rule)
     bind_namespaces(subgraph)
