@@ -117,7 +117,7 @@ defns = []
 prop_defns = []
 
 for s223class in g.subjects(predicate=RDF["type"], object=S223["Class"]):
-    print(s223class)
+    print(f"Generating class {s223class}")
     immediate_subgraph = g.cbd(s223class)
     bind_namespaces(immediate_subgraph)
     subgraph = get_subgraph(g, s223class)
@@ -148,6 +148,8 @@ for node_shape in set(g.subjects(predicate=RDF["type"], object=SH.NodeShape)):
     # check it's not a class
     if (node_shape, RDF["type"], S223["Class"]) in g:
         continue
+
+    print(f"Generating node shape {node_shape}")
 
     if isinstance(node_shape, BNode):
         node_name = stable_id(node_shape)
@@ -181,6 +183,7 @@ for property_shape in set(g.objects(predicate=SH["property"])):
         node_name = stable_id(property_shape)
     else:
         node_name = simplify_node(property_shape)
+    print(f"Generating property shape {property_shape} {node_name}")
     # avlid duplicates
     if node_name in seen:
         continue
@@ -214,7 +217,14 @@ for rule in set(g.objects(predicate=SH["rule"])):
         continue
     seen.add(node_name)
 
+    print(f"Generating rule {rule} {node_name}")
+
+    subject_of_rule = next(g.subjects(predicate=SH["rule"], object=rule))
+
     immediate_subgraph = g.cbd(rule)
+    # add the subject of the rule to the immediate_subgraph so we know
+    # who owns the rule
+    immediate_subgraph.add((subject_of_rule, SH["rule"], rule))
     bind_namespaces(immediate_subgraph)
     subgraph = get_subgraph(g, rule)
     bind_namespaces(subgraph)
