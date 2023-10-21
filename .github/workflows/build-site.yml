@@ -34,7 +34,7 @@ jobs:
         run: poetry install
 
       - name: make index.html
-        run: make index.html
+        run: poetry run python generate_interactive_doc.py ontologies/223p.ttl
 
       - name: Commit Built Files
         run: |
