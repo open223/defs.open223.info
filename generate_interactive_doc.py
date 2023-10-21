@@ -190,11 +190,24 @@ for property_shape in set(g.objects(predicate=SH["property"])):
     seen.add(node_name)
 
     immediate_subgraph = g.cbd(property_shape)
+    hasInterpretableSubject = False
     if isinstance(property_shape, BNode):
-        # if this is a blank node, then add the subject of the property shape to the immediate_subgraph so we know
-        # who owns the property shape
-        subject_of_property_shape = next(g.subjects(predicate=SH["property"], object=property_shape))
-        immediate_subgraph.add((subject_of_property_shape, SH["property"], property_shape))
+        # write a a query that discovers the owner of a property shape following sh:and/sh:or/sh:not/sh:xor followed by sh:property
+        query = """
+        SELECT ?owner WHERE {
+            ?owner (sh:and|sh:or|sh:not|sh:xor|sh:xone|rdf:first|rdf:rest)*/sh:property ?property .
+        }"""
+        for row in g.query(query, initBindings={"property": property_shape}):
+            if isinstance(row["owner"], BNode):
+                continue
+            immediate_subgraph.add((row["owner"], SH["property"], property_shape))
+            hasInterpretableSubject = True
+
+        # if there is no owner, then this is a property shape that is not owned by a node shape; skip it
+        # as it is probably a helper property shape for something else
+        if not hasInterpretableSubject:
+            continue
+
     bind_namespaces(immediate_subgraph)
     subgraph = get_subgraph(g, property_shape)
     bind_namespaces(subgraph)
@@ -240,6 +253,7 @@ for rule in set(g.objects(predicate=SH["rule"])):
     name_or_label = g.value(rule, SH["name"]) or g.value(rule, RDFS["label"])
     message_or_comment = g.value(rule, SH["message"]) or g.value(rule, RDFS.comment)
     label = name_or_label or message_or_comment or "Property Shape"
+
     prop_defns.append({
         "class": None if isinstance(rule, BNode) else rule,
         "name": node_name,
