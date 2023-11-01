@@ -9,6 +9,14 @@ SH = Namespace("http://www.w3.org/ns/shacl#")
 RDF = RDF
 RDFS = RDFS
 
+
+def walk_list(node):
+    """Given the head of an RDF list, yield each of the nodes."""
+    while node != RDF.nil:
+        yield g.value(node, RDF.first)
+        node = g.value(node, RDF.rest)
+
+
 def simplify_node(node):
     if isinstance(node, BNode):
         return stable_id(node)
@@ -177,6 +185,44 @@ for node_shape in set(g.subjects(predicate=RDF["type"], object=SH.NodeShape)):
         "see_alsos": [],
     })
 
+# handle all sh:or/and/xone shapes on node shapes
+for node_shape in set(g.subjects(predicate=RDF["type"], object=SH.NodeShape)):
+    constraints = g.objects(subject=node_shape, predicate=SH["or"] | SH["and"] | SH["xone"])
+    for compound_shape in constraints:
+        if isinstance(compound_shape, BNode):
+            node_name = stable_id(compound_shape)
+        else:
+            node_name = simplify_node(compound_shape)
+        desc = {g.value(s, SH.property / RDFS.comment) for s in walk_list(compound_shape)}
+
+        if len(desc) > 1:
+            boolean_condition = next(g.predicates(node_shape, compound_shape))
+            # clean up the boolean condition to make it more readable (sh:and -> AND, etc)
+            boolean_condition = boolean_condition.split("#")[-1].upper()
+            # if there is more than one unique description, then stitch them together with
+            # the boolean condition
+            desc = f"{boolean_condition} ".join(desc)
+        elif len(desc) == 1:
+            desc = desc.pop()
+        else:
+            desc = g.namespace_manager.qname(shape)
+
+        immediate_subgraph = g.cbd(compound_shape)
+        bind_namespaces(immediate_subgraph)
+        subgraph = get_subgraph(g, compound_shape)
+        bind_namespaces(subgraph)
+
+        prop_defns.append({
+            "class": None if isinstance(compound_shape, BNode) else compound_shape,
+            "name": node_name,
+            "label": desc,
+            "immediate_subgraph": immediate_subgraph,
+            "subgraph": subgraph,
+            "see_alsos": [],
+        })
+
+
+
 # TODO: do this for property shapes!
 for property_shape in set(g.objects(predicate=SH["property"])):
     if isinstance(property_shape, BNode):
@@ -265,6 +311,12 @@ for rule in set(g.objects(predicate=SH["rule"])):
 
 
 with open("index.html", "w") as f:
+    import json
+    from copy import deepcopy
+    for d in defns:
+        d = deepcopy(d)
+        if "using the relation observes" in d['label'] or "using the relation has" in d['name']:
+            print(d)
     f.write(template.render(
         concepts=sorted(defns, key=lambda x: x['class']),
         property_shapes=sorted(prop_defns, key=lambda x: x['name']),
