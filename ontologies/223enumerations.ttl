@@ -1,0 +1,700 @@
+@prefix doc: <http://sample.org/doc#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix s223: <http://data.ashrae.org/standard223#> .
+
+s223:Aspect-DayOfWeek doc:subclauses ( s223:DayOfWeek-Weekday s223:DayOfWeek-Weekend ) .
+
+s223:Aspect-Effectiveness rdfs:comment """
+: Effectiveness Enumerations
+
+| Enumeration |
+|:-----------|
+| Effectiveness-Active |
+""" .
+
+s223:Aspect-ElectricalPhaseIdentifier rdfs:comment """
+: Electrical Phase Identifier Enumerations
+
+| Enumeration |
+|:-----------|
+| ElectricalPhaseIdentifier-A |
+| ElectricalPhaseIdentifier-AB |
+| ElectricalPhaseIdentifier-ABC |
+| ElectricalPhaseIdentifier-B |
+| ElectricalPhaseIdentifier-BC |
+| ElectricalPhaseIdentifier-C |
+| ElectricalPhaseIdentifier-CA |
+""" ;
+ doc:subclauses (
+        s223:hasElectricalPhase
+    ) .
+
+s223:Aspect-ElectricalVoltagePhases rdfs:comment """
+: Electrical Voltage Phases Enumerations
+
+| Enumeration |
+|:-----------|
+| ElectricalVoltagePhases-ABLineLineVoltage |
+| ElectricalVoltagePhases-ANLineNeutralVoltage |
+| ElectricalVoltagePhases-BCLineLineVoltage |
+| ElectricalVoltagePhases-BNLineNeutralVoltage |
+| ElectricalVoltagePhases-CALineLineVoltage |
+| ElectricalVoltagePhases-CNLineNeutralVoltage |
+""" .
+
+s223:DC-12V rdfs:comment """
+: DC-12V Enumerations
+
+| Enumeration |
+|:-----------|
+| 12V-12V-Neg |
+| 12V-12V-Pos |
+| 12V-6V-Neg-6V-Pos |
+""" .
+
+s223:DC-24V rdfs:comment """
+: DC-24V Enumerations
+
+| Enumeration |
+|:-----------|
+| 24V-12V-Neg-12V-Pos |
+| 24V-24V-Neg |
+| 24V-24V-Pos |
+""" .
+
+s223:DC-380V rdfs:comment """
+: DC-380V Enumerations
+
+| Enumeration |
+|:-----------|
+| 380V-190V-Neg-190V-Pos |
+| 380V-380V-Neg |
+| 380V-380V-Pos |
+""" .
+
+s223:DC-48V rdfs:comment """
+: DC-48V Enumerations
+
+| Enumeration |
+|:-----------|
+| 48V-24V-Neg-24V-Pos |
+| 48V-48V-Neg |
+| 48V-48V-Pos |
+""" .
+
+s223:DC-5V rdfs:comment """
+: DC-5V Enumerations
+
+| Enumeration |
+|:-----------|
+| 5V-2.5V-Neg-2.5V-Pos |
+| 5V-5V-Neg |
+| 5V-5V-Pos |
+""" .
+
+s223:DC-6V rdfs:comment """
+: DC-6V Enumerations
+
+| Enumeration |
+|:-----------|
+| 6V-3V-Neg-3V-Pos |
+| 6V-6V-Neg |
+| 6V-6V-Pos |
+""" .
+
+s223:DayOfWeek-Weekday rdfs:comment """
+: Weekday Enumerations
+
+| Enumeration |
+|:-----------|
+| Weekday-Friday |
+| Weekday-Monday |
+| Weekday-Thursday |
+| Weekday-Tuesday |
+| Weekday-Wednesday |
+""" .
+
+s223:DayOfWeek-Weekend rdfs:comment """
+: Weekend Enumerations
+
+| Enumeration |
+|:-----------|
+| Weekend-Saturday |
+| Weekend-Sunday |
+""" .
+
+s223:EM-Light rdfs:comment """
+: Light Enumerations
+
+| Enumeration |
+|:-----------|
+| Light-Infrared |
+| Light-Ultraviolet |
+| Light-Visible |
+""" .
+
+s223:Electricity-AC rdfs:comment """
+: AC Enumerations
+
+| Enumeration |
+|:-----------|
+| AC-10000VLL-1Ph-60Hz |
+| AC-10000VLL-3Ph-60Hz |
+| AC-10000VLL-5770VLN-1Ph-60Hz |
+| AC-10000VLL-5770VLN-3Ph-60Hz |
+| AC-110VLN-1Ph-50Hz |
+| AC-120VLN-1Ph-60Hz |
+| AC-127VLN-1Ph-50Hz |
+| AC-139VLN-1Ph-50Hz |
+| AC-1730VLN-1Ph-60Hz |
+| AC-1900VLN-1Ph-60Hz |
+| AC-190VLL-110VLN-1Ph-50Hz |
+| AC-190VLL-110VLN-3Ph-50Hz |
+| AC-190VLL-1Ph-50Hz |
+| AC-190VLL-3Ph-50Hz |
+| AC-208VLL-120VLN-1Ph-60Hz |
+| AC-208VLL-120VLN-3Ph-60Hz |
+| AC-208VLL-1Ph-60Hz |
+| AC-208VLL-3Ph-60Hz |
+| AC-219VLN-1Ph-60Hz |
+| AC-220VLL-127VLN-1Ph-50Hz |
+| AC-220VLL-127VLN-3Ph-50Hz |
+| AC-220VLL-1Ph-50Hz |
+| AC-220VLL-3Ph-50Hz |
+| AC-231VLN-1Ph-50Hz |
+| AC-2400VLN-1Ph-60Hz |
+| AC-240VLL-120VLN-1Ph-60Hz |
+| AC-240VLL-139VLN-1Ph-50Hz |
+| AC-240VLL-139VLN-3Ph-50Hz |
+| AC-240VLL-1Ph-50Hz |
+| AC-240VLL-1Ph-60Hz |
+| AC-240VLL-208VLN-120VLN-1Ph-60Hz |
+| AC-240VLL-208VLN-120VLN-3Ph-60Hz |
+| AC-240VLL-3Ph-50Hz |
+| AC-240VLL-3Ph-60Hz |
+| AC-240VLN-1Ph-50Hz |
+| AC-24VLN-1Ph-50Hz |
+| AC-24VLN-1Ph-60Hz |
+| AC-277VLN-1Ph-60Hz |
+| AC-3000VLL-1730VLN-1Ph-60Hz |
+| AC-3000VLL-1730VLN-3Ph-60Hz |
+| AC-3000VLL-1Ph-60Hz |
+| AC-3000VLL-3Ph-60Hz |
+| AC-3300VLL-1900VLN-1Ph-60Hz |
+| AC-3300VLL-1900VLN-3Ph-60Hz |
+| AC-3300VLL-1Ph-60Hz |
+| AC-3300VLL-3Ph-60Hz |
+| AC-3460VLN-1Ph-60Hz |
+| AC-347VLN-1Ph-60Hz |
+| AC-380VLL-1Ph-60Hz |
+| AC-380VLL-219VLN-1Ph-60Hz |
+| AC-380VLL-219VLN-3Ph-60Hz |
+| AC-380VLL-3Ph-60Hz |
+| AC-3810VLN-1Ph-60Hz |
+| AC-400VLL-1Ph-50Hz |
+| AC-400VLL-231VLN-1Ph-50Hz |
+| AC-400VLL-231VLN-3Ph-50Hz |
+| AC-400VLL-3Ph-50Hz |
+| AC-415VLL-1Ph-50Hz |
+| AC-415VLL-240VLN-1Ph-50Hz |
+| AC-415VLL-240VLN-3Ph-50Hz |
+| AC-415VLL-3Ph-50Hz |
+| AC-4160VLL-1Ph-60Hz |
+| AC-4160VLL-2400VLN-1Ph-60Hz |
+| AC-4160VLL-2400VLN-3Ph-60Hz |
+| AC-4160VLL-3Ph-60Hz |
+| AC-480VLL-1Ph-60Hz |
+| AC-480VLL-277VLN-1Ph-60Hz |
+| AC-480VLL-277VLN-3Ph-60Hz |
+| AC-480VLL-3Ph-60Hz |
+| AC-5770VLN-1Ph-60Hz |
+| AC-6000VLL-1Ph-60Hz |
+| AC-6000VLL-3460VLN-1Ph-60Hz |
+| AC-6000VLL-3460VLN-3Ph-60Hz |
+| AC-6000VLL-3Ph-60Hz |
+| AC-600VLL-1Ph-60Hz |
+| AC-600VLL-347VLN-1Ph-60Hz |
+| AC-600VLL-347VLN-3Ph-60Hz |
+| AC-600VLL-3Ph-60Hz |
+| AC-6600VLL-1Ph-60Hz |
+| AC-6600VLL-3810VLN-1Ph-60Hz |
+| AC-6600VLL-3810VLN-3Ph-60Hz |
+| AC-6600VLL-3Ph-60Hz |
+""" .
+
+s223:Electricity-DC doc:subclauses ( s223:DC-12V s223:DC-24V s223:DC-380V s223:DC-48V s223:DC-5V s223:DC-6V ) .
+
+s223:Electricity-Signal doc:subclauses ( s223:Signal-Modulated ) .
+
+s223:EnumerationKind-Aspect doc:subclauses ( s223:Aspect-DayOfWeek s223:Aspect-Effectiveness s223:Aspect-ElectricalPhaseIdentifier s223:Aspect-ElectricalVoltagePhases ) ;
+rdfs:comment """
+: Aspect Enumerations
+
+| Enumeration |
+|:-----------|
+| Aspect-Alarm |
+| Aspect-CatalogNumber |
+| Aspect-Command |
+| Aspect-DayOfWeek |
+| Aspect-Deadband |
+| Aspect-Delta |
+| Aspect-DryBulb |
+| Aspect-Effectiveness |
+| Aspect-Efficiency |
+| Aspect-ElectricalPhaseIdentifier |
+| Aspect-ElectricalVoltagePhases |
+| Aspect-Face |
+| Aspect-Fault |
+| Aspect-HighLimit |
+| Aspect-Latent |
+| Aspect-Loss |
+| Aspect-LowLimit |
+| Aspect-Manufacturer |
+| Aspect-Maximum |
+| Aspect-Minimum |
+| Aspect-Model |
+| Aspect-Nominal |
+| Aspect-NominalFrequency |
+| Aspect-PhaseAngle |
+| Aspect-PowerFactor |
+| Aspect-Rated |
+| Aspect-Sensible |
+| Aspect-SerialNumber |
+| Aspect-ServiceFactor |
+| Aspect-Setpoint |
+| Aspect-StandardConditions |
+| Aspect-Standby |
+| Aspect-StartupValue |
+| Aspect-Threshold |
+| Aspect-Total |
+| Aspect-WetBulb |
+| Aspect-Year |
+""" .
+
+s223:EnumerationKind-Binary rdfs:comment """
+: Binary Enumerations
+
+| Enumeration |
+|:-----------|
+| Binary-False |
+| Binary-True |
+| Binary-Unknown |
+""" .
+
+s223:EnumerationKind-Direction rdfs:comment """
+: Direction Enumerations
+
+| Enumeration |
+|:-----------|
+| Direction-Bidirectional |
+| Direction-Inlet |
+| Direction-Outlet |
+""" .
+
+s223:EnumerationKind-Domain rdfs:comment """
+: Domain Enumerations
+
+| Enumeration |
+|:-----------|
+| Domain-ConveyanceSystems |
+| Domain-Electrical |
+| Domain-Fire |
+| Domain-HVAC |
+| Domain-Lighting |
+| Domain-Networking |
+| Domain-Occupancy |
+| Domain-PhysicalSecurity |
+| Domain-Plumbing |
+| Domain-Refrigeration |
+""" .
+
+s223:EnumerationKind-HVACOperatingMode rdfs:comment """
+: HVAC Operating Mode Enumerations
+
+| Enumeration |
+|:-----------|
+| HVACOperatingMode-Auto |
+| HVACOperatingMode-CoolOnly |
+| HVACOperatingMode-FanOnly |
+| HVACOperatingMode-HeatOnly |
+| HVACOperatingMode-Off |
+""" .
+
+s223:EnumerationKind-HVACOperatingStatus rdfs:comment """
+: HVAC Operating Status Enumerations
+
+| Enumeration |
+|:-----------|
+| HVACOperatingStatus-Cooling |
+| HVACOperatingStatus-Dehumidifying |
+| HVACOperatingStatus-Heating |
+| HVACOperatingStatus-Off |
+| HVACOperatingStatus-Ventilating |
+""" .
+
+s223:EnumerationKind-Numerical doc:subclauses (
+    s223:Numerical-DCVoltage
+    s223:Numerical-Frequency
+    s223:Numerical-LineLineVoltage
+    s223:Numerical-LineNeutralVoltage
+    s223:Numerical-NumberOfElectricalPhases
+    s223:Numerical-Voltage
+    s223:hasFrequency
+    s223:hasVoltage
+) .
+
+s223:Numerical-DCVoltage doc:subclauses (s223:DCVoltage-DCNegativeVoltage s223:DCVoltage-DCPositiveVoltage);
+rdfs:comment """
+: DC Voltage Enumerations
+
+| Enumeration |
+|:-----------|
+| DCVoltage-DCNegativeVoltage |
+| DCVoltage-DCPositiveVoltage |
+| DCVoltage-DCZeroVoltage |
+""" .
+s223:DCVoltage-DCNegativeVoltage
+rdfs:comment """
+: DC Negative Voltage Enumerations
+
+| Enumeration |
+|:-----------|
+| DCNegativeVoltage-12.0V |
+| DCNegativeVoltage-190.0V |
+| DCNegativeVoltage-2.5V |
+| DCNegativeVoltage-24.0V |
+| DCNegativeVoltage-3.0V |
+| DCNegativeVoltage-380.0V |
+| DCNegativeVoltage-48.0V |
+| DCNegativeVoltage-5.0V |
+| DCNegativeVoltage-6.0V |
+""" .
+
+s223:DCVoltage-DCPositiveVoltage
+rdfs:comment """
+: DC Positive Voltage Enumerations
+
+| Enumeration |
+|:-----------|
+| DCPositiveVoltage-12.0V |
+| DCPositiveVoltage-190.0V |
+| DCPositiveVoltage-2.5V |
+| DCPositiveVoltage-24.0V |
+| DCPositiveVoltage-3.0V |
+| DCPositiveVoltage-380.0V |
+| DCPositiveVoltage-48.0V |
+| DCPositiveVoltage-5.0V |
+| DCPositiveVoltage-6.0V |
+""" .
+s223:EnumerationKind-Occupancy
+    doc:subclauses (
+        s223:Occupancy-Motion
+        s223:Occupancy-Presence
+        ) ;
+rdfs:comment """
+: Occupancy Enumerations
+
+| Enumeration |
+|:-----------|
+| Occupied |
+| Unoccupied |
+| Unknown |
+""" .
+
+s223:EnumerationKind-OnOff rdfs:comment """
+: On Off Enumerations
+
+| Enumeration |
+|:-----------|
+| OnOff-Off |
+| OnOff-On |
+| OnOff-Unknown |
+""" .
+
+s223:EnumerationKind-Phase
+    doc:subclauses(
+        s223:Phase-Gas
+        s223:Phase-Liquid
+        s223:Phase-Solid
+        s223:Phase-Vapor
+        s223:hasThermodynamicPhase
+    ) .
+
+s223:EnumerationKind-Position rdfs:comment """
+: Position Enumerations
+
+| Enumeration |
+|:-----------|
+| Position-Closed |
+| Position-Open |
+| Position-Unknown |
+""" .
+
+s223:EnumerationKind-Role rdfs:comment """
+: Role Enumerations
+
+| Enumeration |
+|:-----------|
+| Role-Condenser |
+| Role-Controller |
+| Role-Cooling |
+| Role-Discharge |
+| Role-Economizer |
+| Role-Evaporator |
+| Role-Exhaust |
+| Role-Expansion |
+| Role-Generator |
+| Role-HeatRecovery |
+| Role-Heating |
+| Role-Load |
+| Role-Primary |
+| Role-Recirculating |
+| Role-Relief |
+| Role-Return |
+| Role-Secondary |
+| Role-Supply |
+""" .
+
+s223:EnumerationKind-RunStatus rdfs:comment """
+: Run Status Enumerations
+
+| Enumeration |
+|:-----------|
+| RunStatus-Off |
+| RunStatus-On |
+| RunStatus-Unknown |
+""" .
+
+s223:EnumerationKind-Speed rdfs:comment """
+: Speed Enumerations
+
+| Enumeration |
+|:-----------|
+| Speed-High |
+| Speed-Low |
+| Speed-Medium |
+| Speed-Off |
+""" .
+
+s223:EnumerationKind-Substance doc:subclauses ( s223:Substance-Medium s223:Substance-Particulate ) .
+
+s223:Constituent-EM doc:subclauses ( s223:EM-Light ) .
+
+s223:Constituent-Electricity doc:subclauses ( s223:Electricity-AC s223:Electricity-DC s223:Electricity-Signal ) .
+
+s223:Fluid-Refrigerant rdfs:comment """
+: Refrigerant Enumerations
+
+| Enumeration |
+|:-----------|
+| Refrigerant-R-22 |
+| Refrigerant-R-410A |
+""" .
+
+s223:Fluid-Water doc:subclauses ( s223:Water-GlycolSolution ) .
+
+s223:Numerical-DCNegativeVoltage rdfs:comment """
+: DC Negative Voltage Enumerations
+
+| Enumeration |
+|:-----------|
+| DCNegativeVoltage-12.0V |
+| DCNegativeVoltage-190.0V |
+| DCNegativeVoltage-2.5V |
+| DCNegativeVoltage-24.0V |
+| DCNegativeVoltage-3.0V |
+| DCNegativeVoltage-380.0V |
+| DCNegativeVoltage-48.0V |
+| DCNegativeVoltage-5.0V |
+| DCNegativeVoltage-6.0V |
+""" .
+
+s223:Numerical-DCPositiveVoltage rdfs:comment """
+: DC Positive Voltage Enumerations
+
+| Enumeration |
+|:-----------|
+| DCPositiveVoltage-12.0V |
+| DCPositiveVoltage-190.0V |
+| DCPositiveVoltage-2.5V |
+| DCPositiveVoltage-24.0V |
+| DCPositiveVoltage-3.0V |
+| DCPositiveVoltage-380.0V |
+| DCPositiveVoltage-48.0V |
+| DCPositiveVoltage-5.0V |
+| DCPositiveVoltage-6.0V |
+""" .
+
+s223:Numerical-Frequency rdfs:comment """
+: Frequency Enumerations
+
+| Enumeration |
+|:-----------|
+| Frequency-50Hz |
+| Frequency-60Hz |
+""" .
+
+s223:Numerical-LineLineVoltage rdfs:comment """
+: Line-Line Voltage Enumerations
+
+| Enumeration |
+|:-----------|
+| LineLineVoltage-10000V |
+| LineLineVoltage-190V |
+| LineLineVoltage-208V |
+| LineLineVoltage-220V |
+| LineLineVoltage-240V |
+| LineLineVoltage-3000V |
+| LineLineVoltage-3300V |
+| LineLineVoltage-380V |
+| LineLineVoltage-400V |
+| LineLineVoltage-415V |
+| LineLineVoltage-4160V |
+| LineLineVoltage-480V |
+| LineLineVoltage-6000V |
+| LineLineVoltage-600V |
+| LineLineVoltage-6600V |
+""" .
+
+s223:Numerical-LineNeutralVoltage rdfs:comment """
+: Line Neutral Voltage Enumerations
+
+| Enumeration |
+|:-----------|
+| LineNeutralVoltage-110V |
+| LineNeutralVoltage-120V |
+| LineNeutralVoltage-127V |
+| LineNeutralVoltage-139V |
+| LineNeutralVoltage-1730V |
+| LineNeutralVoltage-1900V |
+| LineNeutralVoltage-208V |
+| LineNeutralVoltage-219V |
+| LineNeutralVoltage-231V |
+| LineNeutralVoltage-2400V |
+| LineNeutralVoltage-240V |
+| LineNeutralVoltage-24V |
+| LineNeutralVoltage-277V |
+| LineNeutralVoltage-3460V |
+| LineNeutralVoltage-347V |
+| LineNeutralVoltage-3810V |
+| LineNeutralVoltage-5770V |
+""" .
+
+s223:Numerical-NumberOfElectricalPhases rdfs:comment """
+: Number Of Electrical Phases Enumerations
+
+| Enumeration |
+|:-----------|
+| NumberOfElectricalPhases-SinglePhase |
+| NumberOfElectricalPhases-ThreePhase |
+""" .
+
+s223:Numerical-Voltage rdfs:comment """
+: Voltage Enumerations
+
+| Enumeration |
+|:-----------|
+| Voltage-0V |
+| Voltage-10000V |
+| Voltage-110V |
+| Voltage-120V |
+| Voltage-127V |
+| Voltage-12V |
+| Voltage-139V |
+| Voltage-1730V |
+| Voltage-1900V |
+| Voltage-190V |
+| Voltage-208V |
+| Voltage-219V |
+| Voltage-220V |
+| Voltage-231V |
+| Voltage-2400V |
+| Voltage-240V |
+| Voltage-24V |
+| Voltage-277V |
+| Voltage-2V |
+| Voltage-3000V |
+| Voltage-3300V |
+| Voltage-3460V |
+| Voltage-347V |
+| Voltage-380V |
+| Voltage-3810V |
+| Voltage-3V |
+| Voltage-400V |
+| Voltage-415V |
+| Voltage-4160V |
+| Voltage-480V |
+| Voltage-48V |
+| Voltage-5770V |
+| Voltage-5V |
+| Voltage-6000V |
+| Voltage-600V |
+| Voltage-6600V |
+| Voltage-6V |
+""" .
+
+s223:Occupancy-Motion rdfs:comment """
+: Motion Enumerations
+
+| Enumeration |
+|:-----------|
+| Motion-False |
+| Motion-True |
+""" .
+
+s223:Occupancy-Presence rdfs:comment """
+: Presence Enumerations
+
+| Enumeration |
+|:-----------|
+| Presence-False |
+| Presence-True |
+""" .
+
+s223:Phase-Gas rdfs:comment """
+: Gas Enumerations
+
+| Enumeration |
+|:-----------|
+| Gas-SuperHeated |
+""" .
+
+s223:Phase-Liquid rdfs:comment """
+: Liquid Enumerations
+
+| Enumeration |
+|:-----------|
+| Liquid-SubCooled |
+""" .
+
+s223:Signal-Modulated rdfs:comment """
+: Modulated Enumerations
+
+| Enumeration |
+|:-----------|
+| Modulated-0-10V |
+| Modulated-4-20mA |
+""" .
+
+s223:Substance-Medium doc:subclauses ( s223:Fluid-Air s223:Constituent-EM s223:Constituent-Electricity s223:Fluid-NaturalGas s223:Fluid-Refrigerant s223:Fluid-Water ) .
+
+s223:Substance-Particulate rdfs:comment """
+: Particulate Enumerations
+
+| Enumeration |
+|:-----------|
+| Particulate-PM1.0 |
+| Particulate-PM10.0 |
+| Particulate-PM2.5 |
+""" .
+
+s223:Water-GlycolSolution rdfs:comment """
+: Glycol Solution Enumerations
+
+| Enumeration |
+|:-----------|
+| GlycolSolution-15Percent |
+| GlycolSolution-30Percent |
+""" .
+
