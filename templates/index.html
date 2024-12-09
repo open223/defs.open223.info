@@ -13,7 +13,7 @@
         <h3><a href="#{{ concept.name }}" id="{{ concept.name}}">{{ concept.label }}</a></h3>
         <p>URI: <a href="{{ concept.class }}">{{ concept.class }}</a></p>
         <pre><code class="language-turtle">
-{{ concept.immediate_subgraph.serialize(format='turtle') }}
+{{ concept.immediate_subgraph }}
         </code></pre>
         {% if concept.see_alsos|length > 0 %}
             <h4>See Also</h4>
@@ -23,25 +23,6 @@
             {% endfor %}
             </ul>
         {% endif %}
-        <h4>Details</h4>
-        <details>
-            <summary>All related shapes and rules</summary>
-            <pre><code class="language-turtle">
-{{ concept.subgraph.serialize(format='turtle') }}
-            </code></pre>
-        </details>
-    </div>
-    {% endfor %}
-    {% for concept in property_shapes %}
-    <div class="card" data-concept="{{concept.name}}">
-        <h3><a href="#{{ concept.name }}" id="{{ concept.name}}">{{ concept.label }}</a></h3>
-
-    {% if concept.class is not none %}
-        <p>URI: <a href="{{ concept.class }}">{{ concept.class }}</a></p>
-    {% endif %}
-        <pre><code class="language-turtle">
-{{ concept.immediate_subgraph.serialize(format='turtle') }}
-        </code></pre>
     </div>
     {% endfor %}
     <script>
@@ -50,10 +31,4 @@
         {% include "static/prism-autoloader.min.js" %}
         {% include "static/prism-turtle.min.js" %}
     </script>
-    <!--
-    <script src="app.js"></script>
-    <script src="prism.min.js"></script>
-    <script src="prism-autoloader.min.js"></script>
-    <script src="prism-turtle.min.js"></script>
-    -->
 </body>
