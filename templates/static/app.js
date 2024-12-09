@@ -1,21 +1,23 @@
 (function() {
     const search = document.getElementById("search");
-    search.addEventListener("change", function() {
-        for (const item of document.getElementsByClassName("card")) {
-            // if search.value is not empty OR
-            // if the 'language-turtle' section of the card contains the string,
-            // then show the card
-            // else hide the card
-            if (item.dataset.concept.toLowerCase().indexOf(search.value) > -1) {
-                item.style.display = "block";
-            } else {
-                item.style.display = "none";
-            }
+    const cards = Array.from(document.getElementsByClassName("card"));
+    let debounceTimeout;
 
-        }
+    search.addEventListener("input", function() {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(() => {
+            const query = search.value.toLowerCase();
+            for (const item of cards) {
+                if (item.dataset.concept.toLowerCase().includes(query)) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            }
+        }, 300); // Adjust the delay as needed (e.g., 300ms)
     });
-    for (const item of document.getElementsByClassName('a')) {
-        item.click( function(e) {
+    for (const item of document.querySelectorAll('a.reset-search')) { // Example selector
+        item.addEventListener("click", function(e) {
             e.preventDefault();
             for (const item of document.getElementsByClassName("card")) {
                 item.style.display = "block";
