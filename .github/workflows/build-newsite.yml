@@ -22,7 +22,8 @@ jobs:
     steps:
       - name: Checkout Remote Repository
         uses: actions/checkout@v3
-        ref: gtf-new-site-build
+        with:
+          ref: gtf-new-site-build
 
       - uses: actions/setup-python@v4
         with:
