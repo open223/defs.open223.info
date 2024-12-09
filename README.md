@@ -1,3 +1,3 @@
 # defs-open223-info
 
-Describe your project here.
+Stores links for 223P documentation
