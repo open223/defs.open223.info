@@ -34,7 +34,7 @@ jobs:
         run: poetry install
 
       - name: download constraints.json from gitlab
-        run: poetry run python download_constraints.py
+        run: poetry run python download_constraints.py ${{ secrets.GITLAB_TOKEN }}
 
       - name: make index.html
         run: poetry run python make_site.py

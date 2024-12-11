@@ -1,13 +1,18 @@
 import requests
 import zipfile
+import sys
 import io
 import json
 import os
 
+if len(sys.argv) != 2:
+    print("Usage: python download_constraints.py <GitLab token>")
+    sys.exit(1)
+
 # Define the URL and headers
 url = "https://bas-im.emcs.cornell.edu/api/v4/projects/3/jobs/artifacts/master/download?job=document"
 headers = {
-    "PRIVATE-TOKEN": os.environ.get('GITLAB_TOKEN'),
+    "PRIVATE-TOKEN": sys.argv[1]  # Pass the GitLab token as a command-line argument
 }
 
 # Download the ZIP file
