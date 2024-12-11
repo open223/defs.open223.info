@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.11"
 Jinja2 = "^3.1.2"
 rdflib = "^7.0.0"
+requests = "^2.32.3"
 
 
 [build-system]
