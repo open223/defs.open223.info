@@ -7,7 +7,7 @@ import os
 # Define the URL and headers
 url = "https://bas-im.emcs.cornell.edu/api/v4/projects/3/jobs/artifacts/master/download?job=document"
 headers = {
-    "PRIVATE-TOKEN": os.environ.get('GITLAB-TOKEN'),
+    "PRIVATE-TOKEN": os.environ.get('GITLAB_TOKEN'),
 }
 
 # Download the ZIP file
