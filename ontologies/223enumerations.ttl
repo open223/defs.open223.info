@@ -223,12 +223,32 @@ s223:Electricity-AC rdfs:comment """
 | AC-6600VLL-3Ph-60Hz |
 """ .
 
-s223:Electricity-DC doc:subclauses ( s223:DC-12V s223:DC-24V s223:DC-380V s223:DC-48V s223:DC-5V s223:DC-6V ) .
+s223:Electricity-DC rdfs:comment """
+: DC Enumerations
 
-s223:Electricity-Signal doc:subclauses ( s223:Signal-Modulated ) .
+| Enumeration |
+|:-----------|
+| DC-12V |
+| DC-24V |
+| DC-380V |
+| DC-48V |
+| DC-5V |
+| DC-6V |""";
+doc:subclauses ( s223:DC-12V s223:DC-24V s223:DC-380V s223:DC-48V s223:DC-5V s223:DC-6V ) .
 
-s223:EnumerationKind-Aspect doc:subclauses ( s223:Aspect-DayOfWeek s223:Aspect-Effectiveness s223:Aspect-ElectricalPhaseIdentifier s223:Aspect-ElectricalVoltagePhases ) ;
-rdfs:comment """
+s223:Electricity-Signal rdfs:comment """
+: Signal Enumerations
+
+| Enumeration |
+|:-----------|
+| Signal-EIA485 |
+| Signal-Ethernet |
+| Signal-IEC14908 |
+| Signal-Modulated (see `Signal-Modulated`) |
+| Signal-USB |""";
+doc:subclauses ( s223:Signal-Modulated ) .
+
+s223:EnumerationKind-Aspect rdfs:comment """
 : Aspect Enumerations
 
 | Enumeration |
@@ -236,14 +256,14 @@ rdfs:comment """
 | Aspect-Alarm |
 | Aspect-CatalogNumber |
 | Aspect-Command |
-| Aspect-DayOfWeek |
+| Aspect-DayOfWeek (see `s223:Aspect-DayOfWeek`) |
 | Aspect-Deadband |
 | Aspect-Delta |
 | Aspect-DryBulb |
-| Aspect-Effectiveness |
+| Aspect-Effectiveness (see `s223:Aspect-Effectivenes`) |
 | Aspect-Efficiency |
-| Aspect-ElectricalPhaseIdentifier |
-| Aspect-ElectricalVoltagePhases |
+| Aspect-ElectricalPhaseIdentifier (see `s223:Aspect-ElectricalPhaseIdentifier`)|
+| Aspect-ElectricalVoltagePhases (see `s223:Aspect-ElectricalVoltagePhases`) |
 | Aspect-Face |
 | Aspect-Fault |
 | Aspect-HighLimit |
@@ -270,7 +290,8 @@ rdfs:comment """
 | Aspect-Total |
 | Aspect-WetBulb |
 | Aspect-Year |
-""" .
+""";
+doc:subclauses ( s223:Aspect-DayOfWeek s223:Aspect-Effectiveness s223:Aspect-ElectricalPhaseIdentifier s223:Aspect-ElectricalVoltagePhases )  .
 
 s223:EnumerationKind-Binary rdfs:comment """
 : Binary Enumerations
@@ -477,9 +498,19 @@ s223:EnumerationKind-Speed rdfs:comment """
 | Speed-Off |
 """ .
 
-s223:EnumerationKind-Substance doc:subclauses ( s223:Substance-Medium s223:Substance-Particulate ) .
 
-s223:Constituent-EM doc:subclauses ( s223:EM-Light ) .
+
+s223:Constituent-EM  
+rdfs:comment """
+: EM Enumerations
+
+| Enumeration |
+|:-----------|
+| EM-Light |
+| EM-Microwave |
+| EM-RF |
+""" ;
+doc:subclauses( s223:EM-Light ) .
 
 s223:Constituent-Electricity doc:subclauses ( s223:Electricity-AC s223:Electricity-DC s223:Electricity-Signal ) .
 
@@ -677,7 +708,114 @@ s223:Signal-Modulated rdfs:comment """
 | Modulated-4-20mA |
 """ .
 
-s223:Substance-Medium doc:subclauses ( s223:Fluid-Air s223:Constituent-EM s223:Constituent-Electricity s223:Fluid-NaturalGas s223:Fluid-Refrigerant s223:Fluid-Water ) .
+s223:EnumerationKind-Substance rdfs:comment """
+:Substance Enumerations
+
+| Enumeration |
+|:-----------|
+| Substance-Medium (See `s223:Substance-Medium`) |
+| Substance-Particulate (See `s223:Substance-Particulate`) |
+| Substance-Soot |
+""";
+
+doc:subclauses (s223:Substance-Medium s223:Substance-Particulate) .
+
+s223:Substance-Medium rdfs:comment """
+:Medium Enumerations
+
+| Enumeration |
+|:-----------|
+| Medium-Constituent (See `s223:Medium-Constituent`) |
+| Medium-Mix (See `s223:Medium-Mix`) |
+| Medium-ThermalContact |
+""";
+
+doc:subclauses (s223:Medium-Constituent s223:Medium-Mix) .
+
+s223:Medium-Mix rdfs:comment """
+:Mix Enumerations
+
+| Enumeration |
+|:-----------|
+| Mix-Fluid (see `s223:Mix-Fluid`) |
+| Mix-PowerAndSignal (see `s223:Mix-PowerAndSignal`) |
+""";
+doc:subclauses (s223:Mix-Fluid s223:Mix-PowerAndSignal)
+.
+s223:Mix-Fluid rdfs:comment """
+:Fluid Enumerations
+
+| Enumeration |
+|:-----------|
+| Fluid-Air |
+| Fluid-NaturalGas |
+| Fluid-Oil  |
+| Fluid-Refrigerant (see `s223:Fluid-Refrigerant`) |
+| Fluid-Water (see `s223:Fluid-Water`) |
+""";
+doc:subclauses (s223:Fluid-Refrigerant s223:Fluid-Water)
+.
+
+s223:Fluid-Refrigerant rdfs:comment """
+:Refrigerant Enumerations
+
+| Enumeration |
+|:-----------|
+| Refrigerant-R-22 |
+| Refrigerant-R-410A |
+"""
+.
+
+s223:Fluid-Water rdfs:comment """
+:Water Enumerations
+
+| Enumeration |
+|:-----------|
+| Water-ChilledWater |
+| Water-GlycolSolution (see `s223:Water-GlycolSolution`) |
+| Water-HotWater |
+| Water-Steam |
+""";
+doc:subclauses (s223:Water-GlycolSolution)
+.
+
+s223:Mix-PowerAndSignal rdfs:comment """
+:PowerAndSignal Enumerations
+
+| Enumeration |
+|:-----------|
+| s223:PowerAndSignal-PoE |
+"""
+.
+
+s223:Medium-Constituent rdfs:comment """
+:Constituent Enumerations
+
+| Enumeration |
+|:-----------|
+| Constituent-CO |
+| Constituent-CO2 |
+| Constituent-Glycol |
+| Constituent-Electricity (see `s223:Constituent-Electricity`) |
+| Constituent-EM (see `s223:Constituent-EM`) |
+| Constituent-H2O |
+""" ;
+doc:subclauses (s223:Constituent-Electricity s223:Constituent-EM)
+.
+s223:Constituent-Electricity rdfs:comment """
+:Electricity Enumerations
+
+| Enumeration |
+|:-----------|
+| Electricity-AC (see `s223:Electricity-AC`)|
+| Electricity-DC (see `s223:Electricity-DC`)|
+| Electricity-Earth  |
+| Constituent-Neutral |
+| Constituent-Signal (see `s223:Electricity-Signal`) |
+""" ;
+
+doc:subclauses (s223:Electricity-AC s223:Electricity-DC s223:Electricity-Signal ).
+
 
 s223:Substance-Particulate rdfs:comment """
 : Particulate Enumerations
@@ -696,5 +834,6 @@ s223:Water-GlycolSolution rdfs:comment """
 |:-----------|
 | GlycolSolution-15Percent |
 | GlycolSolution-30Percent |
-""" .
+""" ;
+doc:subclauses (s223:hasFreezingPoint).
 
