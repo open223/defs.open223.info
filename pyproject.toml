@@ -1,17 +1,11 @@
-[tool.poetry]
+[project]
 name = "defs-open223-info"
 version = "0.1.0"
-description = ""
-authors = ["Gabe Fierro <gtfierro@mines.edu>"]
+description = "Add your description here"
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.11"
-Jinja2 = "^3.1.2"
-rdflib = "^7.0.0"
-requests = "^2.32.3"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires-python = ">=3.11"
+dependencies = [
+    "jinja2>=3.1.4",
+    "rdflib>=7.0.0",
+    "requests>=2.32.3",
+]

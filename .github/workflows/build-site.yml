@@ -27,17 +27,14 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Run image
-        uses: abatilo/actions-poetry@v2
-
-      - name: install deps
-        run: poetry install
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
 
       - name: download constraints.json from gitlab
-        run: poetry run python download_constraints.py ${{ secrets.GITLAB_TOKEN }}
+        run: uv run python download_constraints.py ${{ secrets.GITLAB_TOKEN }}
 
       - name: make index.html
-        run: poetry run python make_site.py
+        run: uv run python make_site.py
 
       - name: Commit Built Files
         run: |
