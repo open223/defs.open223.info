@@ -21,7 +21,9 @@ def main():
     for text,link in links:
         anchor = link.split('#', 1)[1] if '#' in link else None
         print(f"Checking link {text} - {anchor} in {html_filename}")
-        if anchor not in open(html_filename).read():
+        if not anchor:
+            print(f"ERROR: Link {link} does not contain an anchor")
+        if anchor and anchor not in open(html_filename).read():
             print(f"ERROR: Link {link} not found in {html_filename}")
             sys.exit(1)
 

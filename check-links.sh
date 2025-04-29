@@ -5,6 +5,10 @@ set -x
 # if 223standard directory does not exist, clone the repo
 if [ ! -d "223standard" ]; then
   git clone https://bas-im.emcs.cornell.edu/223/223standard.git
+else
+  pushd 223standard
+  git pull
+  popd
 fi
 cp stable_ids.json 223standard/publication
 # otherwise, update the repo
