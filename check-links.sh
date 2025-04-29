@@ -12,9 +12,9 @@ pushd 223standard
 git pull
 
 pushd publication
-uv venv
+uv venv --seed
 uv pip install -r requirements.txt
-. .venv/bin/activate && bash build-documentation.sh
+. .venv/bin/activate && uv run bash build-documentation.sh
 
 # generates 223p_publication.md
 popd # publication
