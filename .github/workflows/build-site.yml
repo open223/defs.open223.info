@@ -30,15 +30,15 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v5
 
-      - name: make index.html
-        run: uv run python make_site.py
+      # - name: make index.html
+      #   run: uv run python make_site.py
 
-      - name: Commit Built Files
-        run: |
-          git config user.name "GitHub Action"
-          git config user.email "github-action@example.com"
-          git add index.html
-          git diff --quiet --exit-code || git commit -m "Commit built files" && git push
+      # - name: Commit Built Files
+      #   run: |
+      #     git config user.name "GitHub Action"
+      #     git config user.email "github-action@example.com"
+      #     git add index.html
+      #     git diff --quiet --exit-code || git commit -m "Commit built files" && git push
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
