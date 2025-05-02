@@ -2,7 +2,6 @@
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix bacnet: <http://data.ashrae.org/bacnet/2020#> .
 @prefix g36: <http://data.ashrae.org/standard223/1.0/extensions/g36#> .
-
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -41,12 +40,12 @@ tools for the built environment.*
         pub:reference-equipment-models
         pub:AnnexA
         pub:AnnexB
-        ) .
-
+    )
+.
 pub:purpose
     doc:title "PURPOSE" ;
-    rdfs:comment "The purpose of this standard is to define formal knowledge concepts and a methodology to apply them to create interoperable, machine-readable semantic frameworks for representing building automation and control data, and other building system information.".
-
+    rdfs:comment "The purpose of this standard is to define formal knowledge concepts and a methodology to apply them to create interoperable, machine-readable semantic frameworks for representing building automation and control data, and other building system information."
+.
 pub:scope
     doc:title "SCOPE" ;
         rdfs:comment """This standard provides a comprehensive way to apply semantic formalisms to represent the context of building system data and relationships between the associated building mechanical system components so that software applications can find and understand the information in an automated way. It is intended to facilitate the development and implementation of building analytics tools and enterprise knowledge applications that can implement many building system functions, including:
@@ -56,15 +55,15 @@ pub:scope
 (c) digital twins,
 (d) optimization of energy use, and
 (e) smart grid interactions.
-""" .
-
+"""
+.
 pub:definitions
     doc:title "DEFINITIONS" ;
     doc:subclauses (
         pub:definitions-terms
         pub:abbrev
-        ) .
-
+    )
+.
 pub:definitions-terms
     doc:title "Terms Defined for this Standard" ;
     rdfs:comment """
@@ -74,7 +73,7 @@ pub:definitions-terms
 
 **ConnectionPoint:** an abstract modeling construct used to represent the fact that one `Connectable` thing can be connected to another `Connectable` thing using a `Connection`. It is the abstract representation of the flange, wire terminal, or other physical feature where a connection is made.
 
-Domain: a categorization of building service or specialization used to characterize equipment or spaces in a building. Example domains include HVAC, lighting, and plumbing.
+**Domain:** a categorization of building service or specialization used to characterize equipment or spaces in a building. Example domains include HVAC, lighting, and plumbing.
 
 **DomainSpace:** a portion or the entirety of a `PhysicalSpace` that is associated with a Domain, such as lighting, HVAC, or physical security. `DomainSpace`s can be combined to form a `Zone`.
 
@@ -84,6 +83,8 @@ Domain: a categorization of building service or specialization used to character
 
 **Equipment:** the modeling construct used to represent a device designed to accomplish a specific task. Examples include a pump, fan, heat exchanger, luminaire, temperature sensor, or flow meter. A piece of equipment can contain another piece of equipment. For example, an air handling unit can contain a cooling coil.
 
+**Medium:** a substance used to convey mass, energy, or information through Equipment or a System.  Examples include air, water, refrigerant, and electricity.
+
 **PhysicalSpace:** an architectural concept that represents a room, a collection of rooms such as a floor, a part of a room, or any physical space that might not even be thought of as a room, such as a patio.
 
 **Pipe:** a subclass of `Connection` that is used primarily to transport liquids and gases such as water, sewage, natural gas, and compressed air.
@@ -92,8 +93,8 @@ Domain: a categorization of building service or specialization used to character
 
 **Zone:** a collection of `DomainSpace`s of a specific domain that are grouped together from the perspective of building services or controls.
 
-""" .
-
+"""
+.
 pub:abbrev
     doc:title "Abbreviations and Acronyms Used in this Standard" ;
     rdfs:comment """
@@ -107,9 +108,8 @@ pub:abbrev
 | **SPARQL** | SPARQL Protocol and RDF Query Language |
 | **Turtle** | Terse RDF Triple Language |
 | **W3C** | Worldwide Web Consortium |
-
-""" .
-
+"""
+.
 pub:conceptual-framework
 
     doc:title "CONCEPTUAL FRAMEWORK FOR SEMANTIC MODELING OF BUILDING SYSTEMS AND DATA" ;
@@ -174,11 +174,11 @@ textual syntax to represent and exchange RDF models (see {pub:AnnexA}).
 The Turtle serialization format specifies that IRIs may be written as relative or absolute IRIs or prefixed names. The prefix
 label is defined by using the "@prefix" directive followed by a colon followed by a partial IRI. The encoding
 examples used in this document assume the following prefix statements:
-
+```
     @prefix s223: <http://data.ashrae.org/standard223#> .
     @prefix bacnet: <https://data.ashrae.org/bacnet/> .
     @prefix qudt: <http://qudt.org/schema/qudt/> .
-
+```
 A prefixed name is turned into an IRI by concatenating the IRI associated with the prefix and the local part. The '@prefix' directive associates
 a prefix label with an IRI, e.g., `s223:Equipment` expands to `<http://data.ashrae.org/standard223#Equipment>`. The scope of a prefix label is only within
 the Turtle file that it appears. It is encouraged to use the prefix statements above when exchanging models.
@@ -194,7 +194,6 @@ support, and the sometimes counterintuitive implications of OWL reasoning for no
 it is inferred to be an instance of that class). The use of SHACL shapes to define constraints and inferencing rules is a more intuitive way to define intended
 model behavior and to verify conformance to the standard. The two most-used OWL inferences, supporting symmetric and inverse relations, are redefined in this standard 
 using SHACL rules.
-
 """ ;
 doc:subclauses (
     pub:Conform-Constraints
@@ -202,14 +201,32 @@ doc:subclauses (
     pub:Text-Serialization
     pub:Units
     pub:Namespace
-    s223:Class
     s223:Concept
-    s223:SymmetricRelation
-    s223:inverseOf
-    s223:abstract
+    s223:hasProperty
 )
- .
-
+.
+s223:Concept
+    doc:subclauses (
+        s223:Class
+        s223:Relation
+    )
+.
+s223:Class
+    doc:subclauses (
+        s223:AbstractClass
+    )
+.
+s223:Relation 
+    doc:subclauses (
+        s223:InverseRelation
+        s223:SymmetricRelation
+    )
+.
+s223:InverseRelation
+    doc:subclauses (
+        s223:inverseOf
+    )
+.
 pub:Conform-Constraints
 doc:title "Conformance Constraints and Validation";
 rdfs:comment """ Using RDF also provides a way to build conformance constraints into this standard in a way that enables conformance to be algorithmically 
@@ -234,31 +251,31 @@ of OWL and their support, and the sometimes counterintuitive implications of OWL
 OWL axioms for a class, then it is inferred to be an instance of that class). The use of SHACL shapes to define constraints and inferencing rules is a more 
 intuitive way to define intended model behavior and to verify conformance to the standard. The two most-used OWL inferences, supporting symmetric and inverse
  relations, are redefined in this standard using SHACL rules.
- """.
-
+ """
+ .
 pub:Implicit-Info
 doc:title "Deriving Implicit Information from Inference Rules";
 rdfs:comment """ SHACL is also used in this standard to derive implicit information via a process called inferencing. Inference rules are used to define 
 how new triples are generated. The triples generated from this inference process enhance the ability to make useful queries without the burden of a modeler 
 crafting each one. The goal is to make model development easier without sacrificing the utility application developers need to find what they are looking 
 for. The description of each concept defined in this standard with related inference rules includes a table that lists the relevant SHACL shapes that specify 
-the inferencing. """.
-
+the inferencing. """
+.
 pub:Text-Serialization
 doc:title "Textual Serialization";
 rdfs:comment """ The Terse RDF Triple Language (W3C Turtle) defines a textual syntax to represent and exchange RDF models.
 The normative content of this standard is documented in an RDF model textualized using Turtle (see Clause 15). All models conforming to this standard shall 
 be textualized using Turtle.
-""".
-
+"""
+.
 pub:Units
 doc:title "Units of Measure";
 rdfs:comment """ Because this standard includes references to measurements of physical properties, it is necessary to provide a model representation of 
 units of measure as well as what those units are quantifying (e.g. temperature, power, etc.). This standard builds upon the “Quantities, Units, Dimensions 
 and Types” (QUDT) ontology which is the leading open-source model expressed in RDF/SHACL. The QUDT model is documented at https://qudt.org. The key concepts 
-used here are the classes qudt:Unit and qudt:QuantityKind. The 223 standard is compatible with Version 3.1.1 of QUDT and is expected to be compatible with 
-all newer versions as well.""".
-
+used here are the classes qudt:Unit and qudt:QuantityKind. The 223 standard is compatible with Version 3.1.0 of QUDT and is expected to be compatible with 
+all newer versions as well."""
+.
 pub:Namespace
 doc:title "Namespace";
 rdfs:comment """ Because it is anticipated that models conforming to this standard
@@ -267,13 +284,13 @@ a namespace for the concepts defined by this standard to avoid any possible ambi
 that might arise from a similar name used in the complementary model. In this standard
 and all conforming models, the prefix “s223:” shall be used in the name of each
 concept (class and relation) defined by this standard, e.g., s223:Equipment.
-""".
-
+"""
+.
  s223:Concept
  doc:subclauses(
     s223:hasProperty
- ).
-   
+ )
+ .  
 pub:equipment 
     doc:title "EQUIPMENT" ;
     rdfs:comment """
@@ -294,8 +311,8 @@ grouped together to define a `System` (see {pub:system}).
         s223:Sensor
         s223:Actuator
         s223:Controller
-    ) .
-
+    )
+    .
     pub:equipment-containment
     doc:title "Equipment Containment" ;
     rdfs:comment """
@@ -323,58 +340,57 @@ The fan may have a property that represents the speed of the fan. To make this f
 speed visible as a property of the fan coil unit, a fan speed property would be
 added to the fan coil unit and its value would be an internal reference
 (see {s223:hasInternalReference}) to the speed property of the contained motor.
-""" .
-
+"""
+.
 s223:Sensor
     doc:subclauses (
+        s223:ConcentrationSensor
+        s223:ElectricCurrentSensor
         s223:FlowSensor
         s223:HumiditySensor
+        s223:LightSensor
+        s223:OccupancySensor
+        s223:ParticulateSensor
         s223:PressureSensor
         s223:TemperatureSensor
-        s223:ConcentrationSensor
-        s223:LightSensor
-        s223:ParticulateSensor
-        s223:OccupancySensor
+        s223:VoltageSensor
         s223:hasMeasurementResolution
         s223:observes
         s223:hasObservationLocation
         s223:hasReferenceLocation
-    ) .
-
-
+    )
+.
 s223:PressureSensor
     doc:subclauses(
     s223:GaugePressureSensor
-    ).
-
+    )
+.
 s223:LightSensor
     doc:subclauses(
+        s223:IlluminanceSensor
         s223:CorrelatedColorTemperatureSensor
         s223:DuvSensor
-        s223:IlluminanceSensor
-    ) .
-
+    )
+.
 s223:OccupancySensor
     doc:subclauses(
-        s223:OccupantCounter
         s223:OccupantMotionSensor
         s223:OccupantPresenceSensor
-    ) .
-
+        s223:OccupantCountSensor
+    )
+.
 s223:Controller
-    doc:title "Controller";
     doc:subclauses(
         s223:Function
         s223:executes
-    ) .
-
+    )
+.
 s223:Function
-    doc:title "Function";
     doc:subclauses(
         s223:hasInput
         s223:hasOutput
-    ) .
-
+    )
+.
 s223:ConnectionPoint
     doc:subclauses (
         s223:BidirectionalConnectionPoint
@@ -383,16 +399,14 @@ s223:ConnectionPoint
         s223:pairedConnectionPoint
         s223:mapsTo
         s223:hasMedium
-
-    ) .
-
+    )
+.
 s223:Actuator
-    doc:title "Actuator" ;
     doc:subclauses (
         s223:actuates
         s223:actuatedByProperty
-    ) .
-    
+    )
+.    
 pub:connection
     doc:title "CONNECTION" ;
     rdfs:comment """
@@ -410,7 +424,6 @@ to another. Examples of connections are ducts, pipes, and conductors.
         s223:hasMedium
     )
 .
-
 pub:connectedness
     doc:title "Relations Describing Connectedness";
     rdfs:comment """
@@ -442,14 +455,13 @@ the connectedness relationships that facilitate model queries.
         s223:cnx
     )
 .
-
 s223:Connection
     doc:subclauses (
         s223:Pipe
         s223:Duct
         s223:Conductor
-    ) .
-
+    )
+.
 pub:system
     doc:title "SYSTEM" ;
     rdfs:comment """A `System` is a logical grouping of one or more pieces of `Equipment` or other Systems defined by the modeler for some functional purpose. Examples of possible systems are an air distribution system, or a hot water system. Systems can be associated with other Systems or `Equipment` using the relation `hasMember` (see {s223:hasMember}) A `System` may be associated with an `EnumerationKind-Role` (see {s223:EnumerationKind-Role}).
@@ -459,8 +471,8 @@ pub:system
         s223:hasMember
         s223:hasBoundaryConnectionPoint
         s223:hasOptionalConnectionPoint
-    ) .
-
+    )
+.
 pub:zone
     doc:title "ZONE" ;
     rdfs:comment """
@@ -470,8 +482,8 @@ pub:zone
         s223:hasDomainSpace
         s223:ZoneGroup
         s223:hasZone
-    ) .
-
+    )
+.
 pub:space
     doc:title "SPACE" ;
     rdfs:comment """
@@ -484,7 +496,8 @@ A `DomainSpace` is a subclass of `Connectable` (see {s223:Connectable}) that rep
     doc:subclauses (
         pub:physical-space
         pub:domain-space
-    ) .
+    )
+.
 pub:physical-space
     doc:title "Physical Space" ;
         doc:subclauses (
@@ -492,15 +505,15 @@ pub:physical-space
         s223:contains
         s223:encloses
         s223:OutdoorPhysicalSpace
-    ) .
-
+    )
+.
 pub:domain-space
     doc:title "Domain Space" ;
         doc:subclauses (
         s223:DomainSpace
         s223:hasDomain
-    ) .
-
+    )
+.
 pub:property_value
     doc:title "PROPERTIES AND VALUES" ;
     rdfs:comment "Things have properties, and properties have values." ;
@@ -525,25 +538,25 @@ pub:property_value
         s223:ExternalReference
         s223:hasExternalReference
         s223:hasInternalReference
-    ) .
-
+    )
+.
 s223:QuantifiableProperty
     doc:subclauses (
         s223:hasDeadband
         s223:hasSetpoint
         s223:hasThreshold
-    ) .
-
+    )
+.
 s223:EnumerableProperty
     doc:subclauses (
         s223:hasEnumerationKind
-    ) .
-
+    )
+.
 s223:ExternalReference
     doc:subclauses (
         s223:BACnetExternalReference
-    ) .
-
+    )
+.
 s223:BACnetExternalReference
     doc:subclauses (
         bacnet:device-name
@@ -553,8 +566,8 @@ s223:BACnetExternalReference
         bacnet:property-identifier
         bacnet:property-array-index
         bacnet:priority-for-writing
-    ) .
-
+    )
+.
 pub:enumerations
     doc:title "ENUMERATIONS";
     rdfs:comment """Enumerations are sets of closed values (they cannot take on values outside of what is explicitly listed in the definition) and named (each value has a unique name). The values within an enumeration share a "kind," which communicates how the enumerations are intended to be used.
@@ -574,10 +587,9 @@ The standard uses enumerations to convey groups of useful values for describing 
         s223:EnumerationKind-Occupancy
         s223:EnumerationKind-ThermodynamicPhase
         s223:EnumerationKind-Role
-        s223:EnumerationKind-RunStatus
         s223:EnumerationKind-Substance
-    ) .
-
+    )
+.
 s223:Electricity-AC
     doc:subclauses (
         s223:hasNumberOfElectricalPhases
@@ -588,8 +600,8 @@ s223:Electricity-AC
         doc:electricalwiringv2-p5
         doc:electricalwiringv2-p6
         doc:electricalwiringv2-p7
-    ) .
-
+    )
+.
 doc:electricalwiringv2-p1
     doc:title "1-Phase 3-Wire (LLN) 120V/240V" ;
     rdfs:comment """
@@ -602,8 +614,8 @@ This is an example Single phase 120V/240V transformer.
 | AC-240VLL-120VLN-1Ph-60Hz | 3 | 240 | 120 | US, Canada | ABN |
 | AC-240VLL-1Ph-60Hz | 2 | 240 | - | US, Canada | AB |
 | AC-120VLN-1Ph-60Hz | 2 | - | 120 | US, Canada | AN, BN |
-""" .
-
+"""
+.
 doc:electricalwiringv2-p2
     doc:title "3-Phase 3-Wire (LLL) Delta 480V" ;
     rdfs:comment """
@@ -615,8 +627,8 @@ This is an example 3 phase 480V delta transformer.
 |:------------------:|:-----:|:----:|:----:|:-------:|:-------------------:|
 | AC-480VLL-3Ph-60Hz | 3 | 480 | - | US | ABC |
 | AC-480VLL-1Ph-60Hz | 2 | 480 | - | US | AB, BC, AC |
-""" .
-
+"""
+.
 doc:electricalwiringv2-p3
     doc:title "3-Phase 4-Wire (LLLN) 347V/600V" ;
     rdfs:comment """
@@ -629,8 +641,8 @@ This is an example 347V/600V transformer providing 1 & 3 phase services.
 | AC-600VLL-347VLN-3Ph-60Hz | 3 | 600 | 347 | US, Canada | ABCN |
 | AC-600VLL-1Ph-60Hz | 2 | 600 | - | US, Canada | AB, BC, AC |
 | AC-347VLN-1Ph-60Hz | 2 | - | 347 | US, Canada | AN, BN, CN |
-""" .
-
+"""
+.
 doc:electricalwiringv2-p4
     doc:title "3-Phase 4-Wire (LLLN) High Leg Delta 120V, 208V, 240V" ;
     rdfs:comment """
@@ -646,8 +658,8 @@ This is an example 3-Phase 4-Wire High Leg Delta 120V, 208V, 240V transformer.
 | AC-240VLL-3Ph-60Hz | 3 | 240 | - | US | ABC |
 | AC-240VLL-1Ph-60Hz | 2 | 240 | - | US | AB, BC, AC |
 | AC-120VLN-1Ph-60Hz | 2 | - | 120 | US | AN, BN |
-""" .
-
+"""
+.
 doc:electricalwiringv2-p5
     doc:title "3-Phase 4-Wire (LLLN) 120V/208V" ;
     rdfs:comment """
@@ -662,8 +674,8 @@ This is an example 3 phase 120V/208V transformer.
 | AC-208VLL-3Ph-60Hz | 3 | 208 | - | US, Canada | ABC |
 | AC-208VLL-1Ph-60Hz | 2 | 208 | - | US, Canada | AB, BC, AC |
 | AC-120VLN-1Ph-60Hz | 2 | - | 120 | US, Canada | AN, BN, CN |
-""" .
-
+"""
+.
 doc:electricalwiringv2-p6
     doc:title "3-Phase 4-Wire (LLLN) 230V/400V" ;
     rdfs:comment """
@@ -678,8 +690,8 @@ This is an example 3 phase 230V/400V transformer.
 | AC-400VLL-3Ph-50Hz | 3 | 400 | - | France | ABC |
 | AC-400VLL-1Ph-50Hz | 2 | 400 | - | France | AB, BC, AC |
 | AC-231VLN-1Ph-50Hz | 3 | - | 231 | France | AN, BN, CN |
-""" .
-
+"""
+.
 doc:electricalwiringv2-p7
     doc:title "3-Phase 4-Wire (LLLN) 240V/415V" ;
     rdfs:comment """
@@ -694,8 +706,8 @@ This is an example 3 phase 240V/415V transformer.
 | AC-415VLL-3Ph-50Hz | 3 | 415 | - | Australia | ABC |
 | AC-415VLL-1Ph-50Hz | 2 | 415 | - | Australia | AB, BC, AC |
 | AC-240VLN-1Ph-50Hz | 2 | - | 240 | Australia | AN, BN, CN |
-""" .
-
+"""
+.
 pub:reference-equipment-models
 doc:title "REFERENCE FOR EQUIPMENT AND SYSTEMS";
 rdfs:comment """This clause contains component model templates for commonly found equipment in buildings.""";
@@ -706,20 +718,36 @@ s223:Battery
 s223:Boiler
 s223:ChilledBeam
 s223:Chiller
+s223:ClothesWasher
+s223:CoffeeMaker
 s223:Coil
 s223:Compressor
+s223:Computer
+s223:ComputerPrinter
 s223:CoolingTower
+s223:CopyMachine
 s223:Damper
+s223:Dishwasher
 s223:Door
 s223:ElectricBreaker
-s223:ElectricMeter
-s223:ElectricOutlet
+s223:ElectricClothesDryer
+s223:ElectricCooktop
+s223:ElectricEnergyConverter
+s223:ElectricityMeter
+s223:ElectricityOutlet
+s223:ElectricOven
 s223:ElectricResistanceElement
-s223:ElectricTransformer
+s223:ElectricWaterDispenser
+s223:ElectronicDisplay
+s223:Elevator
+s223:Escalator
 s223:EthernetSwitch
 s223:Fan
 s223:FanCoilUnit
+s223:FiberEthernetOutlet
 s223:Filter
+s223:FlushToilet
+s223:Freezer
 s223:FumeHood
 s223:Furnace
 s223:Generator
@@ -727,53 +755,79 @@ s223:HeatPump
 s223:Humidifier
 s223:Humidistat
 s223:HydronicHeatExchanger
-s223:Inverter
+s223:IceMaker
 s223:Luminaire
+s223:MicrowaveOven
 s223:Motor
 s223:PhotovoltaicModule
 s223:PowerOverEthernetSwitch
 s223:Pump
 s223:RadiantHeater
 s223:Radiator
+s223:Refrigerator
+s223:RFOutlet
+s223:Sink
 s223:SolarThermalCollector
 s223:TerminalUnit
 s223:ThermalEnergyStorageUnit
 s223:Thermostat
 s223:Turbine
+s223:USBOutlet
 s223:Valve
 s223:VariableFrequencyDrive
 s223:Window
 s223:WindowShade
+s223:WiredEthernetOutlet
 )
 .
-s223:Valve
-doc:subclauses (
-        s223:ThreeWayValve
-        s223:TwoWayValve   
-    ).
-
-
 s223:Coil
 doc:subclauses(
     s223:CoolingCoil
     s223:HeatingCoil
-).
-
-s223:TerminalUnit
+)
+.
+s223:Computer
 doc:subclauses(
-s223:DualDuctTerminal
-s223:FanPoweredTerminal
-s223:SingleDuctTerminal
-).
-
+    s223:PersonalComputer
+    s223:ServerComputer
+)
+.
+s223:ElectronicDisplay
+doc:subclauses(
+    s223:Monitor
+    s223:Television
+)
+.
+s223:ElectricEnergyConverter
+doc:subclauses(
+    s223:ElectricEnergyDCDCConverter
+    s223:ElectricEnergyInverter
+    s223:ElectricEnergyTransformer
+)
+.
 s223:HeatPump
 doc:subclauses(
-s223:AirSourceHeatPump
-s223:GroundSourceHeatPump
-s223:WaterSourceHeatPump
-).
-
-
+    s223:AirToAirHeatPump
+    s223:GroundToAirHeatPump
+    s223:WaterToAirHeatPump
+    s223:WaterToWaterHeatPump
+)
+.
+s223:TerminalUnit
+doc:subclauses(
+    s223:DualDuctTerminal
+    s223:FanPoweredTerminal
+    s223:SingleDuctTerminal
+)
+.
+s223:Valve
+doc:subclauses (
+    s223:Drain
+    s223:Faucet
+    s223:ThreeWayValve
+    s223:TwoWayValve   
+)
+.
 pub:AnnexA
 doc:clause "A" ;
 doc:title "RDF REPRESENTATION OF THIS STANDARD (NORMATIVE)";
@@ -781,8 +835,8 @@ rdfs:comment """This text of this standard was generated from an RDF Model. An e
 representation of the model can be found at (URL needed). A user may wish to use electronic tools to browse and study the details of the
 standard, use the equipment types defined in the standard to build a building-specific information model, apply the SHACL
 constraints to test a building specific model for conformance to the standard, or other uses.
-""" .
-
+"""
+.
 pub:AnnexB
 doc:clause "B" ;
 doc:title "INFORMATIVE ANNEX: G36 EXTENSION";
@@ -808,7 +862,6 @@ doc:subclauses(
     doc:SZ-VAV-AHU_4-11
 )
 .
-
 doc:VAV_4-1
     doc:title "VAV Terminal Unit - Cooling Only";
     rdfs:comment """This section describes the VAV Terminal Unit - Cooling Only class defined by this extension. Constraints are based on Guideline 36 Section 4.1.""";
@@ -834,14 +887,13 @@ doc:VAV_4-2
         g36:VAVTerminalWithReheat
         g36:VAVTerminalWithReheatAnnotation
         doc:VAVTerminalWithReheatExample
-    )
-.
+    ).
+
 doc:VAVTerminalWithReheatExample
     doc:title """Example VAV Terminal Unit With Reheat""";
     rdfs:comment """
 VAV Terminal Unit With Reheat based on Figure A-2. [Link to Model](https://models.open223.info/guideline36-2021-A-2.ttl)
 ![Guideline 36 Figure A-2.](figures/g36-figure-a-2.png)
-
 
 """;
 .
@@ -863,7 +915,6 @@ doc:FanPoweredTerminalExample
 Example Fan Powered Terminal Unit based on Figure A-3. [Link to Model](https://models.open223.info/guideline36-2021-A-3.ttl)
 ![Guideline 36 Figure A-3.](figures/g36-figure-a-3.png)
 
-
 """;
 .
 doc:ParallelFanPoweredTerminalExample
@@ -881,8 +932,8 @@ doc:DDTU_4-7
         g36:DualDuctTerminalWithInletSensors
         g36:DualDuctTerminalWithInletSensorsAnnotation
         doc:DualDuctTerminalWithInletSensorsExample
-    )
-.
+    ).
+
 doc:DualDuctTerminalWithInletSensorsExample
     doc:title """Example Dual Duct Terminal Unit With Inlet Sensors""";
     rdfs:comment """
@@ -912,22 +963,25 @@ doc:MZ-VAV-AHU_4-9
     doc:title "Multiple Zone VAV Air Handling Unit";
     rdfs:comment "This section describes the classes and example model of the Multiple Zone VAV Air Handling Unit described in Section 4.6 and Appendix A, Figures A-9 and A-10 (cite)";
     doc:subclauses(
+        doc:MultipleZoneVAVAirHandlingUnitExample
         g36:MultipleZoneVAVAirHandlingUnit 
         g36:MultipleZoneVAVAirHandlingUnitAnnotation
         g36:MultipleZoneVAVAirHandlingUnit-CommonDamper
         g36:MultipleZoneVAVAirHandlingUnit-CommonDamperAnnotation
+        g36:MultipleZoneVAVAirHandlingUnit-OADandAFMS
+        g36:MultipleZoneVAVAirHandlingUnit-OADandAFMS
+        g36:MultipleZoneVAVAirHandlingUnit-OADandAFMSAnnotation
+        g36:MultipleZoneVAVAirHandlingUnit-OADandAFMSAnnotation
         g36:MultipleZoneVAVAirHandlingUnit-OADandDP
         g36:MultipleZoneVAVAirHandlingUnit-OADandDPAnnotation
-        g36:MultipleZoneVAVAirHandlingUnit-OADandAFMS
-        g36:MultipleZoneVAVAirHandlingUnit-OADandAFMSAnnotation
+        g36:MultipleZoneVAVAirHandlingUnit-WithReliefDamper
         g36:MultipleZoneVAVAirHandlingUnit-WithReliefDamper
         g36:MultipleZoneVAVAirHandlingUnit-WithReliefDamperAnnotation
-        g36:MultipleZoneVAVAirHandlingUnit-OADandAFMS
-        g36:MultipleZoneVAVAirHandlingUnit-OADandAFMSAnnotation
-        g36:MultipleZoneVAVAirHandlingUnit-WithReliefDamper
         g36:MultipleZoneVAVAirHandlingUnit-WithReliefDamperAnnotation
-        doc:MultipleZoneVAVAirHandlingUnitExample
-)
+        g36:MultipleZoneVAVAirHandlingUnit-WithReliefFan
+        g36:MultipleZoneVAVAirHandlingUnit-WithReturnFan
+        g36:SingleZoneVAVAirHandlingUnit-WithReliefDamper
+    )
 .
 doc:MultipleZoneVAVAirHandlingUnitExample
     doc:title """Example Multiple Zone VAV Air Handling Unit""";
@@ -950,7 +1004,6 @@ doc:DualFanDualDuctAirHandlingUnitExample
     ![Guideline 36 Figure A-11.](figures/g36-figure-a-11.png)
     """;
 .
-
 doc:SZ-VAV-AHU_4-11
     doc:title "Single Zone VAV Air Handling Unit";
     rdfs:comment "This section describes the classes and example model of the Single Zone VAV Air Handling Unit described in Section 4.8 and Appendix A, Figure A-12 (cite)";
