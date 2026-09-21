@@ -10564,6 +10564,9 @@ s223:RF-Signal a s223:Class,
 | `Signal-Wideband` (see {s223:Signal-Wideband}) |""" ;
     rdfs:subClassOf s223:EM-RF .
 
+<http://data.ashrae.org/standard223/1.0/model/all> a owl:Ontology ;
+    owl:versionInfo "git:master@7c85fe932828be3eb32e3b622eee884fd29a6dc3 date:2026-09-11 20:25:51 UTC" .
+
 s223:Property a s223:Class,
         sh:NodeShape ;
     rdfs:label "Property" ;

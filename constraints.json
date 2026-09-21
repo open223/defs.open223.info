@@ -1,9 +1,9 @@
 {
   "ontology": {
-    "uri": null,
-    "version": "sha256:05fe719c3cf2",
+    "uri": "http://data.ashrae.org/standard223/1.0/model/all",
+    "version": "git:master@7c85fe932828be3eb32e3b622eee884fd29a6dc3 date:2026-09-11 20:25:51 UTC",
     "source": "ontologies/223p.ttl",
-    "ontologies": 18
+    "ontologies": 19
   },
   "concepts": {
     "http://data.ashrae.org/bacnet/2020#device-identifier": {
@@ -11912,6 +11912,17 @@
       "labels": {},
       "stable_ids": {},
       "cbd": "@prefix ns4: <http://data.ashrae.org/standard223/1.0/inference/> .\n@prefix ns5: <http://data.ashrae.org/standard223/1.0/model/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nns4:owl-subset a owl:Ontology ;\n    owl:imports ns5:all ;\n    owl:versionInfo \"Created with TopBraid Composer\" ;\n    sh:declare [ sh:namespace \"http://data.ashrae.org/standard223#\"^^xsd:anyURI ;\n            sh:prefix \"s223\" ] .\n\n",
+      "cbds": {}
+    },
+    "http://data.ashrae.org/standard223/1.0/model/all": {
+      "simple_constraints": [],
+      "complex_constraints": [],
+      "rules": [],
+      "label": "ns5:all",
+      "stable_id": "ns5:all",
+      "labels": {},
+      "stable_ids": {},
+      "cbd": "@prefix ns5: <http://data.ashrae.org/standard223/1.0/model/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n\nns5:all a owl:Ontology ;\n    owl:versionInfo \"git:master@7c85fe932828be3eb32e3b622eee884fd29a6dc3 date:2026-09-11 20:25:51 UTC\" .\n\n",
       "cbds": {}
     },
     "http://data.ashrae.org/standard223/1.0/model/core": {

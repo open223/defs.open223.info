@@ -28,6 +28,7 @@ from rdflib import OWL, RDF, Graph, URIRef
 from constraints import ConstraintExtractor
 
 ONTOLOGY_FILE = "ontologies/223p.ttl"
+ROOT_ONTOLOGY = URIRef("http://data.ashrae.org/standard223/1.0/model/all")
 OUTPUT_FILE = "constraints.json"
 
 
@@ -37,9 +38,10 @@ def ontology_metadata(graph: Graph, source: str) -> dict:
     A graph compiled by tools/compile-223p.py declares a single owl:Ontology
     carrying a real owl:versionInfo, and that is what gets reported.
 
-    The publication's canonical graph is a merge of 19 source files: it
-    declares 18 ontologies, nine of which are never owl:imports-ed, so there
-    is no root to name and their versionInfo is boilerplate.  Fall back to a
+    The publication's canonical graph is a merge of 19 source files, so it
+    declares one ontology per file, none of them a root and all carrying
+    boilerplate versionInfo.  ttl2md.py stamps the compiled root ontology
+    onto that graph, so prefer it when present.  Failing both, fall back to a
     digest of the file, which is what actually determines the anchors anyway.
     """
     ontologies = sorted(graph.subjects(RDF.type, OWL.Ontology))
@@ -51,6 +53,18 @@ def ontology_metadata(graph: Graph, source: str) -> dict:
         if version is None:
             sys.exit(f"{ontologies[0]} has no owl:versionInfo in {source}")
         return {"uri": str(ontologies[0]), "version": str(version), "source": source}
+
+    # A merged publication graph declares one ontology per source file, but
+    # ttl2md.py stamps the compiled root onto it before canonicalizing, so
+    # prefer that one and report its git-derived version.
+    version = graph.value(ROOT_ONTOLOGY, OWL.versionInfo)
+    if version is not None:
+        return {
+            "uri": str(ROOT_ONTOLOGY),
+            "version": str(version),
+            "source": source,
+            "ontologies": len(ontologies),
+        }
 
     digest = hashlib.sha256(Path(source).read_bytes()).hexdigest()[:12]
     return {
