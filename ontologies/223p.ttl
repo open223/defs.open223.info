@@ -3,8 +3,8 @@
 @prefix g36: <http://data.ashrae.org/standard223/1.0/extensions/g36#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pub: <pub:> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
-@prefix qudtqk: <http://qudt.org/vocab/quantitykind/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix s223: <http://data.ashrae.org/standard223#> .
@@ -249,7 +249,7 @@ g36:DualDuctTerminalWithDischargeSensor a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ],
@@ -289,7 +289,7 @@ g36:DualDuctTerminalWithInletSensors a s223:Class,
                                                             sh:path s223:hasAspect ;
                                                             sh:qualifiedMinCount 1 ;
                                                             sh:qualifiedValueShape [ sh:hasValue s223:Role-Heating ] ],
-                                                        [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                                        [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ],
@@ -325,7 +325,7 @@ g36:DualDuctTerminalWithInletSensors a s223:Class,
                                                             sh:path s223:hasAspect ;
                                                             sh:qualifiedMinCount 1 ;
                                                             sh:qualifiedValueShape [ sh:hasValue s223:Role-Cooling ] ],
-                                                        [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                                        [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ],
@@ -359,7 +359,7 @@ g36:DualFanDualDuctAirHandlingUnit a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ],
@@ -377,7 +377,7 @@ g36:DualFanDualDuctAirHandlingUnit a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ],
@@ -406,7 +406,7 @@ g36:ElectricHeatingCoil a s223:Class,
             sh:path s223:hasProperty ;
             sh:qualifiedMinCount 1 ;
             sh:qualifiedValueShape [ sh:class s223:QuantifiableActuatableProperty ;
-                    sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+                    sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                                     sh:maxCount 1 ;
                                     sh:minCount 1 ;
                                     sh:path qudt:hasQuantityKind ] ] ] ] .
@@ -465,7 +465,7 @@ g36:FanPoweredTerminal a s223:Class,
                     sh:node [ sh:property [ sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ],
@@ -485,7 +485,7 @@ g36:FanPoweredTerminal a s223:Class,
                     sh:node [ sh:property [ sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ] .
@@ -502,7 +502,7 @@ g36:FanWithVFD a s223:Class,
             sh:path s223:hasProperty ;
             sh:qualifiedMinCount 1 ;
             sh:qualifiedValueShape [ sh:class s223:QuantifiableActuatableProperty ;
-                    sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+                    sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                                     sh:maxCount 1 ;
                                     sh:minCount 1 ;
                                     sh:path qudt:hasQuantityKind ] ] ] ] .
@@ -543,7 +543,7 @@ g36:MultipleZoneVAVAirHandlingUnit a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ],
@@ -561,7 +561,7 @@ g36:MultipleZoneVAVAirHandlingUnit a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ],
@@ -581,7 +581,7 @@ g36:MultipleZoneVAVAirHandlingUnit a s223:Class,
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path s223:hasAspect ],
-                                                        [ sh:hasValue qudtqk:Temperature ;
+                                                        [ sh:hasValue quantitykind:Temperature ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ],
@@ -617,7 +617,7 @@ g36:MultipleZoneVAVAirHandlingUnit a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ],
@@ -668,7 +668,7 @@ g36:MultipleZoneVAVAirHandlingUnit-CommonDamper a s223:Class,
                                                             sh:path s223:hasAspect ;
                                                             sh:qualifiedMinCount 1 ;
                                                             sh:qualifiedValueShape [ sh:hasValue s223:Role-OutdoorAirIntake ] ],
-                                                        [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                                        [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ] .
@@ -703,7 +703,7 @@ g36:MultipleZoneVAVAirHandlingUnit-OADandAFMS a s223:Class,
                                                             sh:path s223:hasAspect ;
                                                             sh:qualifiedMinCount 1 ;
                                                             sh:qualifiedValueShape [ sh:hasValue s223:Aspect-Minimum ] ],
-                                                        [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                                        [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ] .
@@ -734,7 +734,7 @@ g36:MultipleZoneVAVAirHandlingUnit-OADandDP a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ] .
@@ -752,7 +752,7 @@ g36:MultipleZoneVAVAirHandlingUnit-WithReliefDamper a s223:Class,
             sh:qualifiedValueShape [ sh:node [ sh:property [ sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ],
@@ -832,7 +832,7 @@ g36:MultipleZoneVAVAirHandlingUnit-WithReturnFan a s223:Class,
                                                             sh:path s223:hasProperty ;
                                                             sh:qualifiedMinCount 1 ;
                                                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                                                    sh:node [ sh:property [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                                                    sh:node [ sh:property [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                                                     sh:maxCount 1 ;
                                                                                     sh:minCount 1 ;
                                                                                     sh:path qudt:hasQuantityKind ],
@@ -856,7 +856,7 @@ g36:MultipleZoneVAVAirHandlingUnit-WithReturnFan a s223:Class,
                                                             sh:path s223:hasProperty ;
                                                             sh:qualifiedMinCount 1 ;
                                                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                                                    sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                                                                    sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                                                                     sh:maxCount 1 ;
                                                                                     sh:minCount 1 ;
                                                                                     sh:path qudt:hasQuantityKind ],
@@ -872,7 +872,7 @@ g36:MultipleZoneVAVAirHandlingUnit-WithReturnFan a s223:Class,
             sh:path ( s223:connectedTo s223:connectedTo [ sh:inversePath s223:contains ] s223:hasProperty ) ;
             sh:qualifiedMinCount 1 ;
             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                    sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                    sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                     sh:maxCount 1 ;
                                     sh:minCount 1 ;
                                     sh:path qudt:hasQuantityKind ] ] ] ],
@@ -890,7 +890,7 @@ g36:MultipleZoneVAVAirHandlingUnit-WithReturnFan a s223:Class,
                                                             sh:path s223:hasProperty ;
                                                             sh:qualifiedMinCount 1 ;
                                                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                                                    sh:node [ sh:property [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                                                    sh:node [ sh:property [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                                                     sh:maxCount 1 ;
                                                                                     sh:minCount 1 ;
                                                                                     sh:path qudt:hasQuantityKind ],
@@ -950,7 +950,7 @@ g36:SingleZoneVAVAirHandlingUnit a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ],
@@ -992,7 +992,7 @@ g36:SingleZoneVAVAirHandlingUnit-WithReliefDamper a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableActuatableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ],
@@ -1018,7 +1018,7 @@ g36:SingleZoneVAVAirHandlingUnit-WithReliefFan a s223:Class,
             sh:qualifiedValueShape [ sh:node [ sh:property [ sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ],
@@ -1102,7 +1102,7 @@ g36:VAVTerminalCoolingOnly a s223:Class,
                     sh:node [ sh:property [ sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ],
@@ -1138,7 +1138,7 @@ g36:VAVTerminalWithReheat a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ],
@@ -1170,7 +1170,7 @@ g36:Zone a s223:Class,
             sh:path s223:hasProperty ;
             sh:qualifiedMinCount 1 ;
             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                    sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+                    sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                                     sh:maxCount 1 ;
                                     sh:minCount 1 ;
                                     sh:path qudt:hasQuantityKind ],
@@ -1196,7 +1196,7 @@ g36:Zone a s223:Class,
             sh:path s223:hasProperty ;
             sh:qualifiedMinCount 1 ;
             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                    sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                    sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                     sh:maxCount 1 ;
                                     sh:minCount 1 ;
                                     sh:path qudt:hasQuantityKind ],
@@ -3875,7 +3875,7 @@ light source, defined as the absolute temperature of a blackbody whose chromatic
     sh:property [ rdfs:comment "A `CorrelatedColorTemperatureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `CorrelatedColorTemperature`." ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message "s223: A `CorrelatedColorTemperatureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `CorrelatedColorTemperature`." ;
-            sh:node [ sh:property [ sh:in ( qudtqk:CorrelatedColorTemperature ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:CorrelatedColorTemperature ) ;
                             sh:path qudt:hasQuantityKind ] ] ;
             sh:path s223:observes ] .
 
@@ -4017,7 +4017,7 @@ distance between the chromaticity of the light source and a blackbody radiator o
     sh:property [ rdfs:comment "A `DuvSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Duv`." ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message "s223: A `DuvSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Duv`." ;
-            sh:node [ sh:property [ sh:in ( qudtqk:Duv ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:Duv ) ;
                             sh:path qudt:hasQuantityKind ] ] ;
             sh:path s223:observes ] .
 
@@ -4691,7 +4691,7 @@ is equal to the atmospheric pressure, not a vacuum.""" ;
     sh:property [ rdfs:comment "A `GaugePressureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of GaugePressure and a value of `true` for `qudt:isDeltaQuantity`." ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message "s223: A `GaugePressureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of GaugePressure and a value of `true` for `qudt:isDeltaQuantity`." ;
-            sh:node [ sh:property [ sh:in ( qudtqk:GaugePressure ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:GaugePressure ) ;
                             sh:path qudt:hasQuantityKind ],
                         [ sh:in ( true ) ;
                             sh:path qudt:isDeltaQuantity ] ] ;
@@ -4718,17 +4718,17 @@ s223:GlycolSolution-15Percent a s223:Class,
             rdfs:label "Water concentration" ;
             s223:hasValue 85.0 ;
             s223:ofConstituent s223:Constituent-H2O ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ],
         [ a s223:QuantifiableProperty ;
             rdfs:label "Glycol concentration" ;
             s223:hasValue 15.0 ;
             s223:ofConstituent s223:Constituent-Glycol ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ] ;
     s223:hasFreezingPoint [ a s223:QuantifiableProperty ;
             rdfs:label "Freezing point" ;
-            qudt:hasQuantityKind qudtqk:Temperature ] ;
+            qudt:hasQuantityKind quantitykind:Temperature ] ;
     rdfs:comment "`GlycolSolution-15Percent`" ;
     rdfs:subClassOf s223:Water-GlycolSolution .
 
@@ -4740,17 +4740,17 @@ s223:GlycolSolution-30Percent a s223:Class,
             rdfs:label "Water concentration" ;
             s223:hasValue 70.0 ;
             s223:ofConstituent s223:Constituent-H2O ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ],
         [ a s223:QuantifiableProperty ;
             rdfs:label "Glycol concentration" ;
             s223:hasValue 30.0 ;
             s223:ofConstituent s223:Constituent-Glycol ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ] ;
     s223:hasFreezingPoint [ a s223:QuantifiableProperty ;
             rdfs:label "Freezing point" ;
-            qudt:hasQuantityKind qudtqk:Temperature ] ;
+            qudt:hasQuantityKind quantitykind:Temperature ] ;
     rdfs:comment "`GlycolSolution-30Percent`" ;
     rdfs:subClassOf s223:Water-GlycolSolution .
 
@@ -4801,7 +4801,7 @@ s223:HumiditySensor a s223:Class,
     sh:property [ rdfs:comment "A `HumiditySensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of either `RelativeHumidity` or `AbsoluteHumidity`." ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message "s223: A `HumiditySensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of either `RelativeHumidity` or `AbsoluteHumidity`." ;
-            sh:node [ sh:property [ sh:in ( qudtqk:RelativeHumidity qudtqk:AbsoluteHumidity ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:RelativeHumidity quantitykind:AbsoluteHumidity ) ;
                             sh:path qudt:hasQuantityKind ] ] ;
             sh:path s223:observes ] .
 
@@ -4876,7 +4876,7 @@ luminous flux incident at a point on a surface.""" ;
     sh:property [ rdfs:comment "An `IlluminanceSensor` shall observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Illuminance`." ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message "s223: An `IlluminanceSensor` shall observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Illuminance`." ;
-            sh:node [ sh:property [ sh:in ( qudtqk:Illuminance ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:Illuminance ) ;
                             sh:path qudt:hasQuantityKind ] ] ;
             sh:path s223:observes ] .
 
@@ -5032,7 +5032,7 @@ s223:OccupantCountSensor a s223:Class,
     sh:property [ rdfs:comment "An `OccupantCountSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Population` and a `Unit` of `NUM`." ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message "s223: An `OccupantCountSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Population` and a `Unit` of `NUM`." ;
-            sh:node [ sh:property [ sh:in ( qudtqk:Population ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:Population ) ;
                             sh:path qudt:hasQuantityKind ],
                         [ sh:in ( unit:NUM ) ;
                             sh:path qudt:hasUnit ] ] ;
@@ -5866,7 +5866,7 @@ s223:TemperatureSensor a s223:Class,
     sh:property [ rdfs:comment "A `TemperatureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Temperature`." ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message "s223: A `TemperatureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Temperature`." ;
-            sh:node [ sh:property [ sh:in ( qudtqk:Temperature ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:Temperature ) ;
                             sh:path qudt:hasQuantityKind ] ] ;
             sh:path s223:observes ] .
 
@@ -6004,7 +6004,7 @@ s223:Water-ChilledWater a s223:Class,
     s223:composedOf [ a s223:QuantifiableProperty ;
             rdfs:label "Water concentration" ;
             s223:ofConstituent s223:Constituent-H2O ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ] ;
     rdfs:comment "Water-Chilled water" ;
     rdfs:subClassOf s223:Fluid-Water .
@@ -6016,7 +6016,7 @@ s223:Water-HotWater a s223:Class,
     s223:composedOf [ a s223:QuantifiableProperty ;
             rdfs:label "Water concentration" ;
             s223:ofConstituent s223:Constituent-H2O ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ] ;
     rdfs:comment "Water-Hot water" ;
     rdfs:subClassOf s223:Fluid-Water .
@@ -6305,7 +6305,7 @@ g36:ChilledWaterValveOrShape1 a sh:NodeShape ;
                         sh:path s223:hasProperty ;
                         sh:qualifiedMinCount 1 ;
                         sh:qualifiedValueShape [ sh:class s223:QuantifiableActuatableProperty ;
-                                sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+                                sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                                                 sh:maxCount 1 ;
                                                 sh:minCount 1 ;
                                                 sh:path qudt:hasQuantityKind ],
@@ -6346,7 +6346,7 @@ g36:DamperOrShape1 a sh:NodeShape ;
                         sh:path s223:hasProperty ;
                         sh:qualifiedMinCount 1 ;
                         sh:qualifiedValueShape [ sh:class s223:QuantifiableActuatableProperty ;
-                                sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+                                sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                                                 sh:maxCount 1 ;
                                                 sh:minCount 1 ;
                                                 sh:path qudt:hasQuantityKind ],
@@ -6459,7 +6459,7 @@ g36:HotWaterValveOrShape1 a sh:NodeShape ;
                         sh:path s223:hasProperty ;
                         sh:qualifiedMinCount 1 ;
                         sh:qualifiedValueShape [ sh:class s223:QuantifiableActuatableProperty ;
-                                sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+                                sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                                                 sh:maxCount 1 ;
                                                 sh:minCount 1 ;
                                                 sh:path qudt:hasQuantityKind ],
@@ -7333,7 +7333,7 @@ s223:ElectricCurrentSensor a s223:Class,
     sh:property [ rdfs:comment "An `ElectricCurrentSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `ElectricCurrent`." ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message "s223: An `ElectricCurrentSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `ElectricCurrent`." ;
-            sh:node [ sh:property [ sh:in ( qudtqk:ElectricCurrent ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:ElectricCurrent ) ;
                             sh:path qudt:hasQuantityKind ] ] ;
             sh:path s223:observes ] .
 
@@ -7433,7 +7433,7 @@ s223:PressureSensor a s223:Class,
     sh:property [ rdfs:comment "A `PressureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Pressure` or `GaugePressure`." ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message "s223: A `PressureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Pressure` or `GaugePressure`." ;
-            sh:node [ sh:property [ sh:in ( qudtqk:Pressure qudtqk:GaugePressure ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:Pressure quantitykind:GaugePressure ) ;
                             sh:path qudt:hasQuantityKind ] ] ;
             sh:path s223:observes ] .
 
@@ -7518,7 +7518,7 @@ s223:VoltageSensor a s223:Class,
     sh:property [ rdfs:comment "A `VoltageSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of Voltage." ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message "s223: A `VoltageSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of Voltage." ;
-            sh:node [ sh:property [ sh:in ( qudtqk:Voltage ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:Voltage ) ;
                             sh:path qudt:hasQuantityKind ] ] ;
             sh:path s223:observes ] .
 
@@ -7529,7 +7529,7 @@ s223:Water-Steam a s223:Class,
     s223:composedOf [ a s223:QuantifiableProperty ;
             rdfs:label "Water concentration" ;
             s223:ofConstituent s223:Constituent-H2O ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ] ;
     rdfs:comment "Water-Steam" ;
     rdfs:subClassOf s223:Fluid-Water .
@@ -7955,7 +7955,7 @@ s223:Voltage-2.5V a s223:Class,
         sh:NodeShape ;
     rdfs:label "2.5 V" ;
     s223:hasValue 2.5 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-2.5V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -7965,7 +7965,7 @@ s223:Voltage-3V a s223:Class,
         sh:NodeShape ;
     rdfs:label "3 V" ;
     s223:hasValue 3.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-3V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -8405,7 +8405,7 @@ s223:Voltage-110V a s223:Class,
         sh:NodeShape ;
     rdfs:label "110 V" ;
     s223:hasValue 110.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-110V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -8415,7 +8415,7 @@ s223:Voltage-127V a s223:Class,
         sh:NodeShape ;
     rdfs:label "127 V" ;
     s223:hasValue 127.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-127V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -8425,7 +8425,7 @@ s223:Voltage-139V a s223:Class,
         sh:NodeShape ;
     rdfs:label "139 V" ;
     s223:hasValue 139.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-139V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -8435,7 +8435,7 @@ s223:Voltage-1730V a s223:Class,
         sh:NodeShape ;
     rdfs:label "1730 V" ;
     s223:hasValue 1730.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-1730V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -8445,7 +8445,7 @@ s223:Voltage-1900V a s223:Class,
         sh:NodeShape ;
     rdfs:label "1900 V" ;
     s223:hasValue 1900.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-1900V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -8455,7 +8455,7 @@ s223:Voltage-219V a s223:Class,
         sh:NodeShape ;
     rdfs:label "219 V" ;
     s223:hasValue 219.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-219V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -8465,7 +8465,7 @@ s223:Voltage-230V a s223:Class,
         sh:NodeShape ;
     rdfs:label "230 V" ;
     s223:hasValue 230.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-230V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -8475,7 +8475,7 @@ s223:Voltage-2400V a s223:Class,
         sh:NodeShape ;
     rdfs:label "2400 V" ;
     s223:hasValue 2400.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-2400V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -8485,7 +8485,7 @@ s223:Voltage-277V a s223:Class,
         sh:NodeShape ;
     rdfs:label "277 V" ;
     s223:hasValue 277.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-277V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -8495,7 +8495,7 @@ s223:Voltage-3460V a s223:Class,
         sh:NodeShape ;
     rdfs:label "3460 V" ;
     s223:hasValue 3460.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-3460V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -8505,7 +8505,7 @@ s223:Voltage-347V a s223:Class,
         sh:NodeShape ;
     rdfs:label "347 V" ;
     s223:hasValue 347.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-347V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -8515,7 +8515,7 @@ s223:Voltage-3810V a s223:Class,
         sh:NodeShape ;
     rdfs:label "3810 V" ;
     s223:hasValue 3810.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-3810V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -8525,7 +8525,7 @@ s223:Voltage-5770V a s223:Class,
         sh:NodeShape ;
     rdfs:label "5770 V" ;
     s223:hasValue 5770.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-5770V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -8537,16 +8537,16 @@ s223:Water-GlycolSolution a s223:Class,
     s223:composedOf [ a s223:QuantifiableProperty ;
             rdfs:label "Unspecified" ;
             s223:ofConstituent s223:Constituent-H2O ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ],
         [ a s223:QuantifiableProperty ;
             rdfs:label "Unspecified" ;
             s223:ofConstituent s223:Constituent-Glycol ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ] ;
     s223:hasFreezingPoint [ a s223:QuantifiableProperty ;
             rdfs:label "Freezing point" ;
-            qudt:hasQuantityKind qudtqk:Temperature ] ;
+            qudt:hasQuantityKind quantitykind:Temperature ] ;
     doc:subclauses ( s223:hasFreezingPoint ) ;
     rdfs:comment """This class and its enumerated subclasses represent common concentrations of water-glycol solution.
 
@@ -8563,7 +8563,7 @@ s223:Water-GlycolSolution a s223:Class,
             sh:qualifiedMinCount 1 ;
             sh:qualifiedValueShape [ sh:class s223:QuantifiableProperty ;
                     sh:node [ sh:property [ rdfs:comment "The `QuantityKind` of the constituent shall be `VolumeFraction`." ;
-                                    sh:in ( qudtqk:VolumeFraction ) ;
+                                    sh:in ( quantitykind:VolumeFraction ) ;
                                     sh:path qudt:hasQuantityKind ],
                                 [ rdfs:comment "One of the constituents of a `Water-GlycolSolution` shall be a `Constituent-H2O`." ;
                                     sh:class s223:Constituent-H2O ;
@@ -8577,7 +8577,7 @@ s223:Water-GlycolSolution a s223:Class,
         [ rdfs:comment "A `Water-GlycolSolution` shall be associated with zero or more `QuantifiableProperty`s with a `QuantityKind` of `Temperature` using the relation `hasFreezingPoint`." ;
             sh:class s223:QuantifiableProperty ;
             sh:message "s223: A `Water-GlycolSolution` shall be associated with zero or more `QuantifiableProperty`s with a `QuantityKind` of `Temperature` using the relation `hasFreezingPoint`." ;
-            sh:node [ sh:property [ sh:in ( qudtqk:Temperature ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:Temperature ) ;
                             sh:path qudt:hasQuantityKind ] ] ;
             sh:path s223:hasFreezingPoint ],
         [ rdfs:comment "One of the constituents of a `Water-GlycolSolution` shall be a `Constituent-Glycol`." ;
@@ -8586,7 +8586,7 @@ s223:Water-GlycolSolution a s223:Class,
             sh:qualifiedMinCount 1 ;
             sh:qualifiedValueShape [ sh:class s223:QuantifiableProperty ;
                     sh:node [ sh:property [ rdfs:comment "The `QuantityKind` of the constituent shall be `VolumeFraction`." ;
-                                    sh:in ( qudtqk:VolumeFraction ) ;
+                                    sh:in ( quantitykind:VolumeFraction ) ;
                                     sh:path qudt:hasQuantityKind ],
                                 [ rdfs:comment "One of the constituents of a `Water-GlycolSolution` shall be a `Constituent-Glycol`." ;
                                     sh:class s223:Constituent-Glycol ;
@@ -8847,7 +8847,7 @@ s223:EnumerationKind-Numerical a s223:Class,
         s223:EnumerationKind-Numerical,
         sh:NodeShape ;
     rdfs:label "Numerical" ;
-    qudt:hasQuantityKind qudtqk:Unknown ;
+    qudt:hasQuantityKind quantitykind:Unknown ;
     qudt:hasUnit unit:UNKNOWN ;
     doc:subclauses ( s223:Numerical-Frequency s223:Numerical-NumberOfElectricalPhases s223:Numerical-Voltage ) ;
     rdfs:comment """
@@ -9151,7 +9151,7 @@ s223:Voltage-10000V a s223:Class,
         sh:NodeShape ;
     rdfs:label "10000 V" ;
     s223:hasValue 10000.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-10000V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9161,7 +9161,7 @@ s223:Voltage-220V a s223:Class,
         sh:NodeShape ;
     rdfs:label "220 V" ;
     s223:hasValue 220.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-220V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9171,7 +9171,7 @@ s223:Voltage-3000V a s223:Class,
         sh:NodeShape ;
     rdfs:label "3000 V" ;
     s223:hasValue 3000.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-3000V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9181,7 +9181,7 @@ s223:Voltage-3300V a s223:Class,
         sh:NodeShape ;
     rdfs:label "3300 V" ;
     s223:hasValue 3300.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-3300V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9191,7 +9191,7 @@ s223:Voltage-400V a s223:Class,
         sh:NodeShape ;
     rdfs:label "400 V" ;
     s223:hasValue 400.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-400V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9201,7 +9201,7 @@ s223:Voltage-415V a s223:Class,
         sh:NodeShape ;
     rdfs:label "415 V" ;
     s223:hasValue 415.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-415V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9211,7 +9211,7 @@ s223:Voltage-4160V a s223:Class,
         sh:NodeShape ;
     rdfs:label "4160 V" ;
     s223:hasValue 4160.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-4160V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9221,7 +9221,7 @@ s223:Voltage-480V a s223:Class,
         sh:NodeShape ;
     rdfs:label "480 V" ;
     s223:hasValue 480.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-480V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9231,7 +9231,7 @@ s223:Voltage-6000V a s223:Class,
         sh:NodeShape ;
     rdfs:label "6000 V" ;
     s223:hasValue 6000.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-6000V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9241,7 +9241,7 @@ s223:Voltage-600V a s223:Class,
         sh:NodeShape ;
     rdfs:label "600 V" ;
     s223:hasValue 600.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-600V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9251,7 +9251,7 @@ s223:Voltage-6600V a s223:Class,
         sh:NodeShape ;
     rdfs:label "6600 V" ;
     s223:hasValue 6600.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-6600V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9400,7 +9400,7 @@ s223:Numerical-Frequency a s223:Class,
         s223:Numerical-Frequency,
         sh:NodeShape ;
     rdfs:label "Frequency" ;
-    qudt:hasQuantityKind qudtqk:Frequency ;
+    qudt:hasQuantityKind quantitykind:Frequency ;
     qudt:hasUnit unit:HZ ;
     rdfs:comment """This class and its enumerated subclasses represent common frequencies for AC electricity service.
 
@@ -9412,7 +9412,7 @@ s223:Numerical-Frequency a s223:Class,
 | `Frequency-60Hz` |""" ;
     rdfs:subClassOf s223:EnumerationKind-Numerical ;
     sh:property [ rdfs:comment "A `Numerical-Frequency` shall have a `QuantityKind` of `Frequency`." ;
-            sh:in ( qudtqk:Frequency ) ;
+            sh:in ( quantitykind:Frequency ) ;
             sh:message "s223: A `Numerical-Frequency` shall have a `QuantityKind` of `Frequency`." ;
             sh:path qudt:hasQuantityKind ],
         [ rdfs:comment "A `Numerical-Frequency` shall have a `Unit` of `HZ` (hertz)." ;
@@ -9424,7 +9424,7 @@ s223:Numerical-NumberOfElectricalPhases a s223:Class,
         s223:Numerical-NumberOfElectricalPhases,
         sh:NodeShape ;
     rdfs:label "Number of electrical phases" ;
-    qudt:hasQuantityKind qudtqk:NumberOfElectricalPhases ;
+    qudt:hasQuantityKind quantitykind:NumberOfElectricalPhases ;
     qudt:hasUnit unit:NUM ;
     rdfs:comment """This class and its enumerated subclasses represent all possible service phases for AC electricity service, i.e., single-phase or three-phase. The `hasNumberOfElectricalPhases` relation points to one of the values of this enumeration.
 
@@ -9440,7 +9440,7 @@ s223:Numerical-NumberOfElectricalPhases a s223:Class,
             sh:message "s223: A `Numerical-NumberOfElectricalPhases` shall have a `Unit` of `NUM` (number)." ;
             sh:path qudt:hasUnit ],
         [ rdfs:comment "A `Numerical-NumberOfElectricalPhases` shall have a `QuantityKind` of `NumberOfElectricalPhases`." ;
-            sh:in ( qudtqk:NumberOfElectricalPhases ) ;
+            sh:in ( quantitykind:NumberOfElectricalPhases ) ;
             sh:message "s223: A `Numerical-NumberOfElectricalPhases` shall have a `QuantityKind` of `NumberOfElectricalPhases`." ;
             sh:path qudt:hasQuantityKind ] .
 
@@ -9448,7 +9448,7 @@ s223:Voltage-PoE a s223:Class,
         s223:Voltage-PoE,
         sh:NodeShape ;
     rdfs:label "PoE voltage" ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "This class represents the standardized 44-57VDC range that is produced by PoE Power Sourcing Equipment." ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9559,7 +9559,7 @@ s223:Voltage-120V a s223:Class,
         sh:NodeShape ;
     rdfs:label "120 V" ;
     s223:hasValue 120.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-120V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9569,7 +9569,7 @@ s223:Voltage-190V a s223:Class,
         sh:NodeShape ;
     rdfs:label "190 V" ;
     s223:hasValue 190.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-190V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9579,7 +9579,7 @@ s223:Voltage-48V a s223:Class,
         sh:NodeShape ;
     rdfs:label "48 V" ;
     s223:hasValue 48.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-48V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9589,7 +9589,7 @@ s223:Voltage-5V a s223:Class,
         sh:NodeShape ;
     rdfs:label "5 V" ;
     s223:hasValue 5.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-5V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9689,7 +9689,7 @@ s223:Voltage-208V a s223:Class,
         sh:NodeShape ;
     rdfs:label "208 V" ;
     s223:hasValue 208.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-208V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9816,7 +9816,7 @@ s223:Voltage-12V a s223:Class,
         sh:NodeShape ;
     rdfs:label "12 V" ;
     s223:hasValue 12.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-12V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9826,7 +9826,7 @@ s223:Voltage-6V a s223:Class,
         sh:NodeShape ;
     rdfs:label "6 V" ;
     s223:hasValue 6.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-6V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9956,7 +9956,7 @@ s223:Voltage-24V a s223:Class,
         sh:NodeShape ;
     rdfs:label "24 V" ;
     s223:hasValue 24.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-24V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -9966,7 +9966,7 @@ s223:Voltage-380V a s223:Class,
         sh:NodeShape ;
     rdfs:label "380 V" ;
     s223:hasValue 380.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-380V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -10162,7 +10162,7 @@ s223:Voltage-240V a s223:Class,
         sh:NodeShape ;
     rdfs:label "240 V" ;
     s223:hasValue 240.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-240V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -10510,7 +10510,7 @@ s223:Voltage-0V a s223:Class,
         sh:NodeShape ;
     rdfs:label "0 V" ;
     s223:hasValue 0.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment "Voltage-0V" ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -10565,7 +10565,7 @@ s223:RF-Signal a s223:Class,
     rdfs:subClassOf s223:EM-RF .
 
 <http://data.ashrae.org/standard223/1.0/model/all> a owl:Ontology ;
-    owl:versionInfo "git:master@7c85fe932828be3eb32e3b622eee884fd29a6dc3 date:2026-09-11 20:25:51 UTC" .
+    owl:versionInfo "git:gtf-canonical-constraint-urls@9ea9f0b8d2eae8ed28402011330c7bf26888cec0 date:2026-09-21 15:27:34 UTC" .
 
 s223:Property a s223:Class,
         sh:NodeShape ;
@@ -11321,7 +11321,7 @@ s223:Frequency-50Hz a s223:Class,
         sh:NodeShape ;
     rdfs:label "50 Hertz" ;
     s223:hasValue 50.0 ;
-    qudt:hasQuantityKind qudtqk:Frequency ;
+    qudt:hasQuantityKind quantitykind:Frequency ;
     qudt:hasUnit unit:HZ ;
     rdfs:comment "Frequency-50Hz" ;
     rdfs:subClassOf s223:Numerical-Frequency .
@@ -11347,7 +11347,7 @@ s223:NumberOfElectricalPhases-ThreePhase a s223:Class,
         sh:NodeShape ;
     rdfs:label "Three phase" ;
     s223:hasValue 3.0 ;
-    qudt:hasQuantityKind qudtqk:NumberOfElectricalPhases ;
+    qudt:hasQuantityKind quantitykind:NumberOfElectricalPhases ;
     qudt:hasUnit unit:NUM ;
     rdfs:comment "Three phase" ;
     rdfs:subClassOf s223:Numerical-NumberOfElectricalPhases .
@@ -11423,7 +11423,7 @@ s223:Fluid-Water a s223:Class,
     s223:composedOf [ a s223:QuantifiableProperty ;
             rdfs:label "H2O, i.e., pure water concentration" ;
             s223:ofConstituent s223:Constituent-H2O ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ] ;
     doc:subclauses ( s223:Water-GlycolSolution ) ;
     rdfs:comment """This class and its enumerated subclasses represent water and aqueous solutions in various states.
@@ -11442,7 +11442,7 @@ s223:Numerical-Voltage a s223:Class,
         s223:Numerical-Voltage,
         sh:NodeShape ;
     rdfs:label "Voltage" ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment """This class and its enumerated subclasses represent common voltages for electricity service.
 
@@ -11490,7 +11490,7 @@ s223:Numerical-Voltage a s223:Class,
 | `Voltage-PoE` (see {s223:Voltage-PoE}) |""" ;
     rdfs:subClassOf s223:EnumerationKind-Numerical ;
     sh:property [ rdfs:comment "A `Numerical-Voltage` shall have a `QuantityKind` of `Voltage`." ;
-            sh:in ( qudtqk:Voltage ) ;
+            sh:in ( quantitykind:Voltage ) ;
             sh:message "s223: A `Numerical-Voltage` shall have a `QuantityKind` of `Voltage`." ;
             sh:path qudt:hasQuantityKind ],
         [ rdfs:comment "A `Numerical-Voltage` shall have a `Unit` of `V` (volt)." ;
@@ -11521,7 +11521,7 @@ s223:NumberOfElectricalPhases-SinglePhase a s223:Class,
         sh:NodeShape ;
     rdfs:label "Single phase" ;
     s223:hasValue 1.0 ;
-    qudt:hasQuantityKind qudtqk:NumberOfElectricalPhases ;
+    qudt:hasQuantityKind quantitykind:NumberOfElectricalPhases ;
     qudt:hasUnit unit:NUM ;
     rdfs:comment "Single phase" ;
     rdfs:subClassOf s223:Numerical-NumberOfElectricalPhases .
@@ -11538,7 +11538,7 @@ s223:Frequency-60Hz a s223:Class,
         sh:NodeShape ;
     rdfs:label "60 Hertz" ;
     s223:hasValue 60.0 ;
-    qudt:hasQuantityKind qudtqk:Frequency ;
+    qudt:hasQuantityKind quantitykind:Frequency ;
     qudt:hasUnit unit:HZ ;
     rdfs:comment "Frequency-60Hz" ;
     rdfs:subClassOf s223:Numerical-Frequency .

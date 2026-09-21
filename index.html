@@ -123,7 +123,7 @@ body {
     <h1>Docs</h1>
     <p class="version">Generated from
         the ASHRAE 223P ontology at
-        version <code id="ontology-version">git:master@7c85fe932828be3eb32e3b622eee884fd29a6dc3 date:2026-09-11 20:25:51 UTC</code>
+        version <code id="ontology-version">git:gtf-canonical-constraint-urls@9ea9f0b8d2eae8ed28402011330c7bf26888cec0 date:2026-09-21 15:27:34 UTC</code>
         (<a href="ontologies/223p.ttl">ontologies/223p.ttl</a>)
     </p>
     <!-- Disabled until app.js has built the search index; the status line
@@ -5505,8 +5505,8 @@ s223:CopyMachine a s223:Class,
             <h3><a class="permalink" href="#s223:CorrelatedColorTemperatureSensor">Correlated color temperature sensor</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#CorrelatedColorTemperatureSensor">http://data.ashrae.org/standard223#CorrelatedColorTemperatureSensor</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -5521,7 +5521,7 @@ light source, defined as the absolute temperature of a blackbody whose chromatic
     sh:property [ rdfs:comment &#34;A `CorrelatedColorTemperatureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `CorrelatedColorTemperature`.&#34; ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message &#34;s223: A `CorrelatedColorTemperatureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `CorrelatedColorTemperature`.&#34; ;
-            sh:node [ sh:property [ sh:in ( qudtqk:CorrelatedColorTemperature ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:CorrelatedColorTemperature ) ;
                             sh:path qudt:hasQuantityKind ] ] ;
             sh:path s223:observes ] .
 
@@ -6206,8 +6206,8 @@ s223:Duct a s223:Class,
             <h3><a class="permalink" href="#s223:DuvSensor">Duv sensor</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#DuvSensor">http://data.ashrae.org/standard223#DuvSensor</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -6222,7 +6222,7 @@ distance between the chromaticity of the light source and a blackbody radiator o
     sh:property [ rdfs:comment &#34;A `DuvSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Duv`.&#34; ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message &#34;s223: A `DuvSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Duv`.&#34; ;
-            sh:node [ sh:property [ sh:in ( qudtqk:Duv ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:Duv ) ;
                             sh:path qudt:hasQuantityKind ] ] ;
             sh:path s223:observes ] .
 
@@ -6389,8 +6389,8 @@ s223:ElectricCooktop a s223:Class,
             <h3><a class="permalink" href="#s223:ElectricCurrentSensor">Electric current sensor</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#ElectricCurrentSensor">http://data.ashrae.org/standard223#ElectricCurrentSensor</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -6404,7 +6404,7 @@ s223:ElectricCurrentSensor a s223:Class,
     sh:property [ rdfs:comment &#34;An `ElectricCurrentSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `ElectricCurrent`.&#34; ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message &#34;s223: An `ElectricCurrentSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `ElectricCurrent`.&#34; ;
-            sh:node [ sh:property [ sh:in ( qudtqk:ElectricCurrent ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:ElectricCurrent ) ;
                             sh:path qudt:hasQuantityKind ] ] ;
             sh:path s223:observes ] .
 
@@ -7516,8 +7516,8 @@ s223:EnumerationKind-ElectricalPhaseIdentifier a s223:Class,
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#EnumerationKind-Numerical">http://data.ashrae.org/standard223#EnumerationKind-Numerical</a></p>
             <pre><code class="language-turtle">
 @prefix doc: &lt;http://sample.org/doc#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -7529,7 +7529,7 @@ s223:EnumerationKind-Numerical a s223:Class,
         s223:EnumerationKind-Numerical,
         sh:NodeShape ;
     rdfs:label &#34;Numerical&#34; ;
-    qudt:hasQuantityKind qudtqk:Unknown ;
+    qudt:hasQuantityKind quantitykind:Unknown ;
     qudt:hasUnit unit:UNKNOWN ;
     doc:subclauses ( s223:Numerical-Frequency s223:Numerical-NumberOfElectricalPhases s223:Numerical-Voltage ) ;
     rdfs:comment &#34;&#34;&#34;
@@ -9068,8 +9068,8 @@ s223:Fluid-Oil a s223:Class,
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Fluid-Water">http://data.ashrae.org/standard223#Fluid-Water</a></p>
             <pre><code class="language-turtle">
 @prefix doc: &lt;http://sample.org/doc#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -9083,7 +9083,7 @@ s223:Fluid-Water a s223:Class,
     s223:composedOf [ a s223:QuantifiableProperty ;
             rdfs:label &#34;H2O, i.e., pure water concentration&#34; ;
             s223:ofConstituent s223:Constituent-H2O ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ] ;
     doc:subclauses ( s223:Water-GlycolSolution ) ;
     rdfs:comment &#34;&#34;&#34;This class and its enumerated subclasses represent water and aqueous solutions in various states.
@@ -9167,8 +9167,8 @@ s223:Freezer a s223:Class,
             <h3><a class="permalink" href="#s223:Frequency-50Hz">50 Hertz</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Frequency-50Hz">http://data.ashrae.org/standard223#Frequency-50Hz</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -9180,7 +9180,7 @@ s223:Frequency-50Hz a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;50 Hertz&#34; ;
     s223:hasValue 50.0 ;
-    qudt:hasQuantityKind qudtqk:Frequency ;
+    qudt:hasQuantityKind quantitykind:Frequency ;
     qudt:hasUnit unit:HZ ;
     rdfs:comment &#34;Frequency-50Hz&#34; ;
     rdfs:subClassOf s223:Numerical-Frequency .
@@ -9193,8 +9193,8 @@ s223:Frequency-50Hz a s223:Class,
             <h3><a class="permalink" href="#s223:Frequency-60Hz">60 Hertz</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Frequency-60Hz">http://data.ashrae.org/standard223#Frequency-60Hz</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -9206,7 +9206,7 @@ s223:Frequency-60Hz a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;60 Hertz&#34; ;
     s223:hasValue 60.0 ;
-    qudt:hasQuantityKind qudtqk:Frequency ;
+    qudt:hasQuantityKind quantitykind:Frequency ;
     qudt:hasUnit unit:HZ ;
     rdfs:comment &#34;Frequency-60Hz&#34; ;
     rdfs:subClassOf s223:Numerical-Frequency .
@@ -9361,8 +9361,8 @@ s223:Gas-Superheated a s223:Class,
             <h3><a class="permalink" href="#s223:GaugePressureSensor">Gauge pressure sensor</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#GaugePressureSensor">http://data.ashrae.org/standard223#GaugePressureSensor</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -9379,7 +9379,7 @@ is equal to the atmospheric pressure, not a vacuum.&#34;&#34;&#34; ;
     sh:property [ rdfs:comment &#34;A `GaugePressureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of GaugePressure and a value of `true` for `qudt:isDeltaQuantity`.&#34; ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message &#34;s223: A `GaugePressureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of GaugePressure and a value of `true` for `qudt:isDeltaQuantity`.&#34; ;
-            sh:node [ sh:property [ sh:in ( qudtqk:GaugePressure ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:GaugePressure ) ;
                             sh:path qudt:hasQuantityKind ],
                         [ sh:in ( true ) ;
                             sh:path qudt:isDeltaQuantity ] ] ;
@@ -9419,8 +9419,8 @@ s223:Generator a s223:Class,
             <h3><a class="permalink" href="#s223:GlycolSolution-15Percent">15 percent glycol solution</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#GlycolSolution-15Percent">http://data.ashrae.org/standard223#GlycolSolution-15Percent</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -9435,17 +9435,17 @@ s223:GlycolSolution-15Percent a s223:Class,
             rdfs:label &#34;Water concentration&#34; ;
             s223:hasValue 85.0 ;
             s223:ofConstituent s223:Constituent-H2O ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ],
         [ a s223:QuantifiableProperty ;
             rdfs:label &#34;Glycol concentration&#34; ;
             s223:hasValue 15.0 ;
             s223:ofConstituent s223:Constituent-Glycol ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ] ;
     s223:hasFreezingPoint [ a s223:QuantifiableProperty ;
             rdfs:label &#34;Freezing point&#34; ;
-            qudt:hasQuantityKind qudtqk:Temperature ] ;
+            qudt:hasQuantityKind quantitykind:Temperature ] ;
     rdfs:comment &#34;`GlycolSolution-15Percent`&#34; ;
     rdfs:subClassOf s223:Water-GlycolSolution .
 
@@ -9457,8 +9457,8 @@ s223:GlycolSolution-15Percent a s223:Class,
             <h3><a class="permalink" href="#s223:GlycolSolution-30Percent">30 percent glycol solution</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#GlycolSolution-30Percent">http://data.ashrae.org/standard223#GlycolSolution-30Percent</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -9473,17 +9473,17 @@ s223:GlycolSolution-30Percent a s223:Class,
             rdfs:label &#34;Water concentration&#34; ;
             s223:hasValue 70.0 ;
             s223:ofConstituent s223:Constituent-H2O ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ],
         [ a s223:QuantifiableProperty ;
             rdfs:label &#34;Glycol concentration&#34; ;
             s223:hasValue 30.0 ;
             s223:ofConstituent s223:Constituent-Glycol ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ] ;
     s223:hasFreezingPoint [ a s223:QuantifiableProperty ;
             rdfs:label &#34;Freezing point&#34; ;
-            qudt:hasQuantityKind qudtqk:Temperature ] ;
+            qudt:hasQuantityKind quantitykind:Temperature ] ;
     rdfs:comment &#34;`GlycolSolution-30Percent`&#34; ;
     rdfs:subClassOf s223:Water-GlycolSolution .
 
@@ -9662,8 +9662,8 @@ s223:Humidistat a s223:Class,
             <h3><a class="permalink" href="#s223:HumiditySensor">Humidity sensor</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#HumiditySensor">http://data.ashrae.org/standard223#HumiditySensor</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -9677,7 +9677,7 @@ s223:HumiditySensor a s223:Class,
     sh:property [ rdfs:comment &#34;A `HumiditySensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of either `RelativeHumidity` or `AbsoluteHumidity`.&#34; ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message &#34;s223: A `HumiditySensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of either `RelativeHumidity` or `AbsoluteHumidity`.&#34; ;
-            sh:node [ sh:property [ sh:in ( qudtqk:RelativeHumidity qudtqk:AbsoluteHumidity ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:RelativeHumidity quantitykind:AbsoluteHumidity ) ;
                             sh:path qudt:hasQuantityKind ] ] ;
             sh:path s223:observes ] .
 
@@ -9886,8 +9886,8 @@ s223:IceMaker a s223:Class,
             <h3><a class="permalink" href="#s223:IlluminanceSensor">Illuminance sensor</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#IlluminanceSensor">http://data.ashrae.org/standard223#IlluminanceSensor</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -9902,7 +9902,7 @@ luminous flux incident at a point on a surface.&#34;&#34;&#34; ;
     sh:property [ rdfs:comment &#34;An `IlluminanceSensor` shall observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Illuminance`.&#34; ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message &#34;s223: An `IlluminanceSensor` shall observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Illuminance`.&#34; ;
-            sh:node [ sh:property [ sh:in ( qudtqk:Illuminance ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:Illuminance ) ;
                             sh:path qudt:hasQuantityKind ] ] ;
             sh:path s223:observes ] .
 
@@ -10868,8 +10868,8 @@ s223:NOX-NO2 a s223:Class,
             <h3><a class="permalink" href="#s223:NumberOfElectricalPhases-SinglePhase">Single phase</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase">http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -10881,7 +10881,7 @@ s223:NumberOfElectricalPhases-SinglePhase a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;Single phase&#34; ;
     s223:hasValue 1.0 ;
-    qudt:hasQuantityKind qudtqk:NumberOfElectricalPhases ;
+    qudt:hasQuantityKind quantitykind:NumberOfElectricalPhases ;
     qudt:hasUnit unit:NUM ;
     rdfs:comment &#34;Single phase&#34; ;
     rdfs:subClassOf s223:Numerical-NumberOfElectricalPhases .
@@ -10894,8 +10894,8 @@ s223:NumberOfElectricalPhases-SinglePhase a s223:Class,
             <h3><a class="permalink" href="#s223:NumberOfElectricalPhases-ThreePhase">Three phase</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#NumberOfElectricalPhases-ThreePhase">http://data.ashrae.org/standard223#NumberOfElectricalPhases-ThreePhase</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -10907,7 +10907,7 @@ s223:NumberOfElectricalPhases-ThreePhase a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;Three phase&#34; ;
     s223:hasValue 3.0 ;
-    qudt:hasQuantityKind qudtqk:NumberOfElectricalPhases ;
+    qudt:hasQuantityKind quantitykind:NumberOfElectricalPhases ;
     qudt:hasUnit unit:NUM ;
     rdfs:comment &#34;Three phase&#34; ;
     rdfs:subClassOf s223:Numerical-NumberOfElectricalPhases .
@@ -10920,8 +10920,8 @@ s223:NumberOfElectricalPhases-ThreePhase a s223:Class,
             <h3><a class="permalink" href="#s223:Numerical-Frequency">Frequency</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Numerical-Frequency">http://data.ashrae.org/standard223#Numerical-Frequency</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -10932,7 +10932,7 @@ s223:Numerical-Frequency a s223:Class,
         s223:Numerical-Frequency,
         sh:NodeShape ;
     rdfs:label &#34;Frequency&#34; ;
-    qudt:hasQuantityKind qudtqk:Frequency ;
+    qudt:hasQuantityKind quantitykind:Frequency ;
     qudt:hasUnit unit:HZ ;
     rdfs:comment &#34;&#34;&#34;This class and its enumerated subclasses represent common frequencies for AC electricity service.
 
@@ -10944,7 +10944,7 @@ s223:Numerical-Frequency a s223:Class,
 | `Frequency-60Hz` |&#34;&#34;&#34; ;
     rdfs:subClassOf s223:EnumerationKind-Numerical ;
     sh:property [ rdfs:comment &#34;A `Numerical-Frequency` shall have a `QuantityKind` of `Frequency`.&#34; ;
-            sh:in ( qudtqk:Frequency ) ;
+            sh:in ( quantitykind:Frequency ) ;
             sh:message &#34;s223: A `Numerical-Frequency` shall have a `QuantityKind` of `Frequency`.&#34; ;
             sh:path qudt:hasQuantityKind ],
         [ rdfs:comment &#34;A `Numerical-Frequency` shall have a `Unit` of `HZ` (hertz).&#34; ;
@@ -10960,8 +10960,8 @@ s223:Numerical-Frequency a s223:Class,
             <h3><a class="permalink" href="#s223:Numerical-NumberOfElectricalPhases">Number of electrical phases</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases">http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -10972,7 +10972,7 @@ s223:Numerical-NumberOfElectricalPhases a s223:Class,
         s223:Numerical-NumberOfElectricalPhases,
         sh:NodeShape ;
     rdfs:label &#34;Number of electrical phases&#34; ;
-    qudt:hasQuantityKind qudtqk:NumberOfElectricalPhases ;
+    qudt:hasQuantityKind quantitykind:NumberOfElectricalPhases ;
     qudt:hasUnit unit:NUM ;
     rdfs:comment &#34;&#34;&#34;This class and its enumerated subclasses represent all possible service phases for AC electricity service, i.e., single-phase or three-phase. The `hasNumberOfElectricalPhases` relation points to one of the values of this enumeration.
 
@@ -10988,7 +10988,7 @@ s223:Numerical-NumberOfElectricalPhases a s223:Class,
             sh:message &#34;s223: A `Numerical-NumberOfElectricalPhases` shall have a `Unit` of `NUM` (number).&#34; ;
             sh:path qudt:hasUnit ],
         [ rdfs:comment &#34;A `Numerical-NumberOfElectricalPhases` shall have a `QuantityKind` of `NumberOfElectricalPhases`.&#34; ;
-            sh:in ( qudtqk:NumberOfElectricalPhases ) ;
+            sh:in ( quantitykind:NumberOfElectricalPhases ) ;
             sh:message &#34;s223: A `Numerical-NumberOfElectricalPhases` shall have a `QuantityKind` of `NumberOfElectricalPhases`.&#34; ;
             sh:path qudt:hasQuantityKind ] .
 
@@ -11000,8 +11000,8 @@ s223:Numerical-NumberOfElectricalPhases a s223:Class,
             <h3><a class="permalink" href="#s223:Numerical-Voltage">Voltage</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Numerical-Voltage">http://data.ashrae.org/standard223#Numerical-Voltage</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -11012,7 +11012,7 @@ s223:Numerical-Voltage a s223:Class,
         s223:Numerical-Voltage,
         sh:NodeShape ;
     rdfs:label &#34;Voltage&#34; ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;&#34;&#34;This class and its enumerated subclasses represent common voltages for electricity service.
 
@@ -11060,7 +11060,7 @@ s223:Numerical-Voltage a s223:Class,
 | `Voltage-PoE` (see {s223:Voltage-PoE}) |&#34;&#34;&#34; ;
     rdfs:subClassOf s223:EnumerationKind-Numerical ;
     sh:property [ rdfs:comment &#34;A `Numerical-Voltage` shall have a `QuantityKind` of `Voltage`.&#34; ;
-            sh:in ( qudtqk:Voltage ) ;
+            sh:in ( quantitykind:Voltage ) ;
             sh:message &#34;s223: A `Numerical-Voltage` shall have a `QuantityKind` of `Voltage`.&#34; ;
             sh:path qudt:hasQuantityKind ],
         [ rdfs:comment &#34;A `Numerical-Voltage` shall have a `Unit` of `V` (volt).&#34; ;
@@ -11201,8 +11201,8 @@ s223:OccupancySensor a s223:Class,
             <h3><a class="permalink" href="#s223:OccupantCountSensor">Occupant count sensor</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#OccupantCountSensor">http://data.ashrae.org/standard223#OccupantCountSensor</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -11218,7 +11218,7 @@ s223:OccupantCountSensor a s223:Class,
     sh:property [ rdfs:comment &#34;An `OccupantCountSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Population` and a `Unit` of `NUM`.&#34; ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message &#34;s223: An `OccupantCountSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Population` and a `Unit` of `NUM`.&#34; ;
-            sh:node [ sh:property [ sh:in ( qudtqk:Population ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:Population ) ;
                             sh:path qudt:hasQuantityKind ],
                         [ sh:in ( unit:NUM ) ;
                             sh:path qudt:hasUnit ] ] ;
@@ -11905,8 +11905,8 @@ s223:Presence-True a s223:Class,
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#PressureSensor">http://data.ashrae.org/standard223#PressureSensor</a></p>
             <pre><code class="language-turtle">
 @prefix doc: &lt;http://sample.org/doc#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -11921,7 +11921,7 @@ s223:PressureSensor a s223:Class,
     sh:property [ rdfs:comment &#34;A `PressureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Pressure` or `GaugePressure`.&#34; ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message &#34;s223: A `PressureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Pressure` or `GaugePressure`.&#34; ;
-            sh:node [ sh:property [ sh:in ( qudtqk:Pressure qudtqk:GaugePressure ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:Pressure quantitykind:GaugePressure ) ;
                             sh:path qudt:hasQuantityKind ] ] ;
             sh:path s223:observes ] .
 
@@ -15075,8 +15075,8 @@ s223:Television a s223:Class,
             <h3><a class="permalink" href="#s223:TemperatureSensor">Temperature sensor</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#TemperatureSensor">http://data.ashrae.org/standard223#TemperatureSensor</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -15090,7 +15090,7 @@ s223:TemperatureSensor a s223:Class,
     sh:property [ rdfs:comment &#34;A `TemperatureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Temperature`.&#34; ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message &#34;s223: A `TemperatureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Temperature`.&#34; ;
-            sh:node [ sh:property [ sh:in ( qudtqk:Temperature ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:Temperature ) ;
                             sh:path qudt:hasQuantityKind ] ] ;
             sh:path s223:observes ] .
 
@@ -15550,8 +15550,8 @@ s223:VariableFrequencyDrive a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-0V">0 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-0V">http://data.ashrae.org/standard223#Voltage-0V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -15563,7 +15563,7 @@ s223:Voltage-0V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;0 V&#34; ;
     s223:hasValue 0.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-0V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -15576,8 +15576,8 @@ s223:Voltage-0V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-10000V">10000 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-10000V">http://data.ashrae.org/standard223#Voltage-10000V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -15589,7 +15589,7 @@ s223:Voltage-10000V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;10000 V&#34; ;
     s223:hasValue 10000.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-10000V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -15602,8 +15602,8 @@ s223:Voltage-10000V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-110V">110 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-110V">http://data.ashrae.org/standard223#Voltage-110V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -15615,7 +15615,7 @@ s223:Voltage-110V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;110 V&#34; ;
     s223:hasValue 110.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-110V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -15628,8 +15628,8 @@ s223:Voltage-110V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-120V">120 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-120V">http://data.ashrae.org/standard223#Voltage-120V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -15641,7 +15641,7 @@ s223:Voltage-120V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;120 V&#34; ;
     s223:hasValue 120.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-120V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -15654,8 +15654,8 @@ s223:Voltage-120V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-127V">127 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-127V">http://data.ashrae.org/standard223#Voltage-127V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -15667,7 +15667,7 @@ s223:Voltage-127V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;127 V&#34; ;
     s223:hasValue 127.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-127V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -15680,8 +15680,8 @@ s223:Voltage-127V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-12V">12 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-12V">http://data.ashrae.org/standard223#Voltage-12V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -15693,7 +15693,7 @@ s223:Voltage-12V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;12 V&#34; ;
     s223:hasValue 12.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-12V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -15706,8 +15706,8 @@ s223:Voltage-12V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-139V">139 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-139V">http://data.ashrae.org/standard223#Voltage-139V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -15719,7 +15719,7 @@ s223:Voltage-139V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;139 V&#34; ;
     s223:hasValue 139.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-139V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -15732,8 +15732,8 @@ s223:Voltage-139V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-1730V">1730 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-1730V">http://data.ashrae.org/standard223#Voltage-1730V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -15745,7 +15745,7 @@ s223:Voltage-1730V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;1730 V&#34; ;
     s223:hasValue 1730.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-1730V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -15758,8 +15758,8 @@ s223:Voltage-1730V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-1900V">1900 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-1900V">http://data.ashrae.org/standard223#Voltage-1900V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -15771,7 +15771,7 @@ s223:Voltage-1900V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;1900 V&#34; ;
     s223:hasValue 1900.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-1900V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -15784,8 +15784,8 @@ s223:Voltage-1900V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-190V">190 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-190V">http://data.ashrae.org/standard223#Voltage-190V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -15797,7 +15797,7 @@ s223:Voltage-190V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;190 V&#34; ;
     s223:hasValue 190.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-190V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -15810,8 +15810,8 @@ s223:Voltage-190V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-2.5V">2.5 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-2.5V">http://data.ashrae.org/standard223#Voltage-2.5V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -15823,7 +15823,7 @@ s223:Voltage-2.5V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;2.5 V&#34; ;
     s223:hasValue 2.5 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-2.5V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -15836,8 +15836,8 @@ s223:Voltage-2.5V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-208V">208 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-208V">http://data.ashrae.org/standard223#Voltage-208V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -15849,7 +15849,7 @@ s223:Voltage-208V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;208 V&#34; ;
     s223:hasValue 208.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-208V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -15862,8 +15862,8 @@ s223:Voltage-208V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-219V">219 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-219V">http://data.ashrae.org/standard223#Voltage-219V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -15875,7 +15875,7 @@ s223:Voltage-219V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;219 V&#34; ;
     s223:hasValue 219.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-219V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -15888,8 +15888,8 @@ s223:Voltage-219V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-220V">220 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-220V">http://data.ashrae.org/standard223#Voltage-220V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -15901,7 +15901,7 @@ s223:Voltage-220V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;220 V&#34; ;
     s223:hasValue 220.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-220V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -15914,8 +15914,8 @@ s223:Voltage-220V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-230V">230 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-230V">http://data.ashrae.org/standard223#Voltage-230V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -15927,7 +15927,7 @@ s223:Voltage-230V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;230 V&#34; ;
     s223:hasValue 230.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-230V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -15940,8 +15940,8 @@ s223:Voltage-230V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-2400V">2400 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-2400V">http://data.ashrae.org/standard223#Voltage-2400V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -15953,7 +15953,7 @@ s223:Voltage-2400V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;2400 V&#34; ;
     s223:hasValue 2400.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-2400V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -15966,8 +15966,8 @@ s223:Voltage-2400V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-240V">240 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-240V">http://data.ashrae.org/standard223#Voltage-240V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -15979,7 +15979,7 @@ s223:Voltage-240V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;240 V&#34; ;
     s223:hasValue 240.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-240V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -15992,8 +15992,8 @@ s223:Voltage-240V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-24V">24 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-24V">http://data.ashrae.org/standard223#Voltage-24V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16005,7 +16005,7 @@ s223:Voltage-24V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;24 V&#34; ;
     s223:hasValue 24.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-24V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16018,8 +16018,8 @@ s223:Voltage-24V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-277V">277 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-277V">http://data.ashrae.org/standard223#Voltage-277V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16031,7 +16031,7 @@ s223:Voltage-277V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;277 V&#34; ;
     s223:hasValue 277.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-277V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16044,8 +16044,8 @@ s223:Voltage-277V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-3000V">3000 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-3000V">http://data.ashrae.org/standard223#Voltage-3000V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16057,7 +16057,7 @@ s223:Voltage-3000V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;3000 V&#34; ;
     s223:hasValue 3000.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-3000V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16070,8 +16070,8 @@ s223:Voltage-3000V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-3300V">3300 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-3300V">http://data.ashrae.org/standard223#Voltage-3300V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16083,7 +16083,7 @@ s223:Voltage-3300V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;3300 V&#34; ;
     s223:hasValue 3300.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-3300V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16096,8 +16096,8 @@ s223:Voltage-3300V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-3460V">3460 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-3460V">http://data.ashrae.org/standard223#Voltage-3460V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16109,7 +16109,7 @@ s223:Voltage-3460V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;3460 V&#34; ;
     s223:hasValue 3460.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-3460V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16122,8 +16122,8 @@ s223:Voltage-3460V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-347V">347 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-347V">http://data.ashrae.org/standard223#Voltage-347V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16135,7 +16135,7 @@ s223:Voltage-347V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;347 V&#34; ;
     s223:hasValue 347.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-347V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16148,8 +16148,8 @@ s223:Voltage-347V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-380V">380 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-380V">http://data.ashrae.org/standard223#Voltage-380V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16161,7 +16161,7 @@ s223:Voltage-380V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;380 V&#34; ;
     s223:hasValue 380.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-380V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16174,8 +16174,8 @@ s223:Voltage-380V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-3810V">3810 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-3810V">http://data.ashrae.org/standard223#Voltage-3810V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16187,7 +16187,7 @@ s223:Voltage-3810V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;3810 V&#34; ;
     s223:hasValue 3810.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-3810V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16200,8 +16200,8 @@ s223:Voltage-3810V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-3V">3 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-3V">http://data.ashrae.org/standard223#Voltage-3V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16213,7 +16213,7 @@ s223:Voltage-3V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;3 V&#34; ;
     s223:hasValue 3.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-3V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16226,8 +16226,8 @@ s223:Voltage-3V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-400V">400 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-400V">http://data.ashrae.org/standard223#Voltage-400V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16239,7 +16239,7 @@ s223:Voltage-400V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;400 V&#34; ;
     s223:hasValue 400.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-400V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16252,8 +16252,8 @@ s223:Voltage-400V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-415V">415 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-415V">http://data.ashrae.org/standard223#Voltage-415V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16265,7 +16265,7 @@ s223:Voltage-415V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;415 V&#34; ;
     s223:hasValue 415.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-415V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16278,8 +16278,8 @@ s223:Voltage-415V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-4160V">4160 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-4160V">http://data.ashrae.org/standard223#Voltage-4160V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16291,7 +16291,7 @@ s223:Voltage-4160V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;4160 V&#34; ;
     s223:hasValue 4160.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-4160V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16304,8 +16304,8 @@ s223:Voltage-4160V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-480V">480 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-480V">http://data.ashrae.org/standard223#Voltage-480V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16317,7 +16317,7 @@ s223:Voltage-480V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;480 V&#34; ;
     s223:hasValue 480.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-480V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16330,8 +16330,8 @@ s223:Voltage-480V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-48V">48 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-48V">http://data.ashrae.org/standard223#Voltage-48V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16343,7 +16343,7 @@ s223:Voltage-48V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;48 V&#34; ;
     s223:hasValue 48.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-48V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16356,8 +16356,8 @@ s223:Voltage-48V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-5770V">5770 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-5770V">http://data.ashrae.org/standard223#Voltage-5770V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16369,7 +16369,7 @@ s223:Voltage-5770V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;5770 V&#34; ;
     s223:hasValue 5770.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-5770V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16382,8 +16382,8 @@ s223:Voltage-5770V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-5V">5 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-5V">http://data.ashrae.org/standard223#Voltage-5V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16395,7 +16395,7 @@ s223:Voltage-5V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;5 V&#34; ;
     s223:hasValue 5.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-5V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16408,8 +16408,8 @@ s223:Voltage-5V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-6000V">6000 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-6000V">http://data.ashrae.org/standard223#Voltage-6000V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16421,7 +16421,7 @@ s223:Voltage-6000V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;6000 V&#34; ;
     s223:hasValue 6000.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-6000V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16434,8 +16434,8 @@ s223:Voltage-6000V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-600V">600 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-600V">http://data.ashrae.org/standard223#Voltage-600V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16447,7 +16447,7 @@ s223:Voltage-600V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;600 V&#34; ;
     s223:hasValue 600.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-600V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16460,8 +16460,8 @@ s223:Voltage-600V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-6600V">6600 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-6600V">http://data.ashrae.org/standard223#Voltage-6600V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16473,7 +16473,7 @@ s223:Voltage-6600V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;6600 V&#34; ;
     s223:hasValue 6600.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-6600V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16486,8 +16486,8 @@ s223:Voltage-6600V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-6V">6 V</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-6V">http://data.ashrae.org/standard223#Voltage-6V</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16499,7 +16499,7 @@ s223:Voltage-6V a s223:Class,
         sh:NodeShape ;
     rdfs:label &#34;6 V&#34; ;
     s223:hasValue 6.0 ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;Voltage-6V&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16512,8 +16512,8 @@ s223:Voltage-6V a s223:Class,
             <h3><a class="permalink" href="#s223:Voltage-PoE">PoE voltage</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Voltage-PoE">http://data.ashrae.org/standard223#Voltage-PoE</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16523,7 +16523,7 @@ s223:Voltage-PoE a s223:Class,
         s223:Voltage-PoE,
         sh:NodeShape ;
     rdfs:label &#34;PoE voltage&#34; ;
-    qudt:hasQuantityKind qudtqk:Voltage ;
+    qudt:hasQuantityKind quantitykind:Voltage ;
     qudt:hasUnit unit:V ;
     rdfs:comment &#34;This class represents the standardized 44-57VDC range that is produced by PoE Power Sourcing Equipment.&#34; ;
     rdfs:subClassOf s223:Numerical-Voltage .
@@ -16536,8 +16536,8 @@ s223:Voltage-PoE a s223:Class,
             <h3><a class="permalink" href="#s223:VoltageSensor">Voltage sensor</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#VoltageSensor">http://data.ashrae.org/standard223#VoltageSensor</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -16551,7 +16551,7 @@ s223:VoltageSensor a s223:Class,
     sh:property [ rdfs:comment &#34;A `VoltageSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of Voltage.&#34; ;
             sh:class s223:QuantifiableObservableProperty ;
             sh:message &#34;s223: A `VoltageSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of Voltage.&#34; ;
-            sh:node [ sh:property [ sh:in ( qudtqk:Voltage ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:Voltage ) ;
                             sh:path qudt:hasQuantityKind ] ] ;
             sh:path s223:observes ] .
 
@@ -16563,8 +16563,8 @@ s223:VoltageSensor a s223:Class,
             <h3><a class="permalink" href="#s223:Water-ChilledWater">Chilled water</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Water-ChilledWater">http://data.ashrae.org/standard223#Water-ChilledWater</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16577,7 +16577,7 @@ s223:Water-ChilledWater a s223:Class,
     s223:composedOf [ a s223:QuantifiableProperty ;
             rdfs:label &#34;Water concentration&#34; ;
             s223:ofConstituent s223:Constituent-H2O ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ] ;
     rdfs:comment &#34;Water-Chilled water&#34; ;
     rdfs:subClassOf s223:Fluid-Water .
@@ -16591,8 +16591,8 @@ s223:Water-ChilledWater a s223:Class,
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Water-GlycolSolution">http://data.ashrae.org/standard223#Water-GlycolSolution</a></p>
             <pre><code class="language-turtle">
 @prefix doc: &lt;http://sample.org/doc#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -16607,16 +16607,16 @@ s223:Water-GlycolSolution a s223:Class,
     s223:composedOf [ a s223:QuantifiableProperty ;
             rdfs:label &#34;Unspecified&#34; ;
             s223:ofConstituent s223:Constituent-H2O ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ],
         [ a s223:QuantifiableProperty ;
             rdfs:label &#34;Unspecified&#34; ;
             s223:ofConstituent s223:Constituent-Glycol ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ] ;
     s223:hasFreezingPoint [ a s223:QuantifiableProperty ;
             rdfs:label &#34;Freezing point&#34; ;
-            qudt:hasQuantityKind qudtqk:Temperature ] ;
+            qudt:hasQuantityKind quantitykind:Temperature ] ;
     doc:subclauses ( s223:hasFreezingPoint ) ;
     rdfs:comment &#34;&#34;&#34;This class and its enumerated subclasses represent common concentrations of water-glycol solution.
 
@@ -16633,7 +16633,7 @@ s223:Water-GlycolSolution a s223:Class,
             sh:qualifiedMinCount 1 ;
             sh:qualifiedValueShape [ sh:class s223:QuantifiableProperty ;
                     sh:node [ sh:property [ rdfs:comment &#34;The `QuantityKind` of the constituent shall be `VolumeFraction`.&#34; ;
-                                    sh:in ( qudtqk:VolumeFraction ) ;
+                                    sh:in ( quantitykind:VolumeFraction ) ;
                                     sh:path qudt:hasQuantityKind ],
                                 [ rdfs:comment &#34;One of the constituents of a `Water-GlycolSolution` shall be a `Constituent-H2O`.&#34; ;
                                     sh:class s223:Constituent-H2O ;
@@ -16647,7 +16647,7 @@ s223:Water-GlycolSolution a s223:Class,
         [ rdfs:comment &#34;A `Water-GlycolSolution` shall be associated with zero or more `QuantifiableProperty`s with a `QuantityKind` of `Temperature` using the relation `hasFreezingPoint`.&#34; ;
             sh:class s223:QuantifiableProperty ;
             sh:message &#34;s223: A `Water-GlycolSolution` shall be associated with zero or more `QuantifiableProperty`s with a `QuantityKind` of `Temperature` using the relation `hasFreezingPoint`.&#34; ;
-            sh:node [ sh:property [ sh:in ( qudtqk:Temperature ) ;
+            sh:node [ sh:property [ sh:in ( quantitykind:Temperature ) ;
                             sh:path qudt:hasQuantityKind ] ] ;
             sh:path s223:hasFreezingPoint ],
         [ rdfs:comment &#34;One of the constituents of a `Water-GlycolSolution` shall be a `Constituent-Glycol`.&#34; ;
@@ -16656,7 +16656,7 @@ s223:Water-GlycolSolution a s223:Class,
             sh:qualifiedMinCount 1 ;
             sh:qualifiedValueShape [ sh:class s223:QuantifiableProperty ;
                     sh:node [ sh:property [ rdfs:comment &#34;The `QuantityKind` of the constituent shall be `VolumeFraction`.&#34; ;
-                                    sh:in ( qudtqk:VolumeFraction ) ;
+                                    sh:in ( quantitykind:VolumeFraction ) ;
                                     sh:path qudt:hasQuantityKind ],
                                 [ rdfs:comment &#34;One of the constituents of a `Water-GlycolSolution` shall be a `Constituent-Glycol`.&#34; ;
                                     sh:class s223:Constituent-Glycol ;
@@ -16671,8 +16671,8 @@ s223:Water-GlycolSolution a s223:Class,
             <h3><a class="permalink" href="#s223:Water-HotWater">Hot water</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Water-HotWater">http://data.ashrae.org/standard223#Water-HotWater</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16685,7 +16685,7 @@ s223:Water-HotWater a s223:Class,
     s223:composedOf [ a s223:QuantifiableProperty ;
             rdfs:label &#34;Water concentration&#34; ;
             s223:ofConstituent s223:Constituent-H2O ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ] ;
     rdfs:comment &#34;Water-Hot water&#34; ;
     rdfs:subClassOf s223:Fluid-Water .
@@ -16698,8 +16698,8 @@ s223:Water-HotWater a s223:Class,
             <h3><a class="permalink" href="#s223:Water-Steam">Steam</a></h3>
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223#Water-Steam">http://data.ashrae.org/standard223#Water-Steam</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -16712,7 +16712,7 @@ s223:Water-Steam a s223:Class,
     s223:composedOf [ a s223:QuantifiableProperty ;
             rdfs:label &#34;Water concentration&#34; ;
             s223:ofConstituent s223:Constituent-H2O ;
-            qudt:hasQuantityKind qudtqk:VolumeFraction ;
+            qudt:hasQuantityKind quantitykind:VolumeFraction ;
             qudt:hasUnit unit:PERCENT ] ;
     rdfs:comment &#34;Water-Steam&#34; ;
     rdfs:subClassOf s223:Fluid-Water .
@@ -18669,8 +18669,8 @@ g36:ChilledWaterValveAnnotation a sh:NodeShape ;
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterValveOrShape1">http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterValveOrShape1</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -18686,7 +18686,7 @@ g36:ChilledWaterValveOrShape1 a sh:NodeShape ;
                         sh:path s223:hasProperty ;
                         sh:qualifiedMinCount 1 ;
                         sh:qualifiedValueShape [ sh:class s223:QuantifiableActuatableProperty ;
-                                sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+                                sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                                                 sh:maxCount 1 ;
                                                 sh:minCount 1 ;
                                                 sh:path qudt:hasQuantityKind ],
@@ -18761,8 +18761,8 @@ g36:DamperAnnotation a sh:NodeShape ;
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#DamperOrShape1">http://data.ashrae.org/standard223/1.0/extensions/g36#DamperOrShape1</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -18778,7 +18778,7 @@ g36:DamperOrShape1 a sh:NodeShape ;
                         sh:path s223:hasProperty ;
                         sh:qualifiedMinCount 1 ;
                         sh:qualifiedValueShape [ sh:class s223:QuantifiableActuatableProperty ;
-                                sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+                                sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                                                 sh:maxCount 1 ;
                                                 sh:minCount 1 ;
                                                 sh:path qudt:hasQuantityKind ],
@@ -18809,8 +18809,8 @@ g36:DamperOrShape1 a sh:NodeShape ;
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#DualDuctTerminalWithDischargeSensor">http://data.ashrae.org/standard223/1.0/extensions/g36#DualDuctTerminalWithDischargeSensor</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -18860,7 +18860,7 @@ g36:DualDuctTerminalWithDischargeSensor a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ],
@@ -18904,8 +18904,8 @@ g36:DualDuctTerminalWithDischargeSensorAnnotation a sh:NodeShape ;
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#DualDuctTerminalWithInletSensors">http://data.ashrae.org/standard223/1.0/extensions/g36#DualDuctTerminalWithInletSensors</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -18939,7 +18939,7 @@ g36:DualDuctTerminalWithInletSensors a s223:Class,
                                                             sh:path s223:hasAspect ;
                                                             sh:qualifiedMinCount 1 ;
                                                             sh:qualifiedValueShape [ sh:hasValue s223:Role-Heating ] ],
-                                                        [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                                        [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ],
@@ -18975,7 +18975,7 @@ g36:DualDuctTerminalWithInletSensors a s223:Class,
                                                             sh:path s223:hasAspect ;
                                                             sh:qualifiedMinCount 1 ;
                                                             sh:qualifiedValueShape [ sh:hasValue s223:Role-Cooling ] ],
-                                                        [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                                        [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ],
@@ -19019,8 +19019,8 @@ g36:DualDuctTerminalWithInletSensorsAnnotation a sh:NodeShape ;
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#DualFanDualDuctAirHandlingUnit">http://data.ashrae.org/standard223/1.0/extensions/g36#DualFanDualDuctAirHandlingUnit</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -19049,7 +19049,7 @@ g36:DualFanDualDuctAirHandlingUnit a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ],
@@ -19067,7 +19067,7 @@ g36:DualFanDualDuctAirHandlingUnit a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ],
@@ -19116,8 +19116,8 @@ g36:DualFanDualDuctAirHandlingUnitAnnotation a sh:NodeShape ;
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#ElectricHeatingCoil">http://data.ashrae.org/standard223/1.0/extensions/g36#ElectricHeatingCoil</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -19135,7 +19135,7 @@ g36:ElectricHeatingCoil a s223:Class,
             sh:path s223:hasProperty ;
             sh:qualifiedMinCount 1 ;
             sh:qualifiedValueShape [ sh:class s223:QuantifiableActuatableProperty ;
-                    sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+                    sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                                     sh:maxCount 1 ;
                                     sh:minCount 1 ;
                                     sh:path qudt:hasQuantityKind ] ] ] ] .
@@ -19226,8 +19226,8 @@ g36:FanAnnotation a sh:NodeShape ;
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#FanPoweredTerminal">http://data.ashrae.org/standard223/1.0/extensions/g36#FanPoweredTerminal</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -19271,7 +19271,7 @@ g36:FanPoweredTerminal a s223:Class,
                     sh:node [ sh:property [ sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ],
@@ -19291,7 +19291,7 @@ g36:FanPoweredTerminal a s223:Class,
                     sh:node [ sh:property [ sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ] .
@@ -19328,8 +19328,8 @@ g36:FanPoweredTerminalAnnotation a sh:NodeShape ;
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#FanWithVFD">http://data.ashrae.org/standard223/1.0/extensions/g36#FanWithVFD</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -19347,7 +19347,7 @@ g36:FanWithVFD a s223:Class,
             sh:path s223:hasProperty ;
             sh:qualifiedMinCount 1 ;
             sh:qualifiedValueShape [ sh:class s223:QuantifiableActuatableProperty ;
-                    sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+                    sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                                     sh:maxCount 1 ;
                                     sh:minCount 1 ;
                                     sh:path qudt:hasQuantityKind ] ] ] ] .
@@ -19478,8 +19478,8 @@ g36:HotWaterValveAnnotation a sh:NodeShape ;
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValveOrShape1">http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValveOrShape1</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -19495,7 +19495,7 @@ g36:HotWaterValveOrShape1 a sh:NodeShape ;
                         sh:path s223:hasProperty ;
                         sh:qualifiedMinCount 1 ;
                         sh:qualifiedValueShape [ sh:class s223:QuantifiableActuatableProperty ;
-                                sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+                                sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                                                 sh:maxCount 1 ;
                                                 sh:minCount 1 ;
                                                 sh:path qudt:hasQuantityKind ],
@@ -19526,8 +19526,8 @@ g36:HotWaterValveOrShape1 a sh:NodeShape ;
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#MultipleZoneVAVAirHandlingUnit">http://data.ashrae.org/standard223/1.0/extensions/g36#MultipleZoneVAVAirHandlingUnit</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -19550,7 +19550,7 @@ g36:MultipleZoneVAVAirHandlingUnit a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ],
@@ -19568,7 +19568,7 @@ g36:MultipleZoneVAVAirHandlingUnit a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ],
@@ -19588,7 +19588,7 @@ g36:MultipleZoneVAVAirHandlingUnit a s223:Class,
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path s223:hasAspect ],
-                                                        [ sh:hasValue qudtqk:Temperature ;
+                                                        [ sh:hasValue quantitykind:Temperature ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ],
@@ -19624,7 +19624,7 @@ g36:MultipleZoneVAVAirHandlingUnit a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ],
@@ -19648,8 +19648,8 @@ g36:MultipleZoneVAVAirHandlingUnit a s223:Class,
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#MultipleZoneVAVAirHandlingUnit-CommonDamper">http://data.ashrae.org/standard223/1.0/extensions/g36#MultipleZoneVAVAirHandlingUnit-CommonDamper</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -19691,7 +19691,7 @@ g36:MultipleZoneVAVAirHandlingUnit-CommonDamper a s223:Class,
                                                             sh:path s223:hasAspect ;
                                                             sh:qualifiedMinCount 1 ;
                                                             sh:qualifiedValueShape [ sh:hasValue s223:Role-OutdoorAirIntake ] ],
-                                                        [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                                        [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ] .
@@ -19743,8 +19743,8 @@ g36:MultipleZoneVAVAirHandlingUnit-CommonDamperAnnotation a sh:NodeShape ;
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#MultipleZoneVAVAirHandlingUnit-OADandAFMS">http://data.ashrae.org/standard223/1.0/extensions/g36#MultipleZoneVAVAirHandlingUnit-OADandAFMS</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -19780,7 +19780,7 @@ g36:MultipleZoneVAVAirHandlingUnit-OADandAFMS a s223:Class,
                                                             sh:path s223:hasAspect ;
                                                             sh:qualifiedMinCount 1 ;
                                                             sh:qualifiedValueShape [ sh:hasValue s223:Aspect-Minimum ] ],
-                                                        [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                                        [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ] .
@@ -19817,8 +19817,8 @@ g36:MultipleZoneVAVAirHandlingUnit-OADandAFMSAnnotation a sh:NodeShape ;
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#MultipleZoneVAVAirHandlingUnit-OADandDP">http://data.ashrae.org/standard223/1.0/extensions/g36#MultipleZoneVAVAirHandlingUnit-OADandDP</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -19850,7 +19850,7 @@ g36:MultipleZoneVAVAirHandlingUnit-OADandDP a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ] .
@@ -19887,8 +19887,8 @@ g36:MultipleZoneVAVAirHandlingUnit-OADandDPAnnotation a sh:NodeShape ;
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#MultipleZoneVAVAirHandlingUnit-WithReliefDamper">http://data.ashrae.org/standard223/1.0/extensions/g36#MultipleZoneVAVAirHandlingUnit-WithReliefDamper</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -19908,7 +19908,7 @@ g36:MultipleZoneVAVAirHandlingUnit-WithReliefDamper a s223:Class,
             sh:qualifiedValueShape [ sh:node [ sh:property [ sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ],
@@ -20048,8 +20048,8 @@ g36:MultipleZoneVAVAirHandlingUnit-WithReliefFanAnnotation a sh:NodeShape ;
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#MultipleZoneVAVAirHandlingUnit-WithReturnFan">http://data.ashrae.org/standard223/1.0/extensions/g36#MultipleZoneVAVAirHandlingUnit-WithReturnFan</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -20086,7 +20086,7 @@ g36:MultipleZoneVAVAirHandlingUnit-WithReturnFan a s223:Class,
                                                             sh:path s223:hasProperty ;
                                                             sh:qualifiedMinCount 1 ;
                                                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                                                    sh:node [ sh:property [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                                                    sh:node [ sh:property [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                                                     sh:maxCount 1 ;
                                                                                     sh:minCount 1 ;
                                                                                     sh:path qudt:hasQuantityKind ],
@@ -20110,7 +20110,7 @@ g36:MultipleZoneVAVAirHandlingUnit-WithReturnFan a s223:Class,
                                                             sh:path s223:hasProperty ;
                                                             sh:qualifiedMinCount 1 ;
                                                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                                                    sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                                                                    sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                                                                     sh:maxCount 1 ;
                                                                                     sh:minCount 1 ;
                                                                                     sh:path qudt:hasQuantityKind ],
@@ -20126,7 +20126,7 @@ g36:MultipleZoneVAVAirHandlingUnit-WithReturnFan a s223:Class,
             sh:path ( s223:connectedTo s223:connectedTo [ sh:inversePath s223:contains ] s223:hasProperty ) ;
             sh:qualifiedMinCount 1 ;
             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                    sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                    sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                     sh:maxCount 1 ;
                                     sh:minCount 1 ;
                                     sh:path qudt:hasQuantityKind ] ] ] ],
@@ -20144,7 +20144,7 @@ g36:MultipleZoneVAVAirHandlingUnit-WithReturnFan a s223:Class,
                                                             sh:path s223:hasProperty ;
                                                             sh:qualifiedMinCount 1 ;
                                                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                                                    sh:node [ sh:property [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                                                    sh:node [ sh:property [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                                                     sh:maxCount 1 ;
                                                                                     sh:minCount 1 ;
                                                                                     sh:path qudt:hasQuantityKind ],
@@ -20230,8 +20230,8 @@ g36:MultipleZoneVAVAirHandlingUnitAnnotation a sh:NodeShape ;
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#SingleZoneVAVAirHandlingUnit">http://data.ashrae.org/standard223/1.0/extensions/g36#SingleZoneVAVAirHandlingUnit</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -20276,7 +20276,7 @@ g36:SingleZoneVAVAirHandlingUnit a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ],
@@ -20312,8 +20312,8 @@ g36:SingleZoneVAVAirHandlingUnit a s223:Class,
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#SingleZoneVAVAirHandlingUnit-WithReliefDamper">http://data.ashrae.org/standard223/1.0/extensions/g36#SingleZoneVAVAirHandlingUnit-WithReliefDamper</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -20334,7 +20334,7 @@ g36:SingleZoneVAVAirHandlingUnit-WithReliefDamper a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableActuatableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ],
@@ -20356,8 +20356,8 @@ g36:SingleZoneVAVAirHandlingUnit-WithReliefDamper a s223:Class,
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#SingleZoneVAVAirHandlingUnit-WithReliefFan">http://data.ashrae.org/standard223/1.0/extensions/g36#SingleZoneVAVAirHandlingUnit-WithReliefFan</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -20377,7 +20377,7 @@ g36:SingleZoneVAVAirHandlingUnit-WithReliefFan a s223:Class,
             sh:qualifiedValueShape [ sh:node [ sh:property [ sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ],
@@ -20593,8 +20593,8 @@ g36:TwoPositionDamperAnnotation a sh:NodeShape ;
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#VAVTerminalCoolingOnly">http://data.ashrae.org/standard223/1.0/extensions/g36#VAVTerminalCoolingOnly</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -20615,7 +20615,7 @@ g36:VAVTerminalCoolingOnly a s223:Class,
                     sh:node [ sh:property [ sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ],
@@ -20667,8 +20667,8 @@ g36:VAVTerminalCoolingOnlyAnnotation a sh:NodeShape ;
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#VAVTerminalWithReheat">http://data.ashrae.org/standard223/1.0/extensions/g36#VAVTerminalWithReheat</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -20691,7 +20691,7 @@ g36:VAVTerminalWithReheat a s223:Class,
                                     sh:path s223:hasProperty ;
                                     sh:qualifiedMinCount 1 ;
                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                            sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                                            sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                                             sh:maxCount 1 ;
                                                             sh:minCount 1 ;
                                                             sh:path qudt:hasQuantityKind ] ] ] ] ] ] ],
@@ -20743,8 +20743,8 @@ g36:VAVTerminalWithReheatAnnotation a sh:NodeShape ;
             <p class="uri">URI: <a href="http://data.ashrae.org/standard223/1.0/extensions/g36#Zone">http://data.ashrae.org/standard223/1.0/extensions/g36#Zone</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -20763,7 +20763,7 @@ g36:Zone a s223:Class,
             sh:path s223:hasProperty ;
             sh:qualifiedMinCount 1 ;
             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                    sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+                    sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                                     sh:maxCount 1 ;
                                     sh:minCount 1 ;
                                     sh:path qudt:hasQuantityKind ],
@@ -20789,7 +20789,7 @@ g36:Zone a s223:Class,
             sh:path s223:hasProperty ;
             sh:qualifiedMinCount 1 ;
             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                    sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                    sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                     sh:maxCount 1 ;
                                     sh:minCount 1 ;
                                     sh:path qudt:hasQuantityKind ],
@@ -21159,7 +21159,7 @@ ns4:owl-subset a owl:Ontology ;
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
 
 ns5:all a owl:Ontology ;
-    owl:versionInfo &#34;git:master@7c85fe932828be3eb32e3b622eee884fd29a6dc3 date:2026-09-11 20:25:51 UTC&#34; .
+    owl:versionInfo &#34;git:gtf-canonical-constraint-urls@9ea9f0b8d2eae8ed28402011330c7bf26888cec0 date:2026-09-21 15:27:34 UTC&#34; .
 
 
             </code></pre>
@@ -22845,8 +22845,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n1033">c14n1033</a></h3>
             <p class="uri">URI: <a href="c14n1033">c14n1033</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -22858,7 +22858,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
     sh:path s223:hasProperty ;
     sh:qualifiedMinCount 1 ;
     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-            sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+            sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                             sh:maxCount 1 ;
                             sh:minCount 1 ;
                             sh:path qudt:hasQuantityKind ],
@@ -22901,8 +22901,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n240">c14n240</a></h3>
             <p class="uri">URI: <a href="c14n240">c14n240</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -22914,7 +22914,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
     sh:path s223:hasProperty ;
     sh:qualifiedMinCount 1 ;
     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-            sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+            sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                             sh:maxCount 1 ;
                             sh:minCount 1 ;
                             sh:path qudt:hasQuantityKind ],
@@ -23001,8 +23001,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n215">c14n215</a></h3>
             <p class="uri">URI: <a href="c14n215">c14n215</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -23018,7 +23018,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
                             sh:path s223:hasProperty ;
                             sh:qualifiedMinCount 1 ;
                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                    sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                                    sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ] ] ] ] ] ] .
@@ -23097,8 +23097,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n204">c14n204</a></h3>
             <p class="uri">URI: <a href="c14n204">c14n204</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -23113,7 +23113,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             sh:node [ sh:property [ sh:path s223:hasProperty ;
                             sh:qualifiedMinCount 1 ;
                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                    sh:node [ sh:property [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                    sh:node [ sh:property [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ] ] ] ] ] ] .
@@ -23344,8 +23344,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n74">c14n74</a></h3>
             <p class="uri">URI: <a href="c14n74">c14n74</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -23358,7 +23358,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
     sh:qualifiedValueShape [ sh:node [ sh:property [ sh:path s223:hasProperty ;
                             sh:qualifiedMinCount 1 ;
                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                    sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                                    sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ] ] ] ],
@@ -23422,8 +23422,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <p class="uri">URI: <a href="c14n12">c14n12</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -23437,7 +23437,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
                             sh:path s223:hasProperty ;
                             sh:qualifiedMinCount 1 ;
                             sh:qualifiedValueShape [ sh:class s223:QuantifiableActuatableProperty ;
-                                    sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+                                    sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ],
@@ -23526,8 +23526,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n438">c14n438</a></h3>
             <p class="uri">URI: <a href="c14n438">c14n438</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -23543,7 +23543,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
                             sh:path s223:hasProperty ;
                             sh:qualifiedMinCount 1 ;
                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                    sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                                    sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ],
@@ -23683,8 +23683,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <p class="uri">URI: <a href="c14n1098">c14n1098</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -23704,7 +23704,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
                                                     sh:path s223:hasProperty ;
                                                     sh:qualifiedMinCount 1 ;
                                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                                            sh:node [ sh:property [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                                            sh:node [ sh:property [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                                             sh:maxCount 1 ;
                                                                             sh:minCount 1 ;
                                                                             sh:path qudt:hasQuantityKind ],
@@ -23724,8 +23724,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <p class="uri">URI: <a href="c14n327">c14n327</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -23745,7 +23745,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
                                                     sh:path s223:hasProperty ;
                                                     sh:qualifiedMinCount 1 ;
                                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                                            sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                                                            sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                                                             sh:maxCount 1 ;
                                                                             sh:minCount 1 ;
                                                                             sh:path qudt:hasQuantityKind ],
@@ -23764,8 +23764,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n537">c14n537</a></h3>
             <p class="uri">URI: <a href="c14n537">c14n537</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -23778,7 +23778,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
     sh:path ( s223:connectedTo s223:connectedTo [ sh:inversePath s223:contains ] s223:hasProperty ) ;
     sh:qualifiedMinCount 1 ;
     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-            sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+            sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                             sh:maxCount 1 ;
                             sh:minCount 1 ;
                             sh:path qudt:hasQuantityKind ] ] ] .
@@ -23792,8 +23792,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <p class="uri">URI: <a href="c14n688">c14n688</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -23813,7 +23813,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
                                                     sh:path s223:hasProperty ;
                                                     sh:qualifiedMinCount 1 ;
                                                     sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                                            sh:node [ sh:property [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                                            sh:node [ sh:property [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                                             sh:maxCount 1 ;
                                                                             sh:minCount 1 ;
                                                                             sh:path qudt:hasQuantityKind ],
@@ -23972,8 +23972,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n580">c14n580</a></h3>
             <p class="uri">URI: <a href="c14n580">c14n580</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -23986,7 +23986,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
     sh:qualifiedValueShape [ sh:node [ sh:property [ sh:path s223:hasProperty ;
                             sh:qualifiedMinCount 1 ;
                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                    sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                                    sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ] ] ] ],
@@ -24050,8 +24050,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <p class="uri">URI: <a href="c14n212">c14n212</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -24076,7 +24076,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
                             sh:path s223:hasProperty ;
                             sh:qualifiedMinCount 1 ;
                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                    sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                                    sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ] ] ] ] ] ] .
@@ -24110,8 +24110,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <p class="uri">URI: <a href="c14n201">c14n201</a></p>
             <pre><code class="language-turtle">
 @prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -24140,7 +24140,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
                                                     sh:path s223:hasAspect ;
                                                     sh:qualifiedMinCount 1 ;
                                                     sh:qualifiedValueShape [ sh:hasValue s223:Aspect-Minimum ] ],
-                                                [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                                [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ] ] ] ] ] ] .
@@ -24219,8 +24219,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n847">c14n847</a></h3>
             <p class="uri">URI: <a href="c14n847">c14n847</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -24240,7 +24240,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
                                                     sh:path s223:hasAspect ;
                                                     sh:qualifiedMinCount 1 ;
                                                     sh:qualifiedValueShape [ sh:hasValue s223:Role-OutdoorAirIntake ] ],
-                                                [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                                [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ] ] ] ] ] ] .
@@ -24253,8 +24253,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n1056">c14n1056</a></h3>
             <p class="uri">URI: <a href="c14n1056">c14n1056</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -24270,7 +24270,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
                             sh:path s223:hasProperty ;
                             sh:qualifiedMinCount 1 ;
                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                    sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                                    sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ],
@@ -24287,8 +24287,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n351">c14n351</a></h3>
             <p class="uri">URI: <a href="c14n351">c14n351</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -24304,7 +24304,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
                             sh:path s223:hasProperty ;
                             sh:qualifiedMinCount 1 ;
                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                    sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                                    sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ],
@@ -24321,8 +24321,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n373">c14n373</a></h3>
             <p class="uri">URI: <a href="c14n373">c14n373</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -24340,7 +24340,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path s223:hasAspect ],
-                                                [ sh:hasValue qudtqk:Temperature ;
+                                                [ sh:hasValue quantitykind:Temperature ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ] ] ] ] ] ] .
@@ -24423,8 +24423,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n906">c14n906</a></h3>
             <p class="uri">URI: <a href="c14n906">c14n906</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -24438,7 +24438,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
                             sh:path s223:hasProperty ;
                             sh:qualifiedMinCount 1 ;
                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                    sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                                    sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ],
@@ -24503,8 +24503,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n982">c14n982</a></h3>
             <p class="uri">URI: <a href="c14n982">c14n982</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -24515,7 +24515,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
     sh:path s223:hasProperty ;
     sh:qualifiedMinCount 1 ;
     sh:qualifiedValueShape [ sh:class s223:QuantifiableActuatableProperty ;
-            sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+            sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                             sh:maxCount 1 ;
                             sh:minCount 1 ;
                             sh:path qudt:hasQuantityKind ],
@@ -24614,8 +24614,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n938">c14n938</a></h3>
             <p class="uri">URI: <a href="c14n938">c14n938</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -24627,7 +24627,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
     sh:path s223:hasProperty ;
     sh:qualifiedMinCount 1 ;
     sh:qualifiedValueShape [ sh:class s223:QuantifiableActuatableProperty ;
-            sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+            sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                             sh:maxCount 1 ;
                             sh:minCount 1 ;
                             sh:path qudt:hasQuantityKind ] ] ] .
@@ -24729,8 +24729,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n724">c14n724</a></h3>
             <p class="uri">URI: <a href="c14n724">c14n724</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -24745,7 +24745,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             sh:node [ sh:property [ sh:path s223:hasProperty ;
                             sh:qualifiedMinCount 1 ;
                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                    sh:node [ sh:property [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                    sh:node [ sh:property [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ] ] ] ] ] ] .
@@ -24780,8 +24780,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n915">c14n915</a></h3>
             <p class="uri">URI: <a href="c14n915">c14n915</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -24796,7 +24796,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             sh:node [ sh:property [ sh:path s223:hasProperty ;
                             sh:qualifiedMinCount 1 ;
                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                    sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                                    sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ] ] ] ] ] ] .
@@ -24873,8 +24873,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n562">c14n562</a></h3>
             <p class="uri">URI: <a href="c14n562">c14n562</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -24886,7 +24886,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
     sh:path s223:hasProperty ;
     sh:qualifiedMinCount 1 ;
     sh:qualifiedValueShape [ sh:class s223:QuantifiableActuatableProperty ;
-            sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+            sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                             sh:maxCount 1 ;
                             sh:minCount 1 ;
                             sh:path qudt:hasQuantityKind ] ] ] .
@@ -24941,8 +24941,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n303">c14n303</a></h3>
             <p class="uri">URI: <a href="c14n303">c14n303</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -24958,7 +24958,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
                             sh:path s223:hasProperty ;
                             sh:qualifiedMinCount 1 ;
                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                    sh:node [ sh:property [ sh:hasValue qudtqk:Pressure ;
+                                    sh:node [ sh:property [ sh:hasValue quantitykind:Pressure ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ],
@@ -24975,8 +24975,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n363">c14n363</a></h3>
             <p class="uri">URI: <a href="c14n363">c14n363</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -24992,7 +24992,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
                             sh:path s223:hasProperty ;
                             sh:qualifiedMinCount 1 ;
                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                    sh:node [ sh:property [ sh:hasValue qudtqk:Temperature ;
+                                    sh:node [ sh:property [ sh:hasValue quantitykind:Temperature ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ],
@@ -25075,8 +25075,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n1100">c14n1100</a></h3>
             <p class="uri">URI: <a href="c14n1100">c14n1100</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -25096,7 +25096,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
                                                     sh:path s223:hasAspect ;
                                                     sh:qualifiedMinCount 1 ;
                                                     sh:qualifiedValueShape [ sh:hasValue s223:Role-Heating ] ],
-                                                [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                                [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ] ] ] ] ] ] .
@@ -25159,8 +25159,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n832">c14n832</a></h3>
             <p class="uri">URI: <a href="c14n832">c14n832</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -25178,7 +25178,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
                                                     sh:path s223:hasAspect ;
                                                     sh:qualifiedMinCount 1 ;
                                                     sh:qualifiedValueShape [ sh:hasValue s223:Role-Cooling ] ],
-                                                [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                                [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ] ] ] ] ] ] .
@@ -25306,8 +25306,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n727">c14n727</a></h3>
             <p class="uri">URI: <a href="c14n727">c14n727</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -25323,7 +25323,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
                             sh:path s223:hasProperty ;
                             sh:qualifiedMinCount 1 ;
                             sh:qualifiedValueShape [ sh:class s223:QuantifiableObservableProperty ;
-                                    sh:node [ sh:property [ sh:hasValue qudtqk:VolumeFlowRate ;
+                                    sh:node [ sh:property [ sh:hasValue quantitykind:VolumeFlowRate ;
                                                     sh:maxCount 1 ;
                                                     sh:minCount 1 ;
                                                     sh:path qudt:hasQuantityKind ] ] ] ] ] ] .
@@ -25358,8 +25358,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n1048">c14n1048</a></h3>
             <p class="uri">URI: <a href="c14n1048">c14n1048</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -25370,7 +25370,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
     sh:path s223:hasProperty ;
     sh:qualifiedMinCount 1 ;
     sh:qualifiedValueShape [ sh:class s223:QuantifiableActuatableProperty ;
-            sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+            sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                             sh:maxCount 1 ;
                             sh:minCount 1 ;
                             sh:path qudt:hasQuantityKind ],
@@ -25435,8 +25435,8 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
             <h3><a class="permalink" href="#b-c14n177">c14n177</a></h3>
             <p class="uri">URI: <a href="c14n177">c14n177</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
@@ -25447,7 +25447,7 @@ FILTER (NOT EXISTS {$this rdfs:label ?something}) .
     sh:path s223:hasProperty ;
     sh:qualifiedMinCount 1 ;
     sh:qualifiedValueShape [ sh:class s223:QuantifiableActuatableProperty ;
-            sh:node [ sh:property [ sh:hasValue qudtqk:DimensionlessRatio ;
+            sh:node [ sh:property [ sh:hasValue quantitykind:DimensionlessRatio ;
                             sh:maxCount 1 ;
                             sh:minCount 1 ;
                             sh:path qudt:hasQuantityKind ],
@@ -26056,8 +26056,8 @@ FILTER (?domain != ?dsdomain)
             <h3><a class="permalink" href="#b-c14n626">c14n626</a></h3>
             <p class="uri">URI: <a href="c14n626">c14n626</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -26070,7 +26070,7 @@ FILTER (?domain != ?dsdomain)
     sh:qualifiedMinCount 1 ;
     sh:qualifiedValueShape [ sh:class s223:QuantifiableProperty ;
             sh:node [ sh:property [ rdfs:comment &#34;The `QuantityKind` of the constituent shall be `VolumeFraction`.&#34; ;
-                            sh:in ( qudtqk:VolumeFraction ) ;
+                            sh:in ( quantitykind:VolumeFraction ) ;
                             sh:path qudt:hasQuantityKind ],
                         [ rdfs:comment &#34;One of the constituents of a `Water-GlycolSolution` shall be a `Constituent-H2O`.&#34; ;
                             sh:class s223:Constituent-H2O ;
@@ -26104,8 +26104,8 @@ FILTER (?domain != ?dsdomain)
             <h3><a class="permalink" href="#b-c14n728">c14n728</a></h3>
             <p class="uri">URI: <a href="c14n728">c14n728</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -26114,7 +26114,7 @@ FILTER (?domain != ?dsdomain)
 [] rdfs:comment &#34;A `Water-GlycolSolution` shall be associated with zero or more `QuantifiableProperty`s with a `QuantityKind` of `Temperature` using the relation `hasFreezingPoint`.&#34; ;
     sh:class s223:QuantifiableProperty ;
     sh:message &#34;s223: A `Water-GlycolSolution` shall be associated with zero or more `QuantifiableProperty`s with a `QuantityKind` of `Temperature` using the relation `hasFreezingPoint`.&#34; ;
-    sh:node [ sh:property [ sh:in ( qudtqk:Temperature ) ;
+    sh:node [ sh:property [ sh:in ( quantitykind:Temperature ) ;
                     sh:path qudt:hasQuantityKind ] ] ;
     sh:path s223:hasFreezingPoint .
 
@@ -26126,8 +26126,8 @@ FILTER (?domain != ?dsdomain)
             <h3><a class="permalink" href="#b-c14n947">c14n947</a></h3>
             <p class="uri">URI: <a href="c14n947">c14n947</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -26140,7 +26140,7 @@ FILTER (?domain != ?dsdomain)
     sh:qualifiedMinCount 1 ;
     sh:qualifiedValueShape [ sh:class s223:QuantifiableProperty ;
             sh:node [ sh:property [ rdfs:comment &#34;The `QuantityKind` of the constituent shall be `VolumeFraction`.&#34; ;
-                            sh:in ( qudtqk:VolumeFraction ) ;
+                            sh:in ( quantitykind:VolumeFraction ) ;
                             sh:path qudt:hasQuantityKind ],
                         [ rdfs:comment &#34;One of the constituents of a `Water-GlycolSolution` shall be a `Constituent-Glycol`.&#34; ;
                             sh:class s223:Constituent-Glycol ;
@@ -26155,8 +26155,8 @@ FILTER (?domain != ?dsdomain)
             <h3><a class="permalink" href="#b-c14n18">c14n18</a></h3>
             <p class="uri">URI: <a href="c14n18">c14n18</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -26165,7 +26165,7 @@ FILTER (?domain != ?dsdomain)
 [] rdfs:comment &#34;A `VoltageSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of Voltage.&#34; ;
     sh:class s223:QuantifiableObservableProperty ;
     sh:message &#34;s223: A `VoltageSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of Voltage.&#34; ;
-    sh:node [ sh:property [ sh:in ( qudtqk:Voltage ) ;
+    sh:node [ sh:property [ sh:in ( quantitykind:Voltage ) ;
                     sh:path qudt:hasQuantityKind ] ] ;
     sh:path s223:observes .
 
@@ -26497,8 +26497,8 @@ FILTER (?domain != ?dsdomain)
             <h3><a class="permalink" href="#b-c14n150">c14n150</a></h3>
             <p class="uri">URI: <a href="c14n150">c14n150</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -26507,7 +26507,7 @@ FILTER (?domain != ?dsdomain)
 [] rdfs:comment &#34;A `TemperatureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Temperature`.&#34; ;
     sh:class s223:QuantifiableObservableProperty ;
     sh:message &#34;s223: A `TemperatureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Temperature`.&#34; ;
-    sh:node [ sh:property [ sh:in ( qudtqk:Temperature ) ;
+    sh:node [ sh:property [ sh:in ( quantitykind:Temperature ) ;
                     sh:path qudt:hasQuantityKind ] ] ;
     sh:path s223:observes .
 
@@ -29067,8 +29067,8 @@ $this s223:hasExternalReference ?ext .
             <h3><a class="permalink" href="#b-c14n139">c14n139</a></h3>
             <p class="uri">URI: <a href="c14n139">c14n139</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -29077,7 +29077,7 @@ $this s223:hasExternalReference ?ext .
 [] rdfs:comment &#34;A `PressureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Pressure` or `GaugePressure`.&#34; ;
     sh:class s223:QuantifiableObservableProperty ;
     sh:message &#34;s223: A `PressureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Pressure` or `GaugePressure`.&#34; ;
-    sh:node [ sh:property [ sh:in ( qudtqk:Pressure qudtqk:GaugePressure ) ;
+    sh:node [ sh:property [ sh:in ( quantitykind:Pressure quantitykind:GaugePressure ) ;
                     sh:path qudt:hasQuantityKind ] ] ;
     sh:path s223:observes .
 
@@ -29501,8 +29501,8 @@ FILTER NOT EXISTS {$this s223:mapsTo ?anything} .
             <h3><a class="permalink" href="#b-c14n134">c14n134</a></h3>
             <p class="uri">URI: <a href="c14n134">c14n134</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -29512,7 +29512,7 @@ FILTER NOT EXISTS {$this s223:mapsTo ?anything} .
 [] rdfs:comment &#34;An `OccupantCountSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Population` and a `Unit` of `NUM`.&#34; ;
     sh:class s223:QuantifiableObservableProperty ;
     sh:message &#34;s223: An `OccupantCountSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Population` and a `Unit` of `NUM`.&#34; ;
-    sh:node [ sh:property [ sh:in ( qudtqk:Population ) ;
+    sh:node [ sh:property [ sh:in ( quantitykind:Population ) ;
                     sh:path qudt:hasQuantityKind ],
                 [ sh:in ( unit:NUM ) ;
                     sh:path qudt:hasUnit ] ] ;
@@ -29546,14 +29546,14 @@ FILTER NOT EXISTS {$this s223:mapsTo ?anything} .
             <h3><a class="permalink" href="#b-c14n129">c14n129</a></h3>
             <p class="uri">URI: <a href="c14n129">c14n129</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 
 [] rdfs:comment &#34;A `Numerical-Voltage` shall have a `QuantityKind` of `Voltage`.&#34; ;
-    sh:in ( qudtqk:Voltage ) ;
+    sh:in ( quantitykind:Voltage ) ;
     sh:message &#34;s223: A `Numerical-Voltage` shall have a `QuantityKind` of `Voltage`.&#34; ;
     sh:path qudt:hasQuantityKind .
 
@@ -29603,14 +29603,14 @@ FILTER NOT EXISTS {$this s223:mapsTo ?anything} .
             <h3><a class="permalink" href="#b-c14n402">c14n402</a></h3>
             <p class="uri">URI: <a href="c14n402">c14n402</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 
 [] rdfs:comment &#34;A `Numerical-NumberOfElectricalPhases` shall have a `QuantityKind` of `NumberOfElectricalPhases`.&#34; ;
-    sh:in ( qudtqk:NumberOfElectricalPhases ) ;
+    sh:in ( quantitykind:NumberOfElectricalPhases ) ;
     sh:message &#34;s223: A `Numerical-NumberOfElectricalPhases` shall have a `QuantityKind` of `NumberOfElectricalPhases`.&#34; ;
     sh:path qudt:hasQuantityKind .
 
@@ -29622,14 +29622,14 @@ FILTER NOT EXISTS {$this s223:mapsTo ?anything} .
             <h3><a class="permalink" href="#b-c14n15">c14n15</a></h3>
             <p class="uri">URI: <a href="c14n15">c14n15</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 
 [] rdfs:comment &#34;A `Numerical-Frequency` shall have a `QuantityKind` of `Frequency`.&#34; ;
-    sh:in ( qudtqk:Frequency ) ;
+    sh:in ( quantitykind:Frequency ) ;
     sh:message &#34;s223: A `Numerical-Frequency` shall have a `QuantityKind` of `Frequency`.&#34; ;
     sh:path qudt:hasQuantityKind .
 
@@ -30548,8 +30548,8 @@ FILTER NOT EXISTS {$this s223:mapsTo ?anything} .
             <h3><a class="permalink" href="#b-c14n535">c14n535</a></h3>
             <p class="uri">URI: <a href="c14n535">c14n535</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -30558,7 +30558,7 @@ FILTER NOT EXISTS {$this s223:mapsTo ?anything} .
 [] rdfs:comment &#34;An `IlluminanceSensor` shall observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Illuminance`.&#34; ;
     sh:class s223:QuantifiableObservableProperty ;
     sh:message &#34;s223: An `IlluminanceSensor` shall observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Illuminance`.&#34; ;
-    sh:node [ sh:property [ sh:in ( qudtqk:Illuminance ) ;
+    sh:node [ sh:property [ sh:in ( quantitykind:Illuminance ) ;
                     sh:path qudt:hasQuantityKind ] ] ;
     sh:path s223:observes .
 
@@ -30699,8 +30699,8 @@ FILTER NOT EXISTS {$this s223:mapsTo ?anything} .
             <h3><a class="permalink" href="#b-c14n597">c14n597</a></h3>
             <p class="uri">URI: <a href="c14n597">c14n597</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -30709,7 +30709,7 @@ FILTER NOT EXISTS {$this s223:mapsTo ?anything} .
 [] rdfs:comment &#34;A `HumiditySensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of either `RelativeHumidity` or `AbsoluteHumidity`.&#34; ;
     sh:class s223:QuantifiableObservableProperty ;
     sh:message &#34;s223: A `HumiditySensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of either `RelativeHumidity` or `AbsoluteHumidity`.&#34; ;
-    sh:node [ sh:property [ sh:in ( qudtqk:RelativeHumidity qudtqk:AbsoluteHumidity ) ;
+    sh:node [ sh:property [ sh:in ( quantitykind:RelativeHumidity quantitykind:AbsoluteHumidity ) ;
                     sh:path qudt:hasQuantityKind ] ] ;
     sh:path s223:observes .
 
@@ -30842,8 +30842,8 @@ FILTER NOT EXISTS {$this s223:mapsTo ?anything} .
             <h3><a class="permalink" href="#b-c14n917">c14n917</a></h3>
             <p class="uri">URI: <a href="c14n917">c14n917</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -30853,7 +30853,7 @@ FILTER NOT EXISTS {$this s223:mapsTo ?anything} .
 [] rdfs:comment &#34;A `GaugePressureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of GaugePressure and a value of `true` for `qudt:isDeltaQuantity`.&#34; ;
     sh:class s223:QuantifiableObservableProperty ;
     sh:message &#34;s223: A `GaugePressureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of GaugePressure and a value of `true` for `qudt:isDeltaQuantity`.&#34; ;
-    sh:node [ sh:property [ sh:in ( qudtqk:GaugePressure ) ;
+    sh:node [ sh:property [ sh:in ( quantitykind:GaugePressure ) ;
                     sh:path qudt:hasQuantityKind ],
                 [ sh:in ( true ) ;
                     sh:path qudt:isDeltaQuantity ] ] ;
@@ -32945,8 +32945,8 @@ WHERE {
             <h3><a class="permalink" href="#b-c14n278">c14n278</a></h3>
             <p class="uri">URI: <a href="c14n278">c14n278</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -32955,7 +32955,7 @@ WHERE {
 [] rdfs:comment &#34;An `ElectricCurrentSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `ElectricCurrent`.&#34; ;
     sh:class s223:QuantifiableObservableProperty ;
     sh:message &#34;s223: An `ElectricCurrentSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `ElectricCurrent`.&#34; ;
-    sh:node [ sh:property [ sh:in ( qudtqk:ElectricCurrent ) ;
+    sh:node [ sh:property [ sh:in ( quantitykind:ElectricCurrent ) ;
                     sh:path qudt:hasQuantityKind ] ] ;
     sh:path s223:observes .
 
@@ -33029,8 +33029,8 @@ WHERE {
             <h3><a class="permalink" href="#b-c14n319">c14n319</a></h3>
             <p class="uri">URI: <a href="c14n319">c14n319</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -33039,7 +33039,7 @@ WHERE {
 [] rdfs:comment &#34;A `DuvSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Duv`.&#34; ;
     sh:class s223:QuantifiableObservableProperty ;
     sh:message &#34;s223: A `DuvSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `Duv`.&#34; ;
-    sh:node [ sh:property [ sh:in ( qudtqk:Duv ) ;
+    sh:node [ sh:property [ sh:in ( quantitykind:Duv ) ;
                     sh:path qudt:hasQuantityKind ] ] ;
     sh:path s223:observes .
 
@@ -33301,8 +33301,8 @@ $this ^s223:hasDomainSpace/s223:hasDomain ?domain .
             <h3><a class="permalink" href="#b-c14n865">c14n865</a></h3>
             <p class="uri">URI: <a href="c14n865">c14n865</a></p>
             <pre><code class="language-turtle">
+@prefix quantitykind: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
@@ -33311,7 +33311,7 @@ $this ^s223:hasDomainSpace/s223:hasDomain ?domain .
 [] rdfs:comment &#34;A `CorrelatedColorTemperatureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `CorrelatedColorTemperature`.&#34; ;
     sh:class s223:QuantifiableObservableProperty ;
     sh:message &#34;s223: A `CorrelatedColorTemperatureSensor` shall always observe a `QuantifiableObservableProperty` that has a `QuantityKind` of `CorrelatedColorTemperature`.&#34; ;
-    sh:node [ sh:property [ sh:in ( qudtqk:CorrelatedColorTemperature ) ;
+    sh:node [ sh:property [ sh:in ( quantitykind:CorrelatedColorTemperature ) ;
                     sh:path qudt:hasQuantityKind ] ] ;
     sh:path s223:observes .
 
