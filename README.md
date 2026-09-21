@@ -42,9 +42,17 @@ page so it is clear which build of the ontology the definitions came from.
 
 ## Rebuilding
 
+The site's anchors and the publication's links are both blank-node labels
+canonicalized over a whole graph, so they only agree when both come from the
+*same* graph. That graph is `publication/223p_publication.ttl`, written by
+`ttl2md.py` during a 223standard publication build.
+
 ```sh
-# 1. drop the new compiled ontology in place
-cp /path/to/223standard/223p.ttl ontologies/223p.ttl
+# 1. build the publication (in the 223standard checkout)
+cd ../223standard && bash build-publication.sh && cd -
+
+# 2. copy the graph that build minted the document's links from
+make sync                  # or: make sync STANDARD=/path/to/223standard
 
 # 2. regenerate constraints.json and index.html (needs uv; Python >= 3.12)
 make
@@ -52,7 +60,7 @@ make
 # 3. optional: run the stable-ID regression tests
 make test
 
-# 4. optional: rebuild the 223standard publication and validate its links
+# 4. check every publication link resolves against the generated anchors
 make check
 
 # 5. optional: preview locally on :8000
