@@ -42,7 +42,8 @@ class SiteBuilder:
             f.write(template.render(concepts=definitions, ontology=self.ontology))
         print(
             f"Wrote {OUTPUT_FILE} with {len(definitions)} concepts "
-            f"({self.ontology['uri']} {self.ontology['version']})"
+            f"({self.ontology['uri'] or self.ontology['source']} "
+            f"{self.ontology['version']})"
         )
 
 

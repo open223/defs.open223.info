@@ -6,6 +6,13 @@ set -euo pipefail
 STANDARD_REPO="https://bas-im.emcs.cornell.edu/223/223standard.git"
 STANDARD_DIR="223standard"
 
+# ontologies/223p.ttl is copied from a publication build, and only the markdown
+# from *that same build* shares its blank-node IDs. Set PUBLICATION_MD to check
+# against a local build instead of cloning and rebuilding master.
+if [ -n "${PUBLICATION_MD:-}" ]; then
+  exec uv run python check-links.py "$PUBLICATION_MD" index.html
+fi
+
 if [ ! -d "$STANDARD_DIR" ]; then
   git clone "$STANDARD_REPO" "$STANDARD_DIR"
 else

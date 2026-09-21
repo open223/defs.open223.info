@@ -18,8 +18,10 @@ The output is:
 where "version" is the owl:versionInfo of the ontology declaration.
 """
 
+import hashlib
 import json
 import sys
+from pathlib import Path
 
 from rdflib import OWL, RDF, Graph, URIRef
 
@@ -30,19 +32,33 @@ OUTPUT_FILE = "constraints.json"
 
 
 def ontology_metadata(graph: Graph, source: str) -> dict:
-    """Describe the owl:Ontology declared in the graph, including its version."""
+    """Describe the ontology this site was built from.
+
+    A graph compiled by tools/compile-223p.py declares a single owl:Ontology
+    carrying a real owl:versionInfo, and that is what gets reported.
+
+    The publication's canonical graph is a merge of 19 source files: it
+    declares 18 ontologies, nine of which are never owl:imports-ed, so there
+    is no root to name and their versionInfo is boilerplate.  Fall back to a
+    digest of the file, which is what actually determines the anchors anyway.
+    """
     ontologies = sorted(graph.subjects(RDF.type, OWL.Ontology))
     if not ontologies:
         sys.exit(f"{source} does not declare an owl:Ontology")
-    if len(ontologies) > 1:
-        sys.exit(f"{source} declares more than one owl:Ontology: {ontologies}")
-    ontology = ontologies[0]
 
-    version = graph.value(ontology, OWL.versionInfo)
-    if version is None:
-        sys.exit(f"{ontology} has no owl:versionInfo in {source}")
+    if len(ontologies) == 1:
+        version = graph.value(ontologies[0], OWL.versionInfo)
+        if version is None:
+            sys.exit(f"{ontologies[0]} has no owl:versionInfo in {source}")
+        return {"uri": str(ontologies[0]), "version": str(version), "source": source}
 
-    return {"uri": str(ontology), "version": str(version), "source": source}
+    digest = hashlib.sha256(Path(source).read_bytes()).hexdigest()[:12]
+    return {
+        "uri": None,
+        "version": f"sha256:{digest}",
+        "source": source,
+        "ontologies": len(ontologies),
+    }
 
 
 def build(ontology_file: str) -> dict:
