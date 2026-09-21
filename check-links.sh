@@ -1,27 +1,29 @@
 #!/bin/bash
+# Rebuild the 223standard publication markdown and verify that every anchor it
+# links to on defs.open223.info actually exists in the generated index.html.
+set -euo pipefail
 
-set -x
+STANDARD_REPO="https://bas-im.emcs.cornell.edu/223/223standard.git"
+STANDARD_DIR="223standard"
 
-# if 223standard directory does not exist, clone the repo
-if [ ! -d "223standard" ]; then
-  git clone https://bas-im.emcs.cornell.edu/223/223standard.git
+if [ ! -d "$STANDARD_DIR" ]; then
+  git clone "$STANDARD_REPO" "$STANDARD_DIR"
 else
-  pushd 223standard
-  git pull
-  popd
+  git -C "$STANDARD_DIR" pull
 fi
-cp stable_ids.json 223standard/publication
-# otherwise, update the repo
-pushd 223standard
-git pull
 
-pushd publication
-uv venv --seed
-uv pip install -r requirements.txt
-. .venv/bin/activate && uv run bash build-documentation.sh
+# Build 223p_publication.md in an isolated venv owned by the publication dir.
+# Activate it rather than using `uv run`: uv would walk up to this repo's
+# pyproject.toml and run the publication scripts against the wrong interpreter.
+(
+  cd "$STANDARD_DIR/publication"
+  uv venv --seed --allow-existing
+  set +u
+  . .venv/bin/activate
+  set -u
+  uv pip install -r requirements.txt
+  bash build-documentation.sh
+)
 
-# generates 223p_publication.md
-popd # publication
-popd # 223standard
-. .venv/bin/activate && python check-links.py 223standard/publication/223p_publication.md index.html
-deactivate
+uv run python check-links.py \
+  "$STANDARD_DIR/publication/223p_publication.md" index.html

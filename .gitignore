@@ -8,3 +8,16 @@ wheels/
 
 # venv
 .venv
+
+# GitLab credentials (e.g. for cloning 223standard in check-links.sh) -- never commit these
+token
+project-access-token
+*.token
+
+# clone + build products of check-links.sh
+223standard/
+223p_publication.md
+223p_publication.docx
+
+# tool caches
+.ruff_cache/

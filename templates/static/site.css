@@ -13,11 +13,68 @@ pre[class*="language-"] {
 	line-height: 1.5;
 }
 
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  /* Sized for the Turtle blocks rather than for prose: at 0.8rem monospace this
+     fits ~155 characters, which covers about 95% of the lines in the corpus.
+     The rest scroll inside their own <pre>. */
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+#search {
+  width: 100%;
+  max-width: 30rem;
+  padding: 4px 8px;
+  font: inherit;
+}
+
+#search:disabled {
+  background: #f3f3f3;
+  color: #888;
+  cursor: progress;
+}
+
+.status,
+.version {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.version code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  background: #f3f3f3;
+  padding: 0 0.3em;
+  border-radius: 3px;
+}
+
 /* from: https://www.w3schools.com/howto/howto_css_cards.asp */
+/* A flex column so search results can be grouped by CSS `order` without
+   moving any DOM nodes. Gap replaces per-card margins, which would not
+   collapse between flex items. */
+#definitions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+/* Cards matching only in the Turtle body sink below the name matches;
+   document order is preserved within each group. */
+.card.rank-body { order: 1; }
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 5px; /* 5px rounded corners */
+  padding: 2px 16px 16px;
+
+  /* Skip layout and paint for the ~900 off-screen cards. `auto` remembers
+     each card's real height once it has been rendered. */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 340px;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -25,7 +82,30 @@ pre[class*="language-"] {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-/* Add some padding inside the card container */
-.container {
-  padding: 2px 16px;
+.card.filtered-out { display: none; }
+
+/* Mark the card a permalink pointed at, so it is clear where you landed. */
+.card.is-target { background: #fff8c4; }
+
+.card pre { overflow-x: auto; }
+
+.permalink { color: inherit; text-decoration: none; }
+.permalink:hover { text-decoration: underline; }
+
+.uri, .card-actions {
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
 }
+
+.card-actions { color: #555; }
+
+.warning {
+  padding: 8px 12px;
+  margin: 1rem 0;
+  border: 1px solid #e8a33d;
+  border-radius: 5px;
+  background: #fff4e5;
+  font-size: 0.9rem;
+}
+
+.warning[hidden] { display: none; }
