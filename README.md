@@ -54,16 +54,16 @@ cd ../223standard && bash build-publication.sh && cd -
 # 2. copy the graph that build minted the document's links from
 make sync                  # or: make sync STANDARD=/path/to/223standard
 
-# 2. regenerate constraints.json and index.html (needs uv; Python >= 3.12)
+# 3. regenerate constraints.json and index.html (needs uv; Python >= 3.12)
 make
 
-# 3. optional: run the stable-ID regression tests
+# 4. optional: run the stable-ID regression tests
 make test
 
-# 4. check every publication link resolves against the generated anchors
+# 5. check every publication link resolves against the generated anchors
 make check
 
-# 5. optional: preview locally on :8000
+# 6. optional: preview locally on :8000
 make serve
 ```
 

@@ -1,6 +1,6 @@
 /* Search, permalinks and lazy syntax highlighting for the 223P definitions page.
  *
- * The page ships ~900 definition cards, so the work here is deliberately spread
+ * The page ships well over a thousand definition cards, so the work here is spread
  * out: Turtle blocks are highlighted only as they approach the viewport, the
  * search index is built once off the critical path, and filtering toggles a
  * single class per card and touches nothing else.
@@ -384,10 +384,10 @@
     idle(pump);
   }
 
-  // Injected rather than shipped in the HTML: 905 of these cost ~123 KB and
-  // 1,810 elements to parse, for a link that only matters on the few cards
-  // actually on screen. Injection happens a full viewport early (see
-  // HIGHLIGHT_MARGIN), so the card's height is settled before it is seen.
+  // Injected rather than shipped in the HTML: one per card costs ~140 KB and
+  // a fifth of the page's elements to parse, for a link that only matters on
+  // the few cards actually on screen. Injection happens a full viewport early
+  // (see HIGHLIGHT_MARGIN), so the card's height settles before it is seen.
   function addIsolateLink(card) {
     if (card.querySelector(".card-actions")) return;
     var link = document.createElement("a");
@@ -407,7 +407,7 @@
 
     if (typeof IntersectionObserver === "undefined") {
       // No observer: add the links at idle and leave the Turtle unhighlighted.
-      // Plain Turtle reads fine, and highlighting ~900 blocks up front is
+      // Plain Turtle reads fine, and highlighting every block up front is
       // exactly the freeze this page exists to avoid.
       runChunked(cards, addIsolateLink);
       return;
@@ -450,7 +450,7 @@
 
     // Observe the card, not the <code>: a card skipped by content-visibility
     // still has a layout box, its contents do not. Registration is chunked so
-    // 905 observations do not land in one burst while the reader is typing.
+    // the observations do not land in one burst while the reader is typing.
     runChunked(cards, function (card) {
       observer.observe(card);
     });

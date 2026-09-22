@@ -38,8 +38,7 @@ s223:Concept a s223:Class,
         rdfs:Class,
         sh:NodeShape ;
     rdfs:label "Concept" ;
-    doc:subclauses ( s223:Class s223:Relation ),
-        ( s223:hasProperty ) ;
+    doc:subclauses ( s223:Class s223:Relation ) ;
     rdfs:comment "All classes and relations defined in the 223 standard are subclasses of `Concept`." ;
     rdfs:subClassOf rdfs:Resource ;
     sh:property [ rdfs:comment "Incompatible Medium. Case4: An entity with constituents and an associated `Property` with constituents." ;
@@ -10565,7 +10564,7 @@ s223:RF-Signal a s223:Class,
     rdfs:subClassOf s223:EM-RF .
 
 <http://data.ashrae.org/standard223/1.0/model/all> a owl:Ontology ;
-    owl:versionInfo "git:gtf-canonical-constraint-urls@9ea9f0b8d2eae8ed28402011330c7bf26888cec0 date:2026-09-21 15:27:34 UTC" .
+    owl:versionInfo "git:gtf-canonical-constraint-urls@bf9a7b09bd21c45ca3dcff44413b156c911f1237 date:2026-09-22 05:08:39 UTC" .
 
 s223:Property a s223:Class,
         sh:NodeShape ;

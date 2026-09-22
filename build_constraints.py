@@ -38,11 +38,11 @@ def ontology_metadata(graph: Graph, source: str) -> dict:
     A graph compiled by tools/compile-223p.py declares a single owl:Ontology
     carrying a real owl:versionInfo, and that is what gets reported.
 
-    The publication's canonical graph is a merge of 19 source files, so it
-    declares one ontology per file, none of them a root and all carrying
-    boilerplate versionInfo.  ttl2md.py stamps the compiled root ontology
-    onto that graph, so prefer it when present.  Failing both, fall back to a
-    digest of the file, which is what actually determines the anchors anyway.
+    The publication's canonical graph merges every source file, so it declares
+    one ontology per file, none of them a root and all carrying boilerplate
+    versionInfo.  ttl2md.py stamps the compiled root onto that graph, so prefer
+    it when present.  Failing both, fall back to a digest of the file, which is
+    what actually determines the anchors anyway.
     """
     ontologies = sorted(graph.subjects(RDF.type, OWL.Ontology))
     if not ontologies:

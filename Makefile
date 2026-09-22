@@ -27,15 +27,10 @@ constraints.json: ontologies/223p.ttl build_constraints.py constraints.py
 
 constraints: constraints.json
 
-# Verify the publication's defs.open223.info anchors resolve in index.html.
-# Only the markdown from the same build as ontologies/223p.ttl shares its IDs,
-# so prefer the local checkout and fall back to cloning master.
+# Verify the publication's defs.open223.info anchors resolve in index.html,
+# against the markdown from the build that ontologies/223p.ttl came from.
 check: index.html check-links.sh check-links.py
-	@if [ -f "$(PUBLICATION)/223p_publication.md" ]; then \
-		PUBLICATION_MD="$(PUBLICATION)/223p_publication.md" bash check-links.sh; \
-	else \
-		bash check-links.sh; \
-	fi
+	PUBLICATION_MD="$(PUBLICATION)/223p_publication.md" bash check-links.sh
 
 test:
 	uv run pytest -q tests
@@ -44,4 +39,4 @@ serve: index.html
 	python3 -m http.server --bind 0.0.0.0 8000
 
 clean:
-	rm -rf 223standard
+	rm -f constraints.json index.html
