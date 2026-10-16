@@ -1,15 +1,18 @@
 name: Build index.html
 
+# The only committed input is ontologies/223p.ttl, copied from a 223standard
+# publication build by 'make sync'. Everything the site serves is generated
+# from it here, so a push of that one file republishes the site.
+
 on:
   push:
     branches:
       - main
+  pull_request:
   workflow_dispatch:
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: read
 
 concurrency:
   group: "pages"
@@ -20,44 +23,61 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Remote Repository
-        uses: actions/checkout@v3
-
-      - uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
+      - uses: actions/checkout@v4
 
       - name: Install uv
         uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
 
-      # - name: make index.html
-      #   run: uv run python make_site.py
+      - name: Install Python
+        run: uv python install        # the version in .python-version
 
-      # - name: Commit Built Files
-      #   run: |
-      #     git config user.name "GitHub Action"
-      #     git config user.email "github-action@example.com"
-      #     git add index.html
-      #     git diff --quiet --exit-code || git commit -m "Commit built files" && git push
+      - name: Build the site
+        run: make
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Upload artifact
+      - name: Run the stable-ID tests
+        run: make test
+
+      # Catches ontologies/223p.ttl coming from a graph other than the one the
+      # publication minted its links from, which builds cleanly but anchors
+      # nothing the document points at.
+      - name: Check the publication's anchors resolve
+        run: make check-anchors
+
+      - name: Assemble the site
+        run: make dist
+
+      # Downloadable from the run's summary page: index.html plus the
+      # ontologies it serves, for copying to any other host.
+      - name: Upload index.html as a downloadable artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: site/
+          if-no-files-found: error
+
+      - name: Upload the GitHub Pages artifact
+        if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: site/
+
+  # Publishes to defs.open223.info. Requires the repository's Pages source to
+  # be set to "GitHub Actions" rather than a branch.
   deploy:
+    if: github.ref == 'refs/heads/main'
     needs: build
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    runs-on: ubuntu-latest
+
     permissions:
       pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-    # Deploy to the github-pages environment
+      id-token: write   # to verify the deployment originates from this workflow
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    # Specify runner + deployment step
-    runs-on: ubuntu-latest
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
