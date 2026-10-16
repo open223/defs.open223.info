@@ -3,9 +3,14 @@ name = "defs-open223-info"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = [
     "jinja2>=3.1.4",
+    "rdfcanon==1.0.0",
     "rdflib>=7.0.0",
-    "requests>=2.32.3",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
 ]

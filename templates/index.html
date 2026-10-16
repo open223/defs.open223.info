@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASHRAE 223P Definitions</title>
 <style>
     {% include "static/prism.min.css" %}
     {% include "static/site.css" %}
@@ -7,28 +11,43 @@
 </head>
 <body>
     <h1>Docs</h1>
-    <input type="text" id="search" placeholder="Search" />
-    {% for concept in concepts %}
-    <div class="card" data-concept="{{concept.name}}">
-        <h3><a href="#{{ concept.name }}" id="{{ concept.name}}">{{ concept.label }}</a></h3>
-        <p>URI: <a href="{{ concept.class }}">{{ concept.class }}</a></p>
-        <pre><code class="language-turtle">
-{{ concept.immediate_subgraph }}
-        </code></pre>
-        {% if concept.see_alsos|length > 0 %}
-            <h4>See Also</h4>
-            <ul>
-            {% for see_also in concept.see_alsos %}
-                <li><a href="#{{ see_also }}">{{ see_also }}</a></li>
-            {% endfor %}
-            </ul>
-        {% endif %}
+    <p class="version">Generated from
+        the ASHRAE 223P ontology at
+        version <code id="ontology-version">{{ ontology.version }}</code>
+        (<a href="{{ ontology.source }}">{{ ontology.source }}</a>)
+    </p>
+    <!-- Disabled until app.js has built the search index; the status line
+         below says so, and app.js enables it when the index is ready. -->
+    <input type="search" id="search" placeholder="Search definitions&hellip;"
+           autocomplete="off" spellcheck="false" aria-describedby="status" disabled>
+    <p class="status">
+        <span id="status" role="status" aria-live="polite">Building search index&hellip;</span>
+        <button type="button" id="show-all" hidden>Show all definitions</button>
+    </p>
+
+    <div id="warning" class="warning" role="alert" hidden>
+        <span id="warning-text"></span>
+        <button type="button" id="warning-search">Search for it</button>
+        <button type="button" id="warning-dismiss">Dismiss</button>
     </div>
+
+    <main id="definitions">
+    {% for concept in concepts %}
+        <article class="card" id="{{ concept.name }}">
+            <h3><a class="permalink" href="#{{ concept.name }}">{{ concept.label }}</a></h3>
+            <p class="uri">URI: <a href="{{ concept.class }}">{{ concept.class }}</a></p>
+            <pre><code class="language-turtle">
+{{ concept.immediate_subgraph }}
+            </code></pre>
+        </article>
     {% endfor %}
-    <script>
-        {% include "static/app.js" %}
-        {% include "static/prism.min.js" %}
-        {% include "static/prism-autoloader.min.js" %}
-        {% include "static/prism-turtle.min.js" %}
-    </script>
+    </main>
+
+    <!-- Prism must not auto-highlight: app.js highlights blocks as they scroll
+         into view, which keeps ~900 Turtle blocks off the critical path. -->
+    <script>window.Prism = window.Prism || {}; window.Prism.manual = true;</script>
+    <script>{% include "static/prism.min.js" %}</script>
+    <script>{% include "static/prism-turtle.min.js" %}</script>
+    <script>{% include "static/app.js" %}</script>
 </body>
+</html>

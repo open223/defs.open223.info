@@ -1,27 +1,27 @@
 #!/bin/bash
+# Verify that every defs.open223.info anchor the publication links to exists in
+# the generated index.html.
+#
+# ontologies/223p.ttl is copied from a 223standard publication build, and only
+# the markdown from *that same build* carries matching blank-node IDs: they are
+# canonical labels over a whole graph, so a different build means different
+# anchors. There is therefore nothing useful to check against without a local
+# publication build -- rebuilding master here would just report every link as
+# broken.
+set -euo pipefail
 
-set -x
+PUBLICATION_MD="${PUBLICATION_MD:-}"
 
-# if 223standard directory does not exist, clone the repo
-if [ ! -d "223standard" ]; then
-  git clone https://bas-im.emcs.cornell.edu/223/223standard.git
-else
-  pushd 223standard
-  git pull
-  popd
+if [ -z "$PUBLICATION_MD" ]; then
+  echo "Set PUBLICATION_MD to the 223p_publication.md from the same build as" >&2
+  echo "ontologies/223p.ttl, or run 'make check STANDARD=/path/to/223standard'." >&2
+  exit 1
 fi
-cp stable_ids.json 223standard/publication
-# otherwise, update the repo
-pushd 223standard
-git pull
 
-pushd publication
-uv venv --seed
-uv pip install -r requirements.txt
-. .venv/bin/activate && uv run bash build-documentation.sh
+if [ ! -f "$PUBLICATION_MD" ]; then
+  echo "No such file: $PUBLICATION_MD" >&2
+  echo "Run 'bash build-publication.sh' in the 223standard checkout first." >&2
+  exit 1
+fi
 
-# generates 223p_publication.md
-popd # publication
-popd # 223standard
-. .venv/bin/activate && python check-links.py 223standard/publication/223p_publication.md index.html
-deactivate
+uv run python check-links.py "$PUBLICATION_MD" index.html
