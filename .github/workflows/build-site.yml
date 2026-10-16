@@ -2,7 +2,8 @@ name: Build index.html
 
 # The only committed input is ontologies/223p.ttl, copied from a 223standard
 # publication build by 'make sync'. Everything the site serves is generated
-# from it here, so a push of that one file republishes the site.
+# from it here, so a push of that one file republishes the site and, when the
+# page changed, publishes it as a release.
 
 on:
   push:
@@ -84,3 +85,52 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # Attaches what was just deployed to a GitHub Release, so the newest build is
+  # always at /releases/latest/download/index.html. Runs after the deploy so
+  # the latest release is always what defs.open223.info serves.
+  release:
+    if: github.ref == 'refs/heads/main'
+    needs: deploy
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write   # to create the release and its tag
+
+    steps:
+      - name: Download the site
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: site/
+
+      - name: Publish a release if the site changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          # Rebuilding unchanged inputs reproduces index.html byte for byte, so
+          # a push that doesn't change the page (docs, CI) publishes nothing.
+          if gh release download --pattern index.html --dir previous 2>/dev/null &&
+              cmp -s previous/index.html site/index.html; then
+            echo "index.html matches the latest release; nothing to publish"
+            exit 0
+          fi
+
+          version="$(sed -n 's:.*<code id="ontology-version">\([^<]*\)</code>.*:\1:p' site/index.html)"
+          concepts="$(grep -c '<article class="card"' site/index.html)"
+          tag="$(date -u +%Y-%m-%d)-${GITHUB_SHA::7}"
+
+          # e.g. "git:master@6fdc11c6... date:..." -> "master@6fdc11c"
+          upstream="$(sed 's/^git:\([^@ ]*\)@\([0-9a-f]\{7\}\).*/\1@\2/' <<<"$version")"
+
+          (cd site && zip -qr ../site.zip .)
+
+          gh release create "$tag" site/index.html site.zip \
+              --target "$GITHUB_SHA" \
+              --title "$tag (223standard $upstream)" \
+              --notes "Built from 223standard \`$version\`: $concepts definitions.
+
+          \`index.html\` is the whole site and works unchanged at any host. \`site.zip\` adds the \`ontologies/\` directory it also serves.
+
+          Built by $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"

@@ -5,8 +5,9 @@ ASHRAE 223P concept definitions.
 
 `ontologies/223p.ttl` is the only committed input. Everything the site serves
 is generated from it by `.github/workflows/build-site.yml`, which on every
-push builds `index.html`, attaches it to the run as a downloadable artifact,
-and deploys it to GitHub Pages from `main`. Updating the site means committing
+push builds `index.html` and attaches it to the run as a downloadable
+artifact. From `main` it deploys to GitHub Pages and publishes a release when
+the page changed. Updating the site means committing
 a new `223p.ttl`; nothing generated is checked in.
 
 ## Contents
@@ -74,11 +75,18 @@ document's anchors are missing from it, and publishes to
 ### Taking index.html elsewhere
 
 Every link in the generated page is a bare fragment and its CSS and JavaScript
-are inlined, so the same `index.html` works unchanged at any base URL. To put
-it on another host, open the latest run of **Build index.html** under the
-repository's Actions tab and download the `site` artifact — `index.html`, the
-`ontologies/` directory it serves, and `CNAME`. That is byte-for-byte what
-GitHub Pages deploys.
+are inlined, so the same `index.html` works unchanged at any base URL.
+
+Each deploy that changes the page is published as a
+[release](https://github.com/open223/defs.open223.info/releases), so the
+newest build is always at:
+
+- <https://github.com/open223/defs.open223.info/releases/latest/download/index.html>
+- <https://github.com/open223/defs.open223.info/releases/latest/download/site.zip>
+  — `index.html` plus the `ontologies/` directory it serves, and `CNAME`
+
+These are exactly what defs.open223.info serves. Every CI run, pull requests
+included, also attaches the same files as a `site` artifact, kept for 90 days.
 
 ### Building locally
 
