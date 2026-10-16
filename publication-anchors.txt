@@ -1,4 +1,4 @@
-# anchors linked from ../223standard/publication/223p_publication.md at https://data.ashrae.org/standard223/defs
+# anchors linked from 223p_publication.md at https://data.ashrae.org/standard223/defs
 # regenerate with 'make sync'; checked by 'make check-anchors'
 b-c14n2
 b-c14n5

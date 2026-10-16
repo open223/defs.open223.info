@@ -13,6 +13,7 @@ Usage:
 
 import re
 import sys
+from pathlib import Path
 
 # Markdown inline links, e.g. [Equipment](https://host/defs#s223:Equipment).
 LINK = re.compile(r"\((https?://[^)\s]+#[^)\s]+)\)")
@@ -47,7 +48,7 @@ def extract(markdown_file: str, manifest_file: str) -> None:
         {fragment for b, fragment in targets if b == base}, key=sort_key
     )
     with open(manifest_file, "w") as f:
-        f.write(f"# anchors linked from {markdown_file} at {base}\n")
+        f.write(f"# anchors linked from {Path(markdown_file).name} at {base}\n")
         f.write("# regenerate with 'make sync'; checked by 'make check-anchors'\n")
         f.writelines(f"{anchor}\n" for anchor in anchors)
     print(f"Wrote {manifest_file} with {len(anchors)} anchors from {base}")
